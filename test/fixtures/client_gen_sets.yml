@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  genRent: 9.99
+  monthlyTax: 9.99
+  quotation_detail_id: 
+  client_detail_id: 
+  gen_avail_id: 
+  gaurd_detail_id: 
+
+two:
+  genRent: 9.99
+  monthlyTax: 9.99
+  quotation_detail_id: 
+  client_detail_id: 
+  gen_avail_id: 
+  gaurd_detail_id: 

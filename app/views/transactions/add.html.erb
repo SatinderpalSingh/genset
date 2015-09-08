@@ -1,0 +1,26 @@
+<%= render 'welcome/header' %> <br><br><br><br><br>
+<section class= "quotationSection">
+<h2 class="genAvailHeading">Add Transaction</h2>	
+<div class="container quotationForm">
+<%= form_for(@transaction) do |f| %>
+<%= f.radio_button :payment_type, 'Cash' %>
+<%= label :payment_type, 'Cash' %>
+<%= f.radio_button :payment_type, 'Cheque' %>
+<%= label :payment_type, 'Cheque' %>
+<%= f.radio_button :payment_type, 'Debit Note' %>
+<%= label :payment_type, 'Debit Note' %>
+<label class="ll">Amount</label><%= f.text_field :amount, autofocus:true, :required => true, :class => 'nameOfPerson',:title => 'Amount Paid'%>
+	<label class="ll">Date</label><%= f.text_field :date, :class => 'nameOfPerson', :title => 'date' %>
+	<label class="ll">Transaction Remarks</label><%= f.text_field :transaction_remarks,  :required => true, :class => 'nameOfPerson',:title => 'transaction_remarks'%>
+<%= f.hidden_field :bill_id,:value => params[:billId] %> <br> <br>
+          <p style="text-align: center;"><%= f.submit :class => 'quotation_submit', :value => 'Save', :disabled => false, :disable_with => "Please wait..." %></p><br>
+	  <% end %>
+  </div>
+
+  <script type="text/javascript">
+	    $(document).ready(function(){
+		    $('#transaction_date').datepicker();
+			  });
+			  </script>
+<div>
+</section>

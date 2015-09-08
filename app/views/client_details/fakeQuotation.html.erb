@@ -1,0 +1,36 @@
+<%= render 'welcome/header' %> <br><br><br><br><br>
+<table id="clients-quotations" class="display responsive no-wrap">
+  <thead>
+    <tr>
+      <th>Reference Number</th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Mail Staus</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <% @fakeQuotations.each do |q| %>
+        <% if q.client_details_id == @client_details.id %>
+        <tr>
+          <td><%= q.referenceNumber %></td>
+          <td><%= link_to "Show", quotation_detail_path(q.id) %></td>
+          <td><%= link_to "Edit", "/editor" + quotation_detail_path(q.id) %></td> 
+            <% if q.mailStatus == true %>               
+              <td>Sent</td>
+            <% else %>
+             <td>Draft</td>
+            <% end %>
+        </tr>    
+        <% end %>
+      <% end %>
+  </tbody>
+</table>
+
+<script>
+    $(document).ready(function() {
+    $('#clients-quotations').dataTable({
+      responsive: true
+    });
+  } );
+</script>

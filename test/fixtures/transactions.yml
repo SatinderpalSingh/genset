@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bill_id: 
+  amount: 
+  date: 2015-06-20
+
+two:
+  bill_id: 
+  amount: 
+  date: 2015-06-20

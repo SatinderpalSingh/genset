@@ -1,0 +1,20 @@
+<header class="quotationHeader" id="quotationHeader" role="banner" style="display: block;">
+    <nav class="navbar", role="navigation">
+        <ul class="unlist1" >
+            <li ><%= link_to "Home", root_path %></li>        
+            <li ><%= link_to "DashBoard", dashboard_path %></li>
+            <li><%= link_to "Edit Page", "/editor" + request.path, 
+            {:id => "edit_link"} %></li>
+            <li><%= link_to "Send Mail", "/sendpdfmailfake/" + 
+                @fake_quotation.id.to_s, {:id => "send_mail", 
+                    :onclick => "loader();"} %></li>            
+            <li><%= link_to 'PDF', fake_quotation_path(@fake_quotation, format: 'pdf')%></li>
+        </ul>
+    </nav>  
+</header>
+
+<script type="text/javascript">
+    function loader(){
+        $('.preloader').css("display","block");   
+    }
+</script>        

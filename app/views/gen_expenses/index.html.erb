@@ -1,0 +1,142 @@
+<%= render 'welcome/header' %> <br><br><br><br><br>
+<h2 class="table-heading">Generator Expenses</h2>
+
+<div class="container">
+	<%= link_to 'Edit Taxes', taxes_path() %> </br>
+	<br>
+	</p>
+
+	<table id="genExpenses" class="display responsive no-wrap">
+		<thead>
+			<tr>
+				<th> </th>
+				<th> Client Name</th>
+				<th>Bank Name</th>
+				<th>Branch</th>
+				<th>Generator ID</th>
+				<th>Generator Type</th>
+				<th>Gaurd Name</th>
+				<th>Diesel Expenses</th>
+				<th>Other Expenses</th>
+				<th>Total Expenses</th>
+				<th>Show</th>
+				<th>Add Expenses </th>
+				<th>Transaction</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% 
+					i = 0 
+			@sender_detail = SenderDetail.where(quotationType: 'Real').order(id: :desc)
+			@sender_detail.each do |sender|
+				@client_detail = ClientDetail.where(sender_details_id: sender.id,
+													approved: 't').order(id: :desc)
+				@client_detail.each do |client|
+					date = DateTime.now
+					dieselExpenses = 0
+					otherExpenses = 0
+
+					genType = ''
+					@client_gen_set = ClientGenSet.where(client_detail_id: client.id).order(id: :desc)
+					gaurdName = ''
+					genID = ''
+					@client_gen_set.each do |gen_set| 
+						gaurdName = ''
+						if not gen_set.quotation_detail_id.blank?
+							@bill_detail = BillTable.where(quotation_id: gen_set.quotation_detail_id)
+							billNo = ''
+							@bill_detail.each do|bill|
+								billNo = bill.id
+							end
+						end
+
+					if not gen_set.gaurd_detail.blank?
+						gaurdName = gen_set.gaurd_detail.name
+				end
+				if(gen_set.gen_avail_id.blank?)
+					@tpg = ThirdPartyGen.find(gen_set.third_party_gen_id)
+					genID = @tpg.genID
+					if(@tpg.gen_detail.blank?)
+						genType = @tpg.gen_detail.genType
+					else
+						genType = "Gen Type not available"
+					end
+				else
+					@fpg = GenAvail.find(gen_set.gen_avail_id)
+					genID = @fpg.genID
+
+					genType = @fpg.gen_detail.genType
+				end
+				@qid = gen_set.quotation_detail_id
+					end
+
+					@gen_expenses = GenExpense.where("client_detail_id = ? and date between ? and ?", 
+													 client.id,  date.beginning_of_month, 
+													 date.end_of_month)
+					@gen_expenses.each do |expense|
+						if (expense.client_detail_id == client.id)
+							dieselExpenses += expense.dieselCharge
+							otherExpenses  += expense.otherExpenses
+						end
+					end 
+
+					total = dieselExpenses + otherExpenses
+					i = i+1 
+				%>
+					<tr>
+					<td><%= i  %></td>
+
+				<%	bank=""
+				if not client.bank_id.blank? 
+					bank= Bank.find(client.bank_id).name 
+				end	
+
+					if not @qid.blank?
+						@bill_detail = BillTable.where(quotation_id: @qid)
+						@bill_detail.each do|bill|
+							@billNo = bill.id
+							@pending = bill.pending_payment
+						end
+				end
+			%>
+		<td><%= client.name %></td>
+		<td><%= bank.html_safe %> </td>
+		<td><%= link_to client.bank_branch, controller: "client", action: "index", id: client.id %>
+	
+	
+	</td>
+		<td><%= genID  %></td>
+		<td><%= genType %></td>
+		<td><%= gaurdName  %></td>
+		<td><%= dieselExpenses  %></td>
+		<td><%= otherExpenses  %></td>
+		<td><%= total %></td>
+
+		<td><%= link_to "Show", controller: "gen_expenses", action: "show", id: client.id %></td>  
+		<td><%= link_to "Add Expenses", controller: "gen_expenses", action: "new", id: client.id %></td>
+		<td><% if not @billNo.blank?
+			%><%= "Pending: " + @pending.to_i.to_s %>
+		<%=			button_to 'Add Recieved Payment', controller: "transactions", action: "add", billId: @billNo %><%
+		else
+		%><%= "Generate bill to add Credit" %><%
+			end
+			%></td> 
+
+	</tr>
+<% end %>
+	<% end %>
+</tbody>
+</table>
+</div>
+
+<script>
+	$(document).ready(function() {
+		$('#genExpenses').dataTable({
+			responsive: true
+		});
+	} );
+	document.addEventListener("page:restore", function() {
+		  app.init();
+	});
+</script>

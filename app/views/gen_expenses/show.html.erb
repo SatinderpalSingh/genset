@@ -1,0 +1,187 @@
+<%= render 'welcome/header' %> <br><br><br><br><br>
+
+<% if @notice.present? %>
+<div class="notice">
+<%= @notice %>
+</div>
+<%  end %>
+<script type="text/javascript">
+$( document ).ready(function() {
+  $( ".notice" ).delay(5000).animate({
+    height: "0%",
+    opacity: 0.0,
+  }, 1000 );
+});
+
+
+</script>
+<div class="container">
+	<h2 class="table-heading">Monthly Report</h2><br>
+	<% cgsid = 0
+			@client_gen_set.each do |cgs|
+cgsid =cgs.id
+	end
+
+%>	<% file = "AE-%.6d" % cgsid 
+		billmonth = Date.today.strftime("%Y%m")
+		file = billmonth.to_s + "-" + file
+		filename = file+'.pdf' %>
+	<%  if File.file?(Rails.root.join('billarchieve',filename)) %>
+	<%= button_to "Download Bill", { action: "download", file: filename }, form_class: "new-sender",data: { confirm: 'Are you sure?', disable_with: 'loading...' } %>
+
+
+	<%#= link_to "Download", "/billarchieve/"+filename %>
+	<% else %>
+	 <%= button_to "Generate Bill for current month", { action: "get_bill", id: cgsid }, form_class: "new-sender",data: { confirm: 'Are you sure?' } %>
+
+	 <% end %>
+<div style="font-weight: 400; font-size: 1.6rem; color: #333;">
+    <table id="clientBasicDetails" class="display responsive no-wrap">
+        <thead>                                                             
+                <th colspan=2>Client Basic Details</th>  
+			</thead>   
+        <tbody>
+            <tr>
+                <td>Bank:</td>
+				<td>
+			<%	bank=""
+			if not @client.bank_id.blank? 
+				bank= Bank.find(@client.bank_id).name 
+			end	%>
+		<%= bank.to_s + ', ' + @client.bank_branch.html_safe  %>, 
+
+					<%= @client.district %> </td>
+            </tr>
+
+</div> 
+
+<% 
+    genID = ''
+    genType = ''
+    thirdPartyRent = ''
+    rent_for_left_days = '' 
+    date = DateTime.now.to_date
+%>
+
+<div>
+  <br>
+  <% @client_gen_set.each do |gen_set| %>
+    <% number_of_days = date.end_of_month.day.to_i - gen_set.approveDate.to_i %>
+	<%
+			#rent_for_left_days = (gen_set.genRent/date.end_of_month.day.to_i) * number_of_days 
+			rent_for_left_days = gen_set.genRent %>
+    <% 
+        if( !gen_set.gen_avail.blank? )
+          genType = gen_set.gen_avail.gen_detail.genType
+          genID = gen_set.gen_avail.genID
+        elsif( !gen_set.third_party_gen_id.blank? )
+          @third_gen = ThirdPartyGen.find(gen_set.third_party_gen_id)
+          genID = @third_gen.genID
+	  genType = @third_gen.gen_detail.genType
+          thirdPartyRent = @third_gen.genRent
+        end
+    %>
+    <% if( !thirdPartyRent.blank? ) %>
+<!--      <br> Third Party Generator Detail <br>
+      Generator Rent: <%= thirdPartyRent %> <br> -->
+    <% end %>
+    <tr><td>Generator: </td><td><%= genID %>, <%= genType %></td></tr>
+    <tr><td>Generator Monthly Rent: </td><td><%= gen_set.genRent %></td> </tr>
+    <tr><td>Guard Name: </td><td> <%= gen_set.gaurd_detail.name %> </td></tr>
+    <tr><td>Guard Monthly Pay: </td><td> <%= gen_set.gaurd_detail.monthlySalary %> </td></tr>
+</tbody>
+</table>
+    <% #genID = gen_set.gen_avail.genID %>
+  <% end %>
+</div>
+<br>
+<table id="monthlyDetails" class="display responsive no-wrap dataTable">
+<thead><th colspan=2>Month: <%= Date::MONTHNAMES[date.month] %></th></thead>
+<div>
+  <br>
+   
+  <% @client_gen_set.each do |gen_set| %>
+    <%
+        # Calculating Cleint's Rent including tax
+      genRent = rent_for_left_days.to_i
+      serviceTax = (genRent.to_s.to_d * gen_set.serviceTax.to_s.to_d) / 100
+      surcharge = (serviceTax.to_s.to_d * gen_set.eduTax.to_s.to_d) / 100
+      total = genRent + serviceTax + surcharge
+
+      # Calculation Sender's profit/loss on monthly basis
+
+    %>
+    <tbody>
+    <tr><td>Generator Rent</td> <td><%= rent_for_left_days.to_i %></td></tr>
+    <tr><td>Service Tax(<%= gen_set.serviceTax %>): </td> <td><%= serviceTax %></td></tr>
+    <tr><td>Surcharge(<%= gen_set.eduTax %>):</td> <td><%= surcharge %></td></tr>
+    <tr><td>Total: </td> <td><%= total %> </td></tr>
+    </tbody>
+</table>
+  <% end %>
+
+<br>
+
+<h2 class="table-heading">Daily Readings</h2>
+  <table id="genExpensesShow" class="display responsive no-wrap">
+    <thead>
+<!--      <th> Generator ID </th> -->
+      <th> Date </th>
+      <th> Reading </th>
+      <th> Reading By  </th>
+      <th> Battery Status </th>
+      <th> Radiator Status </th>
+      <th> Diesel Charge </th>
+      <th> Other Expenses </th>
+      <th> Total </th>
+      <th> Edit </th>
+      <th> Destroy </th>
+    </thead>
+
+    <tbody>
+    <% @gen_expense.each do |expense| %>
+
+      <% total = expense.dieselCharge + expense.otherExpenses %>
+      <tr>
+        <!-- <td> <%= genID %> </td> -->
+        <td> <%= expense.date %> </td>
+        <td> <%= expense.reading %> </td>
+        <td> <%= expense.readingBy %> </td>
+        <td> <%= expense.batteryStatus %> </td>
+        <td> <%= expense.radiatorStatus %> </td>
+        <td> <%= expense.dieselCharge %> </td>
+        <td> <%= expense.otherExpenses %> </td>
+        <td> <%= total %> </th>
+        <td> <%= link_to 'Edit', edit_gen_expense_path(expense) %> </td>
+        <td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+    $('#genExpensesShow').dataTable({
+      responsive: true
+    });
+  } );
+</script>
+
+<script>
+    $(document).ready(function() {
+    $('#clientBasicDetails').dataTable({
+      responsive: true
+    });
+  } );
+</script>
+
+<script>
+    $(document).ready(function() {
+    $('#monthlyDetails').dataTable({
+      responsive: true
+    });
+  } );
+</script>

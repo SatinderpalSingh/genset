@@ -1,0 +1,35 @@
+<!-- CSS can be found in quotation.scss.css -->
+<section class="quotationSection">
+    <%= render "welcome/header"  %>
+    <div class="quotationForm">
+		<h2 class="fillForm">Account Details</h2>
+
+<div class="container">
+	<%= link_to 'Edit Accounts', accounts_path() %> </br>
+	<br> <br> <br>
+      <%= form_for(@account) do |f| %>
+
+  <% if @account.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @account.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <label class="ll">Account Name</label>
+  <%= f.text_field :name, autofocus: true, :required => true, :class => 'nameOfPerson', :placeholder => 'Account Name',:title => 'Account Name' %>
+  <label class="ll">Account Number</label>
+  <%= f.text_field :number, autofocus: true, :required => true, :class => 'nameOfPerson', :placeholder => 'Account Number',:title => 'Account Number' %>
+  <label class="ll">IFSC Code</label>
+  <%= f.text_field :ifsc, autofocus: true, :required => true, :class => 'nameOfPerson', :placeholder => 'IFSC Code',:title => 'IFSC' %>
+  <label class="ll">MICR Code</label>
+  <%= f.text_field :micr, autofocus: true, :required => true, :class => 'nameOfPerson', :placeholder => 'MICR Code',:title => 'MICR' %>
+  <br>
+
+        <p style="text-align: center; padding-bottom: 40px;"><%= f.submit :class => 'quotation_submit', :value => 'Submit', :disabled => false, :disable_with => "Please wait..." %></p><br>
+      <% end %>
+    </div> 
+</section>
+

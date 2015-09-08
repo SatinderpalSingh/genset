@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Gentype:</strong>
+  <%= @gen_detail.genType %>
+</p>
+
+<p>
+  <strong>Genrent:</strong>
+  <%= @gen_detail.genRent %>
+</p>
+
+<p>
+  <strong>Totalgen:</strong>
+  <%= @gen_detail.total_gen %>
+</p>
+
+<%= link_to 'Edit', edit_gen_detail_path(@gen_detail) %> |
+<%= link_to 'Back', gen_details_path %>

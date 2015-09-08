@@ -1,0 +1,31 @@
+<!-- CSS on this form is forked from quotations CSS which is in quotation.css.scss -->
+
+<section class="quotationSection">
+    <%= render "welcome/header"  %>
+    <div class="quotationForm">
+    <h2 class="fillForm">Client Details</h2>
+    <%= form_for :client_detail, url: {action: 'clientUpdate'} do |f| %>
+	
+  <% if @client_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@client_detail.errors.count, "error") %> prohibited this gen_detail from being saved:</h2>
+
+      <ul>
+      <% @client_detail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <label class="ll">Designation</label> <%= f.text_field :designation, autofocus: true, :required => true, :class => 'nameOfPerson', :placeholder => 'Designation', :title => 'Name of Person' %><br>
+ <label class="ll">Bank Name</label><%= f.collection_select :bank_id, Bank.all, :id, :name, prompt: true, autofocus: true, :required => true, :class => 'dropDown new-dropdown selectInput' %><br>
+  <label class="ll">Bank Branch Name</label> <%= f.text_field :bank_branch, autofocus: true, :required => true, :class => 'nameOfBank', :placeholder => 'Bank Branch Name', :title => 'Bank Bank Name' %><br>
+         <label class="ll">Address</label>  <%= f.text_field :address, autofocus: true, :required => true, :class => 'address', :placeholder => 'Address', :title => 'Address' %><br>
+         <label class="ll">City</label>  <%= f.text_field :district, autofocus: true, :required => true, :class => 'district', :placeholder => 'District / City', :title => 'District / City' %><br>
+      <label class="ll">Contact No.</label>     <%= f.text_field :contactNo, autofocus: true, :required => true, :class => 'contactNumber', :placeholder => 'Contact Number', :title => 'Contact Number' %><br>
+     <label class="ll">Email</label>      <%= f.email_field :emailID, autofocus: true, :required => true, :class => 'eMail', :placeholder => 'E-mail', :title => 'Email Id of Sender' %><br>
+       <%= f.collection_select :sender_details_id, SenderDetail.all, :id, :name, prompt: true, autofocus: true, :class => 'dropDown new-dropdown' %>
+          <p style="text-align: center;"><%= f.submit :class => 'quotation_submit', :value => 'Save', :disabled => false, :disable_with => "Please wait..." %></p><br>
+        <% end %>
+    </div> 
+</section>

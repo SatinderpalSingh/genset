@@ -1,0 +1,20 @@
+<header class="quotationHeader" id="quotationHeader" role="banner" style="display: block;">
+    <nav class="navbar", role="navigation">
+        <ul class="unlist1" >
+            <li ><%= link_to "Home", root_path %></li>
+			<li ><%= link_to "DashBoard", dashboard_path %></li>
+			<% if not @quotation_detail.mailStatus %>
+				<li><%= link_to "Edit Page", "/editor" + request.path, {:id => "edit_link"} %></li>
+			<% end %>
+            <li><%= link_to "Send Mail", "/sendpdfmail/" + @quotation_detail.id.to_s, {:id => "send_mail", :onclick => "loader();"} %></li>
+            <li><%= link_to 'PDF', quotation_detail_path(@quotation_detail, format: 'pdf')%></li>
+        </ul>
+    </nav>  
+</header>
+
+<script type="text/javascript">
+function loader(){
+	$('.preloader').css("display","block");		
+}
+</script>
+

@@ -1,0 +1,43 @@
+<%= render 'welcome/header' %> <br><br><br><br><br>
+
+<div class="container">
+<h2 class="table-heading">Sender Profiles</h2>
+
+<%= button_to 'Add New', senderdetails_path, {:class => "new-sender"} %> <br>
+
+<table id="senderDetails" class="display responsive no-wrap">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Contact</th>
+      <th>Email ID</th>
+      <th>Quotation Type</th>
+      <th>Edit Details</th>
+      <th>Delete Sender</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sender_detail.each do |sender_detail| %>
+      <tr>
+        <td><%= sender_detail.name %></td>
+        <td><%= sender_detail.address %></td>
+        <td><%= sender_detail.contactNo %></td>
+        <td><%= sender_detail.emailID %></td>
+        <td><%= sender_detail.quotationType %></td>
+		<td><%= link_to 'Edit', edit_sender_detail_path(sender_detail) %></td>
+		<td><%= link_to 'Delete', sender_detail, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"delete" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<script>
+    $(document).ready(function() {
+    $('#senderDetails').dataTable({
+      responsive: true
+    });
+  } );
+</script>
+</div>

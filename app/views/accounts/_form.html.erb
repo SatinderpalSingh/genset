@@ -1,0 +1,43 @@
+<%= form_for(@account) do |f| %>
+  <% if @account.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@account.errors.count, "error") %> prohibited this bank from being saved:</h2>
+
+      <ul>
+      <% @account.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, "Account Name" %><br>
+    <% if @account.name.blank? %>
+      <%= f.text_field :name %>
+    <% else %>
+		<%= f.text_field :name, :value => @account.name %>
+    <% end %>
+    <%= f.label :number, "Account Number" %><br>
+    <% if @account.name.blank? %>
+      <%= f.text_field :number %>
+    <% else %>
+                <%= f.text_field :number, :value => @account.number %>
+    <% end %>
+    <%= f.label :ifsc, "MICR Code" %><br>
+    <% if @account.ifsc.blank? %>
+      <%= f.text_field :ifsc %>
+    <% else %>
+                <%= f.text_field :ifsc, :value => @account.ifsc %>
+    <% end %>
+    <%= f.label :micr, "MICR Code" %><br>
+    <% if @account.micr.blank? %>
+      <%= f.text_field :micr %>
+    <% else %>
+                <%= f.text_field :micr, :value => @account.micr %>
+    <% end %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

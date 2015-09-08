@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bill_id: 1
+  monthly_rent: 1.5
+  mail_sent: MyString
+  third_party_payment: 1.5
+  owner_payment: 1.5
+
+two:
+  bill_id: 1
+  monthly_rent: 1.5
+  mail_sent: MyString
+  third_party_payment: 1.5
+  owner_payment: 1.5

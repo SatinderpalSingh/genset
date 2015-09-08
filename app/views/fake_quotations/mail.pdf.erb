@@ -1,0 +1,121 @@
+<section class="quotationPagePdf" style="width: 820px; margin: 0px;">
+    <div class="whiteOne">
+        <h2 class="amrit">Amrit</h2>
+        <h2 class="engg">Engineers</h2>
+    </div>
+    <div class="blue">
+        <h2 class="offer">Offering Rental Gensets</h2>
+        <h2 class="basis">on Monthly Basis</h2>
+    </div>
+    <div class="greyOne">
+        <h3 class="serviceTax">Service Tax No.: APRPK1196BSD00</h3>
+        <h3 class="date">Dated : <%= Time.now.strftime("%m/%d/%Y") %></h3>
+    </div>
+    <div class="whiteTwo">
+        <div class="phone">
+            <h3 class="phoneText">Phone</h3>
+            <p class="phoneNumber"> +91 98140-09500 <br />
+                                    +91 87270-09500 <br /> 
+                                    +91 161-2439500 <br />
+            </p>
+        </div>
+        <div class="email">
+            <h3 class="emailText">Email</h3>
+            <p class="emailAddress"> ishnoorsingh@in.com <br />
+                                     jasvirsinghsond@gmail.com <br /> 
+                                     amritengineers80@gmail.com<br />
+                                     amritengineers@yahoo.in <br /> 
+            </p>            
+        </div>
+        <div class="website">
+            <h3 class="websiteText">Website</h3>
+            <p class="websiteAddress">http://Sample.com<br />
+            </p>            
+        </div>
+    </div>
+
+    <div class="greyTwo">
+        <h3 class="headOffice"><span>Head Office:</span> # 1380, St. No. 31, Janta Nagar, Bhagwan Chowk, Near Public Health Center, Ludhiana-141003. Punjab</h3>
+        <h3 class="subOffice"><span>Sub Office:</span> # 48, Wadda Gurdwara Sahib Market, Opp. G.N.E, College, Near Octroi Post, Gill Road, Ludhiana</h3>
+    </div>
+
+    <!-- Template Start -->
+    <!-- To-From Part Start -->
+    <div class="contentPartPdf">
+        <div class="contentsToStatementPdf">To</div><br />
+		<div class="detailsPdf"><%= @client_detail.designation.html_safe  %>,
+	   
+			<%	bank=""
+			if not @client_detail.bank_id.blank? 
+				bank= Bank.find(@client_detail.bank_id).name 
+			end %>
+			<br><%= bank.html_safe %>,
+		  	<br> <%= @client_detail.bank_branch.html_safe  %>, 
+	
+		 	<br> <%= @client_detail.address.html_safe  %>, <br><%= @client_detail.district.html_safe  %></div> <br />
+        <div class="subjectPdf"><%= @fake_quotation.subject.html_safe %></div> <br />
+        <div class="regardsPdf"><%= @fake_quotation.regard.html_safe  %></div>
+        <div class="regardContentPdf"><%= @fake_quotation.regardContent.html_safe  %></div><br>
+    </div>    
+    <!-- To-From Part End -->
+    <!--  Banks Names Start Here -->
+
+    <div class="banksPdf" >
+        <table class="tg">
+          <tr>
+            <th class="tg-hgcj">Bank</th>
+            <th class="tg-hgcj">Location</th>
+          </tr>
+          <tr>
+            <td class="tg-e3zv">Allahabad Bank</td>
+            <td class="tg-031e"></td>
+          </tr>
+          <tr>
+            <td class="tg-e3zv">Ludhiana Zone</td>
+            <td class="tg-031e"><%= @fake_quotation.bankZoneOne.html_safe %></td>
+          </tr>
+          <tr>
+            <td class="tg-e3zv">Amritsar Zone</td>
+            <td class="tg-031e"><%= @fake_quotation.bankZoneTwo.html_safe %></td>
+          </tr>
+          <tr>
+            <td class="tg-e3zv">Oriental Bank of Commerce</td>
+            <td class="tg-031e"><%= @fake_quotation.bankNameTwo.html_safe %></td>
+          </tr>
+          <tr>
+            <td class="tg-e3zv">Bank of Baroda</td>
+            <td class="tg-031e"><%= @fake_quotation.bankNameThree.html_safe %></td>
+          </tr>
+          <tr>
+            <td class="tg-e3zv">The Federal Bank Limited</td>
+            <td class="tg-031e"><%= @fake_quotation.bankNameFour.html_safe %></td>
+          </tr>
+          <tr>
+            <td class="tg-e3zv">Central Bank of India</td>
+            <td class="tg-031e"><%= @fake_quotation.bankNameFive.html_safe %></td>
+          </tr>
+        </table>    
+    </div>    
+    <!--  Banks Names Start End -->    
+    <!-- List of Gen Rates Start-->
+    <div class="quotationsPdf" >
+        <h4 class="quotationLinePdf"><%= @fake_quotation.quotationLine.html_safe  %></h4><br />
+        <ul class="quotationsListPdf" style="list-style-type:none">
+            <%= @fake_quotation.quotationRateList.html_safe  %>
+        </ul> <br>
+        <h4 class="serviceTaxPdf">(Plus Service tax is applicable)</h4><br />
+    </div>    
+    <!-- List of Gen Rates End -->
+    <!-- Sender Details Start -->
+    <div class="secondPageContentPdf">    
+        <p class="contentPartOnePdf"><%= @fake_quotation.contentPartOne.html_safe %></p><br><br>
+        <p class="contetnPartTwoPdf"><%= @fake_quotation.contentPartTwo.html_safe %></p><br><br>
+        <p class="thankYouPdf"><%= @fake_quotation.thankYou.html_safe %></p><br><br>
+        <p class="yoursTrulyPdf"><%= @fake_quotation.yoursTruly.html_safe  %></p><br><br>
+        <p class="nameOfCompanyPdf"><%= @fake_quotation.nameOfCompany.html_safe  %></p><br><br><br>
+        <p><%= image_tag(@sender_detail.signature.url(:med))%></p><br><br>
+        <p class="namePdf"><%= @sender_detail.name.html_safe  %></p><hr class="nameHrLine"> 
+    </div>       
+    <!-- Sender Details End -->
+    <!-- Template End -->
+</section>

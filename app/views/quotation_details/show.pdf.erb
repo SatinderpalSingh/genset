@@ -1,0 +1,150 @@
+<section class="quotationPagePdf">
+
+    <div class="contentPartPdf">
+<div class="whiteOne">
+<%= wicked_pdf_image_tag 'amrit_logo.png', class: "logo" %>
+        <!--h2 class="amrit">Amrit</h2>
+        <h2 class="engg">Engineers</h2-->
+    </div>
+    <div class="blue">
+        <h2 class="offer">Offering Rental Gensets</h2>
+        <h2 class="basis">on Monthly Basis</h2>
+    </div>
+    <div class="greyOne">
+        <h3 class="serviceTax">Service Tax No.: APRPK1196BSD001</h3>
+    </div>
+    <div class="whiteTwo">
+        <div class="phone">
+            <h3 class="phoneText">Phone</h3>
+            <p class="phoneNumber"> +91 98140-09500 <br />
+                                    +91 87270-09500 <br /> 
+                                    +91 161-2439500 <br />
+            </p>
+        </div>
+        <div class="email">
+            <h3 class="emailText">Email</h3>
+            <p class="emailAddress"> ishnoorsingh@in.com <br />
+                                     jasvirsinghsond@gmail.com <br /> 
+                                     amritengineers80@gmail.com<br />
+                                     amritengineers@yahoo.in <br /> 
+            </p>            
+        </div>
+        <div class="website">
+            <h3 class="websiteText">Website</h3>
+            <p class="websiteAddress">http://Sample.com<br />
+            </p>            
+        </div>
+    </div>
+
+    <div class="greyTwo">
+        <h3 class="headOffice"><span>Head Office:</span> # 1380, St. No. 31, Janta Nagar, Bhagwan Chowk, Near Public Health Center, Ludhiana-141003. Punjab</h3>
+        <h3 class="subOffice"><span>Sub Office:</span> # 48, Wadda Gurdwara Sahib Market, Opp. G.N.E, College, Near Octroi Post, Gill Road, Ludhiana</h3>
+    </div>
+	</div>
+    <!-- Template Start -->
+    <!-- To-From Part Start -->
+    <div class="contentPartPdf">
+        <div class="referenceNumberPdf">Reference Number : <%= @quotation_detail.referenceNumber %></div>
+        <div class="datedPdf">Dated : <%= Time.now.strftime("%m/%d/%Y") %></div><br /><br />    
+        <div class="contentsToStatementPdf">To</div><br /><br />
+		<div class="detailsPdf"><%= @client_detail.designation.html_safe  %>, 
+	   
+			<%	bank=""
+			if not @client_detail.bank_id.blank? 
+				bank= Bank.find(@client_detail.bank_id).name 
+			end	%>
+		<br><%= bank.html_safe %>, 
+		<br> <%= @client_detail.bank_branch.html_safe  %>, 
+	
+		<br> <%= @client_detail.address.html_safe  %>, <br><%= @client_detail.district.html_safe  %></div> <br />
+        <div class="subjectPdf"><%= @quotation_detail.subject.html_safe %></div> <br />
+        <div class="regardsPdf"><%= @quotation_detail.regard.html_safe  %></div>
+        <div class="regardContentPdf"><%= @quotation_detail.regardContent.html_safe  %></div><br>
+    </div>    
+    <!-- To-From Part End -->
+    <!--  Banks Names Start Here -->
+
+    <div class="banksPdf" >
+        <table class="tg">
+          <tr>
+            <th class="tg-hgcj">Bank</th>
+            <th class="tg-hgcj">Location</th>
+          </tr>
+          <tr>
+            <td class="tg-e3zv">Allahabad Bank : Ludhiana Zone</td>
+            <td class="tg-031e"><%= @quotation_detail.bankZoneOne.html_safe %></td>
+          </tr>
+          <tr>
+            <td class="tg-e3zv">Allahabad Bank : Amritsar Zone</td>
+            <td class="tg-031e"><%= @quotation_detail.bankZoneTwo.html_safe %></td>
+          </tr>
+          <tr>
+            <td class="tg-e3zv">Oriental Bank of Commerce</td>
+            <td class="tg-031e"><%= @quotation_detail.bankNameTwo.html_safe %></td>
+          </tr>
+          <tr>
+            <td class="tg-e3zv">Bank of Baroda</td>
+            <td class="tg-031e"><%= @quotation_detail.bankNameThree.html_safe %></td>
+          </tr>
+          <tr>
+            <td class="tg-e3zv">The Federal Bank Limited</td>
+            <td class="tg-031e"><%= @quotation_detail.bankNameFour.html_safe %></td>
+          </tr>
+          <tr>
+            <td class="tg-e3zv">Central Bank of India</td>
+            <td class="tg-031e"><%= @quotation_detail.bankNameFive.html_safe %></td>
+          </tr>
+        </table>    
+    </div>    
+    <!--  Banks Names Start End -->    
+    <!-- List of Gen Rates Start-->
+    <div class="quotationsPdf" >
+        <h4 class="quotationLinePdf"><%= @quotation_detail.quotationLine.html_safe  %></h4><br />
+        <div class="genRentAndTypePdf">
+        <table class="tg">
+            <thead>
+                <tr> 
+                    <th class="tg-hgcj">Generator Type</th> 
+                    <th class="tg-hgcj">Generator Rent</th> 
+                <tr>
+            </thead>
+            <tbody>
+            <%  counter = 0
+                qtnGenType = ''
+                qtnGenRent = ''
+                @quotation_rent.each do |qtn_rent|
+                    qtnGenType = qtn_rent.genType.split(',')
+                    qtnGenRent = qtn_rent.genRent.split(',')
+                end
+                qRent = qtnGenType.zip(qtnGenRent)
+            %>
+            <% qRent.each do |qt, qr| %>        
+                <tr>
+                    <% counter +=1 %>
+                    <td class ="type" data-mercury="full" id ="quotation_type<%= counter %>"> <%= qt %>  </td>
+                    <td class ="rent" data-mercury="full" id ="quotation_rent<%= counter %>"> <%= qr %> </td>
+                </tr>
+            <% end %>
+            </tbody>
+        </table>
+        </div><br />
+        <div class="counter" data-mercury="full" id="quotation_counter" style="display:none">
+            <%= counter %>
+        </div>    
+        <h4 class="serviceTaxPdf">(Plus Service tax is applicable)</h4><br />
+    </div>    
+    <!-- List of Gen Rates End -->
+    <!-- Sender Details Start -->
+    <div class="secondPageContentPdf">    
+        <p class="contentPartOnePdf"><%= @quotation_detail.contentPartOne.html_safe %></p><br><br>
+        <p class="contetnPartTwoPdf"><%= @quotation_detail.contentPartTwo.html_safe %></p><br><br>
+        <p class="thankYouPdf"><%= @quotation_detail.thankYou.html_safe %></p><br><br>
+        <p class="yoursTrulyPdf"><%= @quotation_detail.yoursTruly.html_safe  %></p><br><br>
+        <p class="nameOfCompanyPdf"><%= @quotation_detail.nameOfCompany.html_safe  %></p><br>
+        <p><%= wicked_pdf_image_tag(@sender_detail.signature.url(:med))%></p><br>
+        <p class="namePdf"><%= @sender_detail.name.html_safe  %></p>
+        <p class="authSign">(Authorized Signatory)</p><br>
+    </div>       
+    <!-- Sender Details End -->
+    <!-- Template End -->
+</section>

@@ -1,0 +1,39 @@
+<%= render 'welcome/header' %> <br><br><br><br><br>
+<h2 class="table-heading">Third Party Providers</h2>
+
+<div class="container">
+
+<%= button_to 'Add New', providers_path, {:class => "new-sender"}%><br>
+
+<table id="thirdPartyProvider" class="display responsive no-wrap">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Contactno</th>
+	    <th> Edit details</th>
+	    <th> Delete Record</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @third_party_providers.each do |third_party_provider| %>
+      <tr>
+        <td><%= third_party_provider.name %></td>
+        <td><%= third_party_provider.address %></td>
+        <td><%= third_party_provider.contactNo %></td>
+		<td><%= link_to 'Edit', edit_third_party_provider_path(third_party_provider) %></td>
+		<td><%= link_to 'Destroy', third_party_provider, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<script>
+    $(document).ready(function() {
+    $('#thirdPartyProvider').dataTable({
+      responsive: true
+    });
+  } );
+</script>

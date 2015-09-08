@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reading: MyString
+  readingBy: MyString
+  batteryStatus: MyString
+  radiatorStatus: MyString
+  dieselCharge: 9.99
+  otherExpenses: 9.99
+  client_detail_id: 
+
+two:
+  reading: MyString
+  readingBy: MyString
+  batteryStatus: MyString
+  radiatorStatus: MyString
+  dieselCharge: 9.99
+  otherExpenses: 9.99
+  client_detail_id: 

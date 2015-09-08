@@ -1,0 +1,71 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  companyName: MyString
+  serviceTax: MyString
+  companyTagLine: MyString
+  headerMobileNumber: MyString
+  companyAddressOne: MyString
+  companyAddressTwo: MyString
+  referenceNumber: MyString
+  subject: MyText
+  regard: MyString
+  regardContent: MyText
+  bankNameOne: MyString
+  bankNameTwo: MyString
+  bankNameThree: MyString
+  bankNameFour: MyString
+  bankNameFive: MyString
+  bankZoneOne: MyText
+  bankZoneTwo: MyText
+  quotationLine: MyText
+  quotationRateList: MyText
+  contentPartOne: MyText
+  contentPartTwo: MyText
+  thankYou: MyString
+  yoursTruly: MyString
+  nameOfCompany: MyString
+  emailIdOne: MyString
+  emailIdTwo: MyString
+  emailIdThree: MyString
+  emailIdFour: MyString
+  contactNumberOne: MyString
+  contactNumberTwo: MyString
+  contactNumberThree: MyString
+  client_details_id: 
+  sender_details_id: 
+
+two:
+  companyName: MyString
+  serviceTax: MyString
+  companyTagLine: MyString
+  headerMobileNumber: MyString
+  companyAddressOne: MyString
+  companyAddressTwo: MyString
+  referenceNumber: MyString
+  subject: MyText
+  regard: MyString
+  regardContent: MyText
+  bankNameOne: MyString
+  bankNameTwo: MyString
+  bankNameThree: MyString
+  bankNameFour: MyString
+  bankNameFive: MyString
+  bankZoneOne: MyText
+  bankZoneTwo: MyText
+  quotationLine: MyText
+  quotationRateList: MyText
+  contentPartOne: MyText
+  contentPartTwo: MyText
+  thankYou: MyString
+  yoursTruly: MyString
+  nameOfCompany: MyString
+  emailIdOne: MyString
+  emailIdTwo: MyString
+  emailIdThree: MyString
+  emailIdFour: MyString
+  contactNumberOne: MyString
+  contactNumberTwo: MyString
+  contactNumberThree: MyString
+  client_details_id: 
+  sender_details_id: 

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GenSys</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= stylesheet_link_tag 'http://yandex.st/bootstrap/3.0.0/css/bootstrap.min.css' %>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true , :debug => false %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true, :debug => false %>
+    <%= javascript_include_tag "http://www.google.com/jsapi", "chartkick" %>
+    <%= javascript_include_tag 'http://yandex.st/bootstrap/3.0.0/js/bootstrap.min.js' %>
+    <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>

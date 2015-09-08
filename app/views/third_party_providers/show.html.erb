@@ -1,0 +1,76 @@
+<%
+	if not params[:start_date].blank?
+		start_d =  Date::civil(params[:start_date][:year].to_i, params[:start_date][:month].to_i, params[:start_date][:day].to_i) 
+		end_d = Date::civil(params[:end_date][:year].to_i, params[:end_date][:month].to_i, params[:end_date][:day].to_i)
+	else
+		start_d = Date.today - 31.days
+		end_d = Date.today
+	end
+
+	start_d = start_d.beginning_of_day
+	end_d = end_d.end_of_day
+
+	%>
+<%= render 'welcome/header' %> <br><br>
+<% @provider = ThirdPartyProvider.find(params[:id]) %>
+<h2 class="table-heading">Provider name: <%= @provider.name %> </h2>
+<% @bill = BillTable.where(third_party_provider_id: params[:id], created_at: (start_d)..end_d) %>
+<div class="container">
+	<div style="margin-left:18%;"> 
+		<br>
+		<%= form_for :Date do |f| %>
+			From <%= select_date start_d, prefix: :start_date %>
+
+		To		<%= select_date end_d, prefix: :end_date %></p>
+</div></br>
+<div class="actions">
+	<%= f.submit value:"Filter Result", :class=> 'form_submit' %>
+</div>
+<% end %>
+<%= line_chart [
+	{name: "Total", data: @bill.map{|record| [record.created_at,record.total]}},
+	{name: "Expenses", data: @bill.map{|record| [record.created_at, record.total_exp]}},
+	{name: "Amount To Forward", data: @bill.map{|record| [record.created_at, record.total.to_d - record.total_exp.to_d - record.calc_tds.to_d ]}}
+], { library:{width: 1200} } %>
+<table id="genExpenses" class="display responsive no-wrap">
+	<thead>
+		<tr>
+			<th>S no. </th>
+			<th>Gen Id</th>	
+			<th>Rate</th>
+			<th>Bill amount</th>
+     		<th>Bill date</th>
+			<th>Expenses</th>
+			<th>Amount to be forwarded</th>
+		</tr>
+	</thead>
+	<tbody>
+<% i = 0 %>
+    <%  i += 1 %>
+	<% @bills = BillTable.where(third_party_provider_id: @provider.id,  created_at: (start_d)..end_d) %>
+	<% @bills.each_with_index do |b, index| %>
+		<% @tds = ((b.total.to_d / 100) * b.tds.to_d).round(1) %>
+		<% @to_forward = (b.total - @tds - b.total_exp).round(1) %>
+		<tr> <% index=index+1 %>
+	<td><%= index %></td> 
+	<td><%= b.gen_desc %></td>
+<td><%= b.rate %></td>
+<td><%= b.total %></td>
+<td><%= b.created_at.strftime("%d-%m-%Y")%></td></td>
+<td><%= b.total_exp %></td>
+<td><%= @to_forward %></td>
+		</tr>
+	<% end %>
+
+
+		</tbody>
+	</table>
+</div>
+
+<script>
+	$(document).ready(function() {
+		$('#genExpenses').dataTable({
+			responsive: true
+		});
+	} );
+</script>

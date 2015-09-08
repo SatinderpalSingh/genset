@@ -1,0 +1,39 @@
+<%= render 'welcome/header' %> <br><br><br><br><br>
+
+<p id="notice"><%= notice %></p>
+
+<h2 class="table-heading">Listing Taxes</h2>
+<div class="container">
+	<%= link_to 'Add Tax', new_tax_path() %> </br>
+<br>
+<br>
+<br>
+<div class="container">
+<table id="taxes" class="display responsive no-wrap" >
+  <thead>
+    <tr>
+      <th>Tax Name</th>
+      <th>Tax Percentage</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @taxes.each do |tax| %>
+      <tr>
+        <td><%= tax.taxName %></td>
+        <td><%= tax.taxPercentage %></td>
+        <td><%= link_to 'Edit', edit_tax_path(tax) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<script>
+    $(document).ready(function() {
+    $('#taxes').dataTable({
+      responsive: true
+    });
+  } );
+</script>

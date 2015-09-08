@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Bill Tables</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bill</th>
+      <th>Monthly rent</th>
+      <th>Mail sent</th>
+      <th>Third party payment</th>
+      <th>Owner payment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bill_tables.each do |bill_table| %>
+      <tr>
+        <td><%= bill_table.bill_id %></td>
+        <td><%= bill_table.monthly_rent %></td>
+        <td><%= bill_table.mail_sent %></td>
+        <td><%= bill_table.third_party_payment %></td>
+        <td><%= bill_table.owner_payment %></td>
+        <td><%= link_to 'Show', bill_table %></td>
+        <td><%= link_to 'Edit', edit_bill_table_path(bill_table) %></td>
+        <td><%= link_to 'Destroy', bill_table, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bill table', new_bill_table_path %>

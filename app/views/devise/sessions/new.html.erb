@@ -1,0 +1,20 @@
+<section class="signIn">
+<%= render 'welcome/header' %>
+    <div class="container">    
+        <div class="headBar">
+            <h1 class="signInHeading">Login</h1>        
+        </div>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => 'signInForm'}) do |f| %>
+        <%= f.text_field :username, autofocus: true, :required => true, :class => 'name', :id => 'name', :placeholder => 'Username', :title => 'Username' %> <br />
+        <!-- <%= f.email_field :email, autofocus: true, :required => true, :class => 'eMail', :id => 'email', :placeholder => 'E-mail', :title => 'Email Address' %> <br /> -->
+        <%= f.password_field :password, autocomplete: "off", :required => true, :class => 'pass', :id => 'password', :placeholder => 'Password', :title => 'Password' %> <br><br>
+        <% if devise_mapping.rememberable? -%>
+            <p style="text-align:center"><%= f.check_box :remember_me %>
+            <span><%= f.label :remember_me %></span></p><br>
+        <% end -%>
+        <p style="text-align: center;"><%= f.submit :class => 'submit', :value => 'Log In' %></p><br>
+        <% end %>
+    </div>
+</section>
+
+

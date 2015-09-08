@@ -1,0 +1,116 @@
+<%= render 'welcome/header' %> <br><br><br><br><br>  
+<div class="container">
+<h2 class="table-heading">Client Overview</h2>
+<div style="margin-left:18%;">
+<%= form_for :Date do |f| %>
+From <%= select_date Date.today, prefix: :start_date %>
+To <%= select_date Date.today, prefix: :end_date %>
+</div><br><br>
+<div class="actions">
+<%= f.submit value:"Filter Result", :class=> 'form_submit' %>
+</div>
+<% #end %>
+<%
+
+	if not params[:start_date].blank?
+	start_d =  Date::civil(params[:start_date][:year].to_i, params[:start_date][:month].to_i, params[:start_date][:day].to_i)
+end_d = Date::civil(params[:end_date][:year].to_i, params[:end_date][:month].to_i, params[:end_date][:day].to_i)
+
+	start_d = start_d.beginning_of_day
+	end_d = end_d.end_of_day
+	end
+	%>
+
+
+
+
+	<%#= @client.id %><br>
+	<h2 class="table-heading">Bill Payment</h2>
+	<table id="client" class="display responsive no-wrap">
+
+	<thead>
+	<tr>
+	<th></th>
+	<th>Bill Number</th>
+	<th>Payment Received</th>
+	</tr>
+	</thead>
+	<tbody>
+
+
+	<%
+	bill_id = nil
+	quotation_id= nil
+	bill_number = nil
+	total = nil
+	transaction_id= nil
+	transaction_amount= nil
+	if not params[:start_date].blank?
+
+@quotation_detail = QuotationDetail.where(client_details_id: @client.id, created_at: (start_d)..end_d)
+	else
+@quotation_detail = QuotationDetail.where(client_details_id: @client.id)
+	end
+j = 1
+	@quotation_detail.each do |quo_det|
+	quotation_id = quo_det.id
+
+@bill_detail = BillTable.where(quotation_id: quotation_id.to_i)
+	@bill_detail.each do |bill|
+	bill_id = bill.id
+	bill_number = bill.bill_no
+	total = bill.total_exp
+	
+	
+@transaction_detail = Transaction.where(bill_id: bill_id, created_at: (start_d)..end_d).sum(:amount)
+#@transaction_detail.each do |trans_det|
+#transaction_id = trans_det.id
+#transaction_amount = trans_det.amount
+
+#end
+	%>
+
+
+	<tr>
+	<td><%= j %></td>
+	<td><%= bill_number %></td>
+	<td><%= @transaction_detail %></td></tr>
+<% j= j+1 end end %>
+	</tbody>
+	</table>
+
+<div class="row">
+	<div class="col-xs-6">
+        	<%= line_chart [
+                                        {name: "Total", data: @bill_detail.map{|record| [record.created_at, record.total]}},
+                                        {name: "Expenses", data: @bill_detail.map{|record| [record.created_at, record.total_exp]}},
+                                        {name: "Payment Done", data: @bill_detail.map{|record| [record.created_at, record.total-record.pending_payment ]}}
+                                ], { library:{width: 1200} } %>
+
+
+                </div>
+</div>
+
+
+
+
+
+
+
+<% end %>
+
+
+
+
+
+
+
+	</div>
+
+	<script>
+	$(document).ready(function() {
+			$('#client').dataTable({
+responsive: true
+});
+			} );
+</script>

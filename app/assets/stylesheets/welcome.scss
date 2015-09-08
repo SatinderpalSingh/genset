@@ -1,0 +1,113 @@
+@import "layout";
+
+.landingPage {
+    height: 100%;
+    position: relative;
+    background: url($landing-image) center no-repeat;
+    @include background-size(cover);
+  
+    @extend .content;
+ 
+    .main-heading {
+        color: $white;
+        text-align:center;
+        font-weig5ht:10px; 
+/*        padding-bottom: 0.8rem;*/
+        @include breakpoint(alpha){padding-top:4rem; font-size:2.6rem;}
+        @include breakpoint(beta){padding-top:4.5rem; font-size:3.6rem;}
+        @include breakpoint(gamma){padding-top:6rem; font-size:5rem;}
+        @include breakpoint(delta){padding-top:5.9rem; font-size:5.8rem;}
+        @include breakpoint(epsilon){padding-top:0rem; font-size:1.7rem;}  
+    }
+
+
+    .box{
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 400px;
+        text-align: center;
+        margin: 0 auto;
+        border: 15px solid rgba(0, 0, 0, 0.5);
+        padding: 60px 0px 60px 0px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -190px;
+        margin-left: -200px;
+    }
+
+    .amrit {
+        font-size: 35px;
+        font-weight: 600;
+        color: $white;
+/*        text-transform: uppercase;*/
+        letter-spacing: 2px;
+        padding-top: 30px;
+    }
+
+    .eng {
+        font-size: 18px;
+        font-weight: 100;
+        color: $white;
+/*        text-transform: uppercase;*/
+        letter-spacing: 2px;
+        padding-bottom: 45px;
+	padding-top: 20px;
+    }
+
+        .amrit-logo {                                                       
+            width: 280px;
+            display:table;
+            margin:auto;
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+
+    .tagline1 {
+        text-align: center;
+        color: $rose;
+        padding-bottom: 0.7rem;
+        @include breakpoint(alpha){font-size: 2.1rem; font-weight: 200};
+        @include breakpoint(beta){font-size: 2.5rem; font-weight: 200};
+        @include breakpoint(gamma){font-size: 2.8rem; font-weight: 400;};
+        @include breakpoint(delta){font-size: 3.2rem; font-weight: 400;};
+        @include breakpoint(epsilon){font-size: 3.2rem; font-weight: 400;};
+    }  
+    .tagline2 {
+        text-align: center;
+        color: $rose;
+        padding-bottom: 0.7rem;        
+        @include breakpoint(alpha){font-size: 1.8rem; font-weight: 200};
+        @include breakpoint(beta){font-size: 2.2rem; font-weight: 200};
+        @include breakpoint(gamma){font-size: 2.5rem; font-weight: 400;};
+        @include breakpoint(delta){font-size: 2.7rem; font-weight: 400;};
+        @include breakpoint(epsilon){font-size: 2.7rem; font-weight: 400;};        
+    }
+    .tagline3 {
+        text-align: center;
+        color: $rose;
+        @include breakpoint(alpha){font-size: 2.1rem; font-weight: 200; padding-bottom: 2rem;};
+        @include breakpoint(beta){font-size: 2.5rem; font-weight: 200; padding-bottom: 2rem;};
+        @include breakpoint(gamma){font-size: 2.8rem; font-weight: 400; padding-bottom: 4rem;};
+        @include breakpoint(delta){font-size: 3.2rem; font-weight: 400; padding-bottom: 4rem;};
+        @include breakpoint(epsilon){font-size: 3.2rem; font-weight: 400; padding-bottom: 4rem;};        
+    }
+    .enter {
+	font-size:16px;
+	border:2px solid $white;
+	border-radius:2px;
+	background:transparent;
+	color: $white;
+    padding: 15px;
+    cursor: pointer;
+    font-family: "PT Sans";
+    font-weight: 600;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    transition: 0.2s ease-in-out 0s;
+        &:hover{ 
+	        background: $mainblue;
+            color: $white;
+            border: 2px solid $mainblue;
+        }
+    }
+}

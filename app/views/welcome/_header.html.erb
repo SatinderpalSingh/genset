@@ -1,0 +1,92 @@
+<div id="navbar"
+  <nav class="navbar navbar-default navbar-static-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left">
+					<li> <%= link_to root_path do %>  Home <% end %> </li>
+					<% if user_signed_in? %>
+                    <li> <%= link_to dashboard_path do %> Dashboard  <% end %> </li>
+                    <li> <%= link_to profitloss_path do %> Profit Loss Sheet <% end %> </li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Third Party<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+						<li><%= link_to party_providers_path do%> Providers <% end %></li>
+							<li><%= link_to partylist_path do %>Bill <% end %></li>
+						</ul>
+					</li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">More<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><%= link_to active_generators_path do%>Active generators<% end %></li>
+							<li><%= link_to tax_report_path do%>Tax reports<% end %></li>
+							<li><%= link_to banks_path do %> Add/Edit Banks <% end %> </li>
+						</ul>
+					</li>
+
+		            <% else %>
+        	        <li><%= link_to "Login", login_path %></li>
+       		        <% end %>
+				</ul>
+				<% if user_signed_in? %> 
+				<ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li> <%= link_to accounts_path do %> My Bank accounts <% end %> </li>
+                            <li>  <%= link_to email_addresses_path do %> My Email addresses <% end %> </li>
+                            <li>  <%= link_to taxes_path do %> Taxes <% end %> </li>
+						<!--	<li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> Reports</a>
+								<ul class="dropdown-menu">
+									<li><a href="#">Client</a></li>
+									<li><a href="#">Third Party</a></li>
+									<li><a href="#">Taxes</a></li>-->
+						</ul>
+					</li>
+					<li ><%= link_to logout_path do %> Log Out <% end %></li>   
+				</ul>
+			<% else %>
+				<% end %>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+</div>
+
+
+    
+
+<% if false %>
+<header class="header" id="header" role="banner" style="display: block;">
+    <nav class="navbar" role="navigation">
+        <ul class="unlist1">	
+        <%= link_to root_path do %>
+                <li >Home</li>	
+        <% end %>
+        <%= link_to dashboard_path do %>
+                <li >Dashboard</li>
+        <% end %>
+	<%= link_to profitloss_path do %>
+                <li >Profit Loss Sheet</li>
+        <% end %>
+	<%= link_to partylist_path do %>
+                <li >Third Party Details</li>
+        <% end %>
+	<%= link_to accounts_path do %>
+                <li >My Bank Accounts</li>
+        <% end %>
+        <%= link_to email_addresses_path do %>
+                <li >Email Addresses</li>
+        <% end %>
+	 <% if user_signed_in? %>
+        <%= link_to logout_path do %>
+                <li> Log Out</li>
+        <% end %>
+            <% else %>       
+                <li><%= link_to "Login", login_path %></li>
+            <% end %>
+        </ul>
+    </nav>  
+</header>
+<% end %>

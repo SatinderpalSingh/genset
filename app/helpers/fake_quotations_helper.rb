@@ -1,0 +1,2 @@
+module FakeQuotationsHelper
+end

@@ -1,0 +1,487 @@
+@import "layout";
+
+/* 
+ * N E W . H T M L . E R B 
+ */
+
+.quotationSection {
+    .quotationForm {
+        padding-top: 3em;
+        @include container(65%);
+        .fillForm{
+            text-align: center;
+            font-size: 32px;
+/*	    text-transform:uppercase;*/
+            padding: 1.7em 0 1em 0;
+	    letter-spacing:0px;
+            color: $mainblue;
+        }
+        .nameOfPerson {
+            @extend .input;
+        }
+        .nameOfBank {
+            @extend .input;
+        }
+        .address {
+            @extend .input;
+        }
+        .district {
+            @extend .input;
+        }
+        .contactNumber {
+            @extend .input;
+        }
+        .eMail {
+            @extend .input;
+        }
+        .common {
+            @extend .input;
+        }        
+        .dropDown {
+            @extend .input;
+        }
+        .quotation_submit {
+            @extend .send;
+        }                
+    }
+}
+
+
+/* 
+ * B A N K _ N A M E S _ C S S
+ */
+
+.BankNames {
+
+    padding-top: 0.2em;
+    // font-weight: bold;
+    font-size: 1.3rem;
+}
+
+/* 
+ * S H O W . H T M L . E R B 
+ */
+
+.quotationPage {
+    padding-top: 4em;
+    @include container(92%);
+    .barline {
+         //  Content need to add more       
+    }
+    .address {
+        //  Content need to add more
+        .companyName {
+            font-size: 2.6em;
+            font-weight: 400;
+        }
+        .companyNameTagline {
+            font-size: 1em;
+            padding-top: 0.5em;
+            padding-bottom: 0.2em;
+        }
+        .serviceTax {
+            float: right;
+            font-size: 1.6rem;
+            padding-top: 0.5em;
+        }
+        .phoneNumbers {
+            float: right;
+            font-size: 1.4rem;
+        }
+    }
+    .referenceNumber {
+        padding-top: 0.8em;
+        font-size: 1.3em;
+        font-weight: 400;
+    }
+    .dated {
+        float: right;
+        font-size: 1.1rem;
+        margin-top: 13px;
+
+    }
+
+    // Content starts from here
+    .contentPart {
+        @include container(95%);
+        .contentsToStatement {
+            font-size: 1.1em;
+        }
+        .details {
+            padding-left: 2.3em;
+            padding-bottom: 0.6em;
+        }
+        .subject {
+            font-size: 1em;
+            font-weight: bold;
+        }
+        .regards {
+            padding-top: 0.6em;
+            font-size: 1em;
+        }
+        .regardContent {
+            text-indent: 1.1em;
+            padding-top: 0.6em;
+        }
+    }
+    .banks {
+        @include container(95%);
+        .tg  {border-collapse:collapse;border-spacing:0;border-color:#C74841;border-width:1px;border-style:solid;}
+        .tg td{font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#C74841;color:#444;background-color:#F7FDFA;}
+        .tg th{font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#C74841;}
+        .tg .tg-hgcj{font-weight:bold;text-align:center}
+        .tg .tg-e3zv{font-weight:bold}            
+    }    
+    .quotations {
+        @include container(95%);
+        .quotationLine {
+            padding-top: 0.2em;
+            font-size: 1.2em;
+        }
+        .genRentAndType {
+            margin: 0% 0% 0% 40%;
+            .tg  {border-collapse:collapse;border-spacing:0;border-color:#C74841;border-width:1px;border-style:solid;}
+            .tg td{;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#C74841;color:#444;background-color:#F7FDFA;}
+            .tg th{font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#C74841;}
+            .tg .tg-hgcj{font-weight:bold;text-align:center}
+            .tg .tg-e3zv{font-weight:bold}            
+        }
+        .quotationsList {
+            @include container(90%);
+            padding-top: 0.3em;
+        }
+        .serviceTax {
+            font-weight: bold;
+            padding-bottom: 0.4em;
+        }
+    }
+    .footer {
+        text-align: center;
+    }    
+}
+
+/* 
+ * 10% increment content
+ */
+
+ .secondPageContent {
+    @include container(91%);
+    .name {
+        font-size:1em;
+        font-weight: bold;
+    }
+ }
+
+
+ /* 
+  * S H O W . P D F . E R B
+  */
+
+.quotationPagePdf {
+    font-family: 'Lato';
+    margin-left: -40px;
+    margin-right: -40px;
+    width: 780px;
+    background-color: white;
+    .whiteOne {
+        width: 100%;
+        height: 278px;
+        .logo {
+            width: 200px;
+            display:table;
+            margin:auto;
+            padding-top: 60px;
+        }
+        .amrit {
+            font-family: 'Lato', sans-serif;
+            padding-top: 1.1em;
+            text-align: center;
+            font-size: 2.3em;
+            color: $blue;
+            font-weight: 800;
+        }
+        .engg {
+            font-family: 'PT_Sans', sans-serif;
+            text-align: center;
+            font-size: 1.5em;
+            color: #666666;
+            font-weight: 500;
+            letter-spacing: 0px;
+        }
+    }
+    .blue {
+        width: 100%;
+        height: 350px;
+        background-color: $blue;
+        .offer {
+            padding-top: 3em;
+            padding-bottom: 10px;
+            text-align: center;
+            font-size: 2em;
+            color: $white;
+	    font-family:"Lato", sans-serif;
+/*          font-weight: 200;*/
+        }
+        .basis {
+            font-size: 2em;
+            color: $white;
+            text-align: center;
+	    font-family:"Lato",sans-serif;
+
+/*          font-weight: 200;*/
+        }
+    }
+    .greyOne {
+        width: 100%;
+/*      height: 80px;*/
+        background-color: #EBEBEB;
+        .serviceTax {
+            padding: 1.2em 0em 1.2em 0em;
+            text-align:center;
+            font-size: 1em;
+/*          right: 10px;*/
+        }
+    }
+    .whiteTwo {
+        width: 100%;
+        height: 252px;
+        .phone {
+            @include span(4 of 12);
+            .phoneText {
+                text-align: center;
+                padding-top: 2.5em;
+                font-size: 1.3em;
+            }
+            .phoneNumber {
+                text-align: center;
+                padding-top: 1.4em;
+                color: $lesserblack;
+                font-size: 0.8em;
+                line-height: 23px;
+            }            
+        }
+        .email {
+            @include span(4 at 5 of 12);
+            .emailText {
+                text-align: center;
+                padding-top: 2.5em;                
+                font-size: 1.3em;
+
+            }
+            .emailAddress {
+                text-align: center;
+                padding-top: 1.4em;
+                color: $lesserblack;
+                font-size: 0.75em;
+                line-height: 23px;
+            }            
+        }
+        .website {
+            @include span(4 at 9 of 12);
+            .websiteText {
+                text-align: center;
+                padding-top: 2.5em;                
+                font-size: 1.3em;
+
+            }
+            .websiteAddress {
+                text-align: center;
+                padding-top: 1.4em;
+                color: $lesserblack;
+                font-size: 0.75em;
+                line-height: 23px;
+            }            
+        }
+    }
+    .greyTwo {
+        width: 100%;
+/*      height: 60px;*/
+        background-color: #FCFCFC;
+        color: $lesserblack;
+        border-top: 1px $lesserblack solid;
+        border-bottom: 1px $lesserblack solid;
+        padding: 0.5em 0em 0.5em 0em;
+        page-break-after: always; 
+        margin-top: 3px;
+        .headOffice {
+            text-align: center;
+/*            padding-top:1em;*/
+            font-size: 0.68em;
+        }
+        .subOffice {
+            text-align: center;
+            font-size: 0.68em;
+            line-height: 28px;
+
+        }
+    }
+
+    // Content Start Here
+    .contentPartPdf {
+        @include container(85%);
+        font-size: 0.8em;
+        .referenceNumberPdf {
+            float:left;
+            font-size: 1em;
+            font-weight: 200;
+        }
+        .datedPdf {
+            float:right;
+            font-size: 1em;
+            font-weight: 200;
+        }
+        .contentsToStatementPdf {
+            float:left;
+            margin-top: 13px;
+        }
+        .detailsPdf {
+/*          @include container(85%);*/
+            line-height: 28px;
+        }
+        .subjectPdf {
+            font-weight: bold;
+        }
+        .regardsPdf {
+        }
+        .regardContentPdf {
+            padding-top: 0.5rem;
+/*          text-indent: 1.3em;*/
+            line-height: 28px;
+        }
+    }
+    .banksPdf {
+        @include container(85%);
+        tr:nth-child(odd)       { background-color: #DFDFDF; }
+        tr:nth-child(even)      { background-color: #F7F7F7; }
+        .tg  {border-collapse:collapse;border-spacing:0;border-color: $white;border-width:1px;border-style:solid;}
+        .tg td{font-family:"Lato", Arial, sans-serif;font-size:13px; line-height: 20px; padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color: $white;color:#000;}
+        .tg th{font-family:"Lato", Arial, sans-serif;font-size:13px; line-height: 20px; font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color: $white;color:#fff; background-color: $pdfblue;}
+        .tg .tg-hgcj{font-weight:bold;text-align:center;width:80px }
+        .tg .tg-e3zv{font-weight:bold}       
+    }
+    .quotationsPdf {
+        @include container(85%);
+        .quotationLinePdf {
+            font-size: 0.8em;
+            padding-top: 0.8em;
+            line-height: 28px;
+            page-break-after: always; 
+        }
+        .genRentAndTypePdf {
+        @include container(85%);
+        tr:nth-child(odd)       { background-color: #F7F7F7; }
+        tr:nth-child(even)      { background-color: #DFDFDF;}
+        .tg  {border-collapse:collapse;border-spacing:0;border-color: $white;border-width:1px;border-style:solid; width: 100%;}
+        .tg td{font-family:"Lato", Arial, sans-serif;font-size:13px; line-height: 20px; padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color: $white;color:#000;   text-align: center;}
+        .tg th{font-family:"Lato", Arial, sans-serif;font-size:13px; line-height: 20px; font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color: $white;color:#fff;background-color: $pdfblue;}
+        .tg .tg-hgcj{font-weight:bold;text-align:center;width:80px }
+        .tg .tg-e3zv{font-weight:bold}       
+        .type .rent{
+                text-align: center;
+        }
+
+        }
+        .quotationsListPdf {
+            @include container(85%);
+            font-size: 0.8em;
+        }
+        .serviceTaxPdf {
+            font-size: 0.7em;
+            font-weight: bold;
+            padding-bottom: 0.4em;
+        }
+    } 
+    .secondPageContentPdf {
+        @include container(85%);
+        font-size: 0.8em;
+        .namePdf {
+            font-weight: bold;
+            color: $pdfblue;
+            font-size: 1.1em;
+            line-height: 2;
+        }
+
+        .authSign{
+            color: $lesserblack;
+            font-size: 0.89em;
+        }
+    }   
+}
+
+
+.fQuotationPagePdf {
+    font-family: "Times New Roman";
+    margin-left: 40px;
+
+}
+
+.fContainer {
+    font-size: 1em;
+    margin-right: -40px;
+
+}
+
+    .fHeading{
+        font-weight: 600;
+        margin-left: 50%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .fDate {
+/*        float: right;*/
+        margin-left: 700px;
+
+    }
+
+    .fClientDetails{
+        font-weight: 600;
+    }
+
+    .fSubject {
+        font-weight: 600;
+        text-decoration: underline;
+    }
+
+
+td a:hover{
+    text-decoration:underline;
+}
+td a:visited{
+    color:#000;
+}
+#quotations{
+    border:2px solid #222;
+}
+#quotations th{
+    font-family:'Lato',serif;
+    text-align:center;
+    font-size:24px;
+}
+#quotations td{
+    font-family:'Lato',serif;
+    text-align:center;
+}
+
+.gen-table {
+    width: 100%;
+}
+
+.terms-conditions-heading {
+/*  font-size: 0.9em;*/
+    font-weight: bold;
+    padding-bottom: 0.4em;
+}
+
+.closing-part {
+    line-height: 28px;
+}
+
+.terms-conditions {
+    line-height: 28px;
+}
+
+.btn-center{
+    margin-left:340px;
+}
+

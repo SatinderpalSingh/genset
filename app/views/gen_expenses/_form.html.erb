@@ -1,0 +1,53 @@
+<section class="quotationSection">
+<div class="quotationForm">
+<h2 class="fillForm">Generator Expenses</h2>
+
+<%= form_for(@gen_expense) do |f| %>
+  <% if @gen_expense.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gen_expense.errors.count, "error") %> prohibited this gen_expense from being saved:</h2>
+
+      <ul>
+      <% @gen_expense.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+	
+<div class="name-center"> 
+	<label><span>For Bank: </span>
+		
+		
+			<%	bank=""
+			if not @approved_client.bank_id.blank? 
+				bank= Bank.find(@approved_client.bank_id).name 
+			end	%>
+		<%= bank.html_safe + ", " +@approved_client.bank_branch.html_safe %>, <%= @approved_client.district %></label><br>
+	<%= f.hidden_field :client_detail_id, :value => @approved_client.id %>
+	<% @client_gen_set_id = ClientGenSet.find_by(client_detail_id: params[:id]) %>
+</div> 
+  <label class = "ll">Date </label><%= f.date_select :date, :class => "dropDown" %>
+    <label class ="ll">Reading </label><%= f.text_field :reading, autofocus: true, :required => true, :class => 'common', :placeholder => 'Ok/Not Ok',:title => 'Reading' %>
+    <label class ="ll">Self </label><%= f.radio_button(:readingBy, "Self", :class => "common") %>
+    <label class ="ll">Telephonic </label><%= f.radio_button(:readingBy, "Telephonic", :class => "common" )%>
+    <label class ="ll">Battery Status </label><%= f.text_field :batteryStatus, autofocus: true, :required => true, :class => "common", :placeholder => 'OK/Not OK', :title => 'Battery Status'%>
+<label class="ll">Radiator Status </label><%= f.text_field :radiatorStatus, autofocus: true, :required => true, :class => "common", :placeholder => 'OK/Not Ok', :title => 'Radiator Status'%>
+<%= fields_for :diesel_reading do |a| %>
+	<%= a.hidden_field :client_gen_set_id, :value => @client_gen_set_id.id %>
+<label class="ll">Remaining Diesel </label><%= a.text_field :remaining_fuel, autofocus: true, :required => true, :class => "common", :placeholder => 'How much diesel (in leters) was remaining?', :title => 'Remaining Diesel'%>
+
+<label class="ll">Added Diesel </label><%= a.text_field :added_fuel, autofocus: true, :required => true, :class => "common", :placeholder => ' Was any more diesel added?', :title => 'Added Diesel'%>
+<% end %>
+    <label class ="ll">Diesel Charge </label><%= f.text_field :dieselCharge, autofocus: true, :required => true, :class => "common", :placeholder => 'Diesel', :title => 'Diesel Charge'%>
+<label class="ll">Other Charges </label><%= f.text_field :otherExpenses, autofocus: true, :required => true, :class => "common", :placeholder => 'Other', :title => 'Other' %><br><br>
+<label class ="ll">Serviced </label><%= f.radio_button(:serviced, "TRUE", :class => "common") %>
+<label class ="ll">Not Serviced </label><%= f.radio_button(:serviced, "FALSE", :class => "common") %> <hr>
+<label class ="ll">Hour meter set </label><%= f.radio_button(:hour_meter_set, "TRUE", :class => "common") %>
+<label class ="ll">Hour meter not set</label><%= f.radio_button(:hour_meter_set, "FALSE", :class => "common") %>  
+ <p style="text-align: center; padding-bottom: 40px;"><%= f.submit :class => 'quotation_submit', :value => 'Submit', :disabled => false, :disable_with => "Please wait..." %>
+ </p>
+    </div> 
+<% end %>
+</div>
+</section>

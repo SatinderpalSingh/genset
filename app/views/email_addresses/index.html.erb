@@ -1,0 +1,39 @@
+<%= render 'welcome/header' %> <br><br><br><br><br>
+
+<p id="notice"><%= notice %></p>
+
+<h2 class="table-heading">Listing Email Accounts</h2>
+<br>
+<div class="container">
+	<%= link_to 'Add Email Account', new_email_address_path %> </br>
+<br>
+<br>
+<div class="container">
+<table id="Eaccounts" class="display responsive no-wrap" >
+  <thead>
+    <tr>
+      <th>Name</th>
+	<th>Email Address</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @email_addresses.each do |email| %>
+      <tr>
+        <td><%= email.name %></td>
+	<td><%= email.address %></td>
+        <td><%= link_to "edit", edit_email_address_path(email)  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<script>
+    $(document).ready(function() {
+    $('#Eaccounts').dataTable({
+      responsive: true
+    });
+  } );
+</script>

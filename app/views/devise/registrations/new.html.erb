@@ -1,0 +1,25 @@
+<section class="register">
+  <div class="headBarRegister"> 
+    <h1 class="registerHeading">Register</h1>          
+
+  </div>
+  
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => 'registerForm'}) do |f| %>
+    <%= devise_error_messages! %>
+  
+    <%= f.text_field :username, :required => true, :class => 'name', :title => 'Characters Only.', :placeholder => 'Name', :pattern => '[a-zA-Z\s]+{5,}' %>
+
+    <%= f.email_field :email, autofocus: true, :required => true, :class => 'eMail', :title => 'Please Fill Valid Email Address.', :placeholder => 'E-mail' %>
+
+    <% if @validatable %>
+    <!-- <em>(<%= @minimum_password_length %> characters minimum)</em> -->
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off", :required => true, :class => 'pass', :onchange => 'form.Passconf.pattern = this.value;', :placeholder => 'Password',  :pattern => '(?=.*[a-zA-Z0-9]).{6,}', :title => 'Minimum 8 words having at least one speical character( Like : @#$%).' %>
+
+    <%= f.password_field :password_confirmation, autocomplete: "off", :required => true, :class => 'cPass',  :placeholder => 'Confirm Password',  :pattern => '(?=.*[a-zA-Z0-9]).{6,}', :title => 'Fill Same Password' %> <br><br>
+
+    <p style="text-align: center;"><%= f.submit :class => 'submit', :value => 'Submit' %></p>
+
+<% end %>
+
+</section>

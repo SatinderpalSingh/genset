@@ -1,0 +1,69 @@
+<section class="fQuotationPagePdf" style="width: 820px; margin: auto;">
+<div class="fContainer">
+    <div class="fHeading">
+        QUOTATION
+    </div>
+
+    <div class="fDate">
+        <%= Time.now.strftime("%m/%d/%Y") %>
+    </div>
+
+    <div class="fClientDetails">
+            M/s.
+        <%= @client_detail.designation.html_safe  %>, 
+        <%= @client_detail.bank_branch.html_safe  %>, <br> 
+        <%= @client_detail.address.html_safe  %> 
+        <%= @client_detail.district.html_safe  %>
+    </div> <br />
+
+    <div class="fSubject">
+        <%= @fake_quotation.subject.html_safe %></div> <br />
+    </div>
+    <div>
+        <%= @fake_quotation.regard.html_safe  %><br><br>
+    </div>
+    <div>
+        <%= @fake_quotation.regardContent.html_safe  %><br>
+    </div>
+
+
+    <!-- To-From Part Start -->
+    <div class="contentPartPdf">
+        <div class="contentsToStatementPdf">To</div><br />
+		<div class="detailsPdf"><%= @client_detail.designation.html_safe  %>, 
+		
+			<%	bank=""
+			if not @client_detail.bank_id.blank? 
+				bank= Bank.find(@client_detail.bank_id).name 
+			end	%>
+		<br><%= bank.html_safe %>, 
+		<br> <%= @client_detail.bank_branch.html_safe  %>, 
+		<br> <%= @client_detail.address.html_safe  %>, <br><%= @client_detail.district.html_safe  %></div> <br />
+        <div class="subjectPdf"><%= @fake_quotation.subject.html_safe %></div> <br />
+        <div class="regardsPdf"><%= @fake_quotation.regard.html_safe  %></div>
+        <div class="regardContentPdf"><%= @fake_quotation.regardContent.html_safe  %></div><br>
+    </div>    
+    <!-- To-From Part End -->
+    <!-- List of Gen Rates Start-->
+    <div class="quotationsPdf" >
+        <h4 class="quotationLinePdf"><%= @fake_quotation.quotationLine.html_safe  %></h4><br />
+        <ul class="quotationsListPdf" style="list-style-type:none; font-weight: 600;">
+            <%= @fake_quotation.quotationRateList.html_safe  %>
+        </ul> <br>
+        <!--h4 class="serviceTaxPdf">(Plus Service tax is applicable)</h4><br /-->
+    </div>    
+    <!-- List of Gen Rates End -->
+    <!-- Sender Details Start -->
+    <div class="secondPageContentPdf">    
+        <p class="contentPartOnePdf"><%= @fake_quotation.contentPartOne.html_safe %></p><br>
+        <p class="contetnPartTwoPdf"><%= @fake_quotation.contentPartTwo.html_safe %></p><br>
+        <p class="thankYouPdf"><%= @fake_quotation.thankYou.html_safe %></p><br>
+        <p class="yoursTrulyPdf"><%= @fake_quotation.yoursTruly.html_safe  %></p>
+        <p class="nameOfCompanyPdf"><%= @fake_quotation.nameOfCompany.html_safe  %></p>
+        <p><%= wicked_pdf_image_tag(@sender_detail.signature.url(:med))%></p><br>
+        <p class="namePdf"><%= @sender_detail.name.html_safe  %></p>
+    </div>       
+    <!-- Sender Details End -->
+    <!-- Template End -->
+    </div>    
+</section>

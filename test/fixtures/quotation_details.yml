@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  companyName: MyString
+  serviceTax: MyString
+  companyTagLine: MyString
+  headerMobileNumber: MyString
+  companyAddressOne: MyString
+  companyAddressTwo: MyString
+  referenceNumber: MyString
+  subject: MyText
+  regard: MyString
+  regardContent: MyText
+  bankNameOne: MyString
+  bankNameTwo: MyString
+  bankNameThree: MyString
+  bankNameFour: MyString
+  bankNameFive: MyString
+  bankZoneOne: MyText
+  bankZoneTwo: MyText
+  quotationLine: MyText
+  quotationRateList: MyText
+
+two:
+  companyName: MyString
+  serviceTax: MyString
+  companyTagLine: MyString
+  headerMobileNumber: MyString
+  companyAddressOne: MyString
+  companyAddressTwo: MyString
+  referenceNumber: MyString
+  subject: MyText
+  regard: MyString
+  regardContent: MyText
+  bankNameOne: MyString
+  bankNameTwo: MyString
+  bankNameThree: MyString
+  bankNameFour: MyString
+  bankNameFive: MyString
+  bankZoneOne: MyText
+  bankZoneTwo: MyText
+  quotationLine: MyText
+  quotationRateList: MyText

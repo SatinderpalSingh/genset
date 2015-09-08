@@ -1,0 +1,218 @@
+<%= render 'welcome/header' %>
+<h2 class="table-heading">Profit Loss Sheet</h2>
+
+<div class="container">
+	<% ############################################################# %>
+
+	<div style="margin-left:18%;">
+		<%= form_for :Date do |f| %>
+			From <%= select_date Date.today, prefix: :start_date %>
+		To <%= select_date Date.today, prefix: :end_date %>
+</div>
+<div class="actions">
+	<%= f.submit value:"Filter Result", :class=> 'form_submit' %>
+</div>
+				<% end %>
+	<%
+			if not params[:start_date].blank?
+				start_d =  Date::civil(params[:start_date][:year].to_i, params[:start_date][:month].to_i, params[:start_date][:day].to_i)
+				end_d = Date::civil(params[:end_date][:year].to_i, params[:end_date][:month].to_i, params[:end_date][:day].to_i)
+
+				start_d = start_d.beginning_of_day
+				end_d = end_d.end_of_day
+			end
+%>
+				<div class="row">
+					<!-- Line Chart - Single Series -->
+					<div class="col-xs-6">
+						<%
+								if not params[:start_date].blank?
+									@bill = @bill.where(created_at: (start_d)..end_d)
+								end
+						%>
+				<%= line_chart [
+					{name: "Total", data: @bill.map{|record| [record.created_at, record.total]}},
+					{name: "Expenses", data: @bill.map{|record| [record.created_at, record.total_exp]}},
+					{name: "Payment Done", data: @bill.map{|record| [record.created_at, record.total-record.pending_payment ]}}
+				], { library:{width: 1200} } %>
+
+
+		</div>
+
+	</div>
+
+
+
+<% ################################################################# %>
+<%= link_to 'Edit Taxes', taxes_path() %> </br>
+<br>
+
+<table id="genExpenses" class="display responsive no-wrap">
+	<thead>
+		<tr>
+			<th> </th>
+			<th>Bill No</th>	
+			<th>Month</th>
+			<th>Bank Name</th>
+			<th>Branch</th>
+			<th>Gen Rate Monthly</th>
+			<th>Service Tax</th>
+			<th>Total Current Month</th>
+			<th>TDS</th>
+			<th>Amount to be Credit</th>
+			<th>Amount credited in A/C</th>
+			<th>Date of Credit</th>
+			<th>DIfference if Any</th>
+			<th>Gaurd Monthly Salary</th>
+			<th>Diesel Expenses</th>
+			<th>Other Expenses</th>
+			<th>Total Expenses</th>
+			<th>Net Income</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% 
+				i = 0
+
+		@sender_detail = SenderDetail.where(quotationType: 'Real').order(id: :desc)
+		@sender_detail.each do |sender|
+			@client_detail = ClientDetail.where(sender_details_id: sender.id,
+												approved: 't').order(id: :desc)
+			@client_detail.each do |client|
+				date = DateTime.now
+				dieselExpenses = 0
+				otherExpenses = 0
+
+				genType = ''
+				@client_gen_set = ClientGenSet.where(client_detail_id: client.id).order(id: :desc)
+				gaurdName = ''
+				genID = ''
+				genRate = nil
+				service_tax = ''
+				total = ''
+				gaurdExpense = ''
+				tds = ''
+				difference = ''
+				amount_to_be = ''
+				amount_credited_in = ''
+				total = ''
+				net_income = ''
+				@client_gen_set.each do |gen_set| 
+					gaurdName = ''
+					genRate = gen_set.genRent
+					service_tax = gen_set.serviceTax
+					per = (genRate.to_i * (service_tax / 100))
+						total = (genRate.to_i + per)
+					if not gen_set.quotation_detail_id.blank?
+						#	@bill_data = BillTable.find(gen_set.quotation_detail_id)
+					end
+					if not gen_set.gaurd_detail_id.blank?
+						#	gaurdName = gen_set.gaurd_detail.namei
+						@gaurd_detail = GaurdDetail.find(gen_set.gaurd_detail_id) 
+						gaurdExpense = @gaurd_detail.monthlySalary
+					end
+					if(gen_set.gen_avail_id.blank?)
+						@tpg = ThirdPartyGen.find(gen_set.third_party_gen_id)
+						genID = @tpg.genID
+						if(@tpg.gen_detail.blank?)
+							genType = @tpg.gen_detail.genType
+						else
+							genType = "Gen Type not available"
+						end
+					else
+						@fpg = GenAvail.find(gen_set.gen_avail_id)
+						genID = @fpg.genID
+
+						genType = @fpg.gen_detail.genType
+					end
+					@qid = gen_set.quotation_detail_id
+				end
+
+				@gen_expenses = GenExpense.where("client_detail_id = ? and date between ? and ?", 
+												 client.id,  date.beginning_of_month, 
+												 date.end_of_month)
+				@gen_expenses.each do |expense|
+					if (expense.client_detail_id == client.id)
+						dieselExpenses += expense.dieselCharge
+						otherExpenses  += expense.otherExpenses
+					end
+				end 
+
+				totalExpense = dieselExpenses.to_i + otherExpenses.to_i + gaurdExpense.to_i
+				netIncome = total.to_i + totalExpense
+				i = i+1 
+								if not params[:start_date].blank?
+									@bill_table = BillTable.where(quotation_id: @qid, created_at: (start_d)..end_d)
+								else
+									@bill_table = BillTable.where(quotation_id: @qid)
+								end
+				if @bill_table.blank?
+					next
+				end
+
+			%>
+		<tr>
+			<td><%= i  %></td>
+			<%	bank=""
+			if not client.bank_id.blank? 
+				bank= Bank.find(client.bank_id).name 
+			end	
+
+			billNo = ""
+			billDate ="" 
+			difference = ''
+			@bill_table.each do|bill|
+				total = bill.total
+				tds = bill.tds
+				tds_percent = (total * (tds / 100))
+				amount_to_be = total - tds_percent
+				billNo = bill.bill_no
+				difference = bill.pending_payment	
+				amount_credited_in = total - difference
+				net_income = amount_credited_in - bill.total_exp
+
+				billDate = Date.parse(bill.date.to_s)
+			end
+
+		%>
+
+	<td><%= billNo %></td>
+	<td><%= billDate%></td>
+	<td><%= bank.html_safe %></td>
+	<td><%= client.bank_branch %></td>
+	<td><%= genRate %></td>
+	<td><%= service_tax %></td>
+	<td><%= total.round(1) %></td>
+	<td><%= tds %></td>
+	<td><%= amount_to_be.round(1) %></td>
+	<td><%= amount_credited_in.to_d.round(1) %></td>
+	<td><%= %></td>
+	<td><%= difference.to_d.round(1) %></td>
+	<td><%= gaurdExpense.to_d.round(1)  %></td>
+	<td><%= dieselExpenses.to_d.round(1)  %></td>
+	<td><%= otherExpenses.to_d.round(1)  %></td>
+	<td><%= totalExpense.to_d.round(1)  %></td>
+	<td> <% if (net_income > 0) %>
+		<span style="color:green;font-weight:bold">
+		<% else %>
+			<span style="color:red">
+			<% end %>
+			<%= net_income.to_d.round(1) %>
+		</span>	
+	</td>
+</tr>
+	<% end %>
+<% end %>
+</tbody>
+</table>
+</div>
+
+
+<script>
+	$(document).ready(function() {
+		$('#genExpenses').dataTable({
+			responsive: true
+		});
+	} );
+</script>

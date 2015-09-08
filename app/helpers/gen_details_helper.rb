@@ -1,0 +1,2 @@
+module GenDetailsHelper
+end

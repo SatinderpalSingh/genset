@@ -1,0 +1,400 @@
+
+<% 
+    genID = ''
+    genType = ''
+    thirdPartyRent = ''
+    rent_for_left_days = '' 
+    date = DateTime.now.to_date
+%>
+
+<div>
+  <br> <% if date.month.to_i > @gen_set.approveMonth.to_i || date.year.to_i > @gen_set.approveYear.to_i %>
+	<% rent_for_left_days = @gen_set.genRent %>
+	<% elsif date.month.to_i == @gen_set.approveMonth.to_i && date.year.to_i == @gen_set.approveYear.to_i %>
+    <% number_of_days = date.end_of_month.day.to_i - @gen_set.approveDate.to_i %>
+    <% rent_for_left_days = (@gen_set.genRent/date.end_of_month.day.to_i) * number_of_days %>
+	<% end %>
+    <% 
+        if( !@gen_set.gen_avail.blank? )
+          genID = @gen_set.gen_avail.gen_detail.genType
+          genType = @gen_set.gen_avail.genID
+        elsif( !@gen_set.third_party_gen_id.blank? )
+          @third_gen = ThirdPartyGen.find(@gen_set.third_party_gen_id)
+          genID = @third_gen.genID
+          genType = @third_gen.gen_detail_id
+          thirdPartyRent = @third_gen.genRent
+        end
+    %>
+    <% if( !thirdPartyRent.blank? ) %>
+     <!-- <br> Third Party Generator Detail <br>
+	 Generator Rent: <%= thirdPartyRent %> <br> -->
+    <% end %>
+</div>
+<div>
+  <br>
+   
+    <%
+        # Calculating Cleint's Rent including tax
+      genRent = rent_for_left_days.to_i
+      serviceTax = ((@totalwithouttax.to_d * @gen_set.serviceTax.to_s.to_d) / 100).round(1)
+      surcharge = ((serviceTax.to_s.to_d * @gen_set.eduTax.to_s.to_d) / 100).round(1)
+      total = (@totalwithouttax + serviceTax + surcharge).round(1)
+
+      # Calculation Sender's profit/loss on monthly basis
+
+    %>
+
+</div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset='UTF-8'>
+
+	<title>Amrit Engineers - Bill Template</title>
+
+	<link rel='stylesheet' href='style.css'>
+
+	<style>
+	* { margin: 0; padding: 0; }
+	body { 
+    width: 1000px;
+	font: 14px/1.4 Lato; 
+	}
+	
+	table td, table th {
+	padding: 12px;
+	font-size: 17px;
+	}
+	
+	#customer {
+	overflow: hidden;
+	margin-top: 20px;
+	}
+	
+	.logo {
+	width: 240px;
+	}
+	
+	#monthly-bill-heading {
+	text-align: right;
+	float: right;
+	margin-top: -100px;
+	font-size: 25px;
+	padding: 11px 25px 11px 25px;
+	background-color: #28ABE3;
+	color: white;
+	}
+	
+	#date-and-bill{
+	font-size: 18px;
+	text-align: right;
+	float: right;
+	color: #666666;
+	margin-top: -23px;
+	}
+	
+	#line1 {
+	margin-top: 35px;
+	}
+	
+	#line2 {
+	margin-top: 42px;
+	}
+	
+	#client-label {
+	text-align: left;
+	float: left;
+	font-size: 25px;
+	padding: 3px 25px;
+	background-color: #28ABE3;
+	color: white;
+	}
+	
+	#client-name {
+	text-align: left;
+	font-size: 20px;
+	color: #28ABE3;
+	}
+	
+	#client-address {
+	float: left;
+	font-size: 20px;
+	color: #666666;
+	width: 500px;
+	}
+	
+	#client-details {
+	margin-top: 60px;
+	}
+	
+	#service-tax{
+	text-align: center;
+	float: right;
+	position: relative;
+	font-size: 25px;
+	padding: 34px 34px;
+	background-color: #28ABE3;
+	color: white;
+	}
+	
+	th.rate {
+	text-align: center;
+	}
+	
+	th.description {
+	text-align: center;
+	}
+	
+	th.price {
+	text-align: center;
+	}
+	
+	.description {
+	width: 450px;
+	}
+	
+	.rate {
+	text-align: right;
+	#}
+	
+	.qty {
+	text-align: center;
+	}
+	
+	.price {
+	text-align: right;
+	}
+	
+	#person-name {
+	font-weight: 600;
+	font-size: 23px;
+	color: #28ABE3;
+	text-align: right;
+	margin-top: 150px;
+	}
+	
+	#designation {
+	font-size: 18px;
+	color: #898989;
+	text-align: right;
+	}
+	
+	.bottom{
+	margin-top: -53px;
+	text-align: center;
+	background-color: #EBEBEB;
+	font-size: 16px;
+	padding: 24px;
+	}
+	
+	#customer-title { 
+	font-size: 20px; 
+	font-weight: bold; 
+	float: left; 
+	}
+	
+	#items { 
+	clear: both; 
+	width: 100%; 
+	margin: 30px 0 0 0; 
+	}
+	
+	#items th {
+	background: #28ABE3;
+	color: white;
+	}
+
+	#items tr.item-row td { 
+	vertical-align: top; 
+	background-color: #F7F7F7;
+	}
+	
+	#items tr.item-row1 td { 
+	vertical-align: top;
+	background-color: #DFDFDF; 
+	
+	}
+	
+	#items tr.grand-total-item-row td { 
+	vertical-align: top;
+	background-color: #F7F7F7; 
+	font-weight: 600;
+	}
+	
+	</style>
+</head>
+
+<body>
+
+	<div id="page-wrap">
+                <div>
+                        <img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfMAAACnCAYAAAAFZ7UeAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAjzQAAI80B/RlpdQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAACAASURBVHic7d15vG1z+cDxz73XeM0k0SZxLxaFZI5IogyZlsyR4skUP1Q3flEopZApPVGRJCwaZEgaJDNdJW2F8GuRyHTN072/P77rcO6x1zp77/Vd097P+/Xar3vvWXt/13M4Zz97fdfz/T4TZs2ahamnIIrXBhbt4SXPt8PWH4qKxwyXIIrnA1rAMsmfiwILdXjMB8yVPOYc9ecrwLMdHg8B9ySPe4GH22HL3oiMyWGCJfN6CqJ4MvAfYP4eXjYTWKYdth4qJqr+BVG8CbBvjiFOboetm33FUwdBFO8GbJ1jiD3bYeulHOefBCwLTAWmJH8uByydPHr5IJnH87ikfhtwA3B9O2zdXdK5uxJE8R7AljmH+WE7bF3R5fnOw30gMnB/O2x9oeog6m6OqgMwqbaht0QOMBHYBfim/3ByWx7YKcfrpwZRvFY7bM30FVCVgiheFDgdWDjHMHvnOH8b9/+kDgljMrBq8tgbIIjie4FLgQvbYetPFcY2Yg3y/fwC3AR0lcyBHYG5c55vUNwBWDIfx8SqAzCpdu/zdbt5jaI+1gA+WXUQHh1FvkSe11TqkcjTTAE+B9weRPEtQRTvGUTxXFUHZUxdWTKvoSCKFwc26/PlqwdRvIrPeGrkK0EUV5kAvQiieAqwf9VxNMhawDnA35Okbu9bxoxhvxT1tBP5boEM6tX54sCXqg7Cg69T76viuloWl9RvGeAPrMb0xZJ5PeVNxrsGUTzBSyT1c0AQxStXHUS/gijeANi+6jga7r246fdDqw7EmLqwZF4zQRQvD6ybc5h3ABt4CKeO5gBOrTqIfiQfsE6sOo4BMTdwYhDFmlTlGzPULJnXj68p8n4L6Jrgg0EUb1d1EH3YCVi76iAGzL7AxXYf3Qw7+wWoH1/JfMcBr/49KYjieaoOoltBFM8NHF91HANqO+DkqoMwpkqWzGskiOK1gBU8DbcIsIWnsepoWeCzVQfRg8/gYjbF+EwQxZ+oOghjqmLJvF58V6EPalX7iGlBFC9ddRDjCaJ4MeDIquMYAicHUbxk1UEYUwVL5jWRFPHs7HnYrYIoXsjzmHUyGfhG1UF04WjcHuamWAsBp1UdhDFVsGReH5sCS3gecx5gB89j1s1OQRS/v+og0gRRvALw6arjGCI7BFG8RtVBGFM2S+b1UVT1+SBXtY84tcbLk2yDmPIdVXUAxpTNGq3UQNIhrailVhsFUfz2OnZS82g13BKlM6sOZLRkxmDbquMo0J3AfcD9yeNJ4GXgpeTPl4FJvNEqtQWsh9tHYcEC4/poEMXLtsPWAwWew5hasWReD9viekIXYSKwK824t5zHsUEUX9gOW09UHQgMzQYx67XD1nO9vihZE74ZcBDwEcD3boUTcLvsneR53DIdR/Hvz5sC78s5xjXA9R5iyfLvgscfCJbM66HoqvPdGPxkvhhwDHBg1YEkdgXWrDqIOkra2F4FXBVE8drAj3HtWH1qdDJvh63jij5Hsk9D7mTeDltf9xGPycfumVcsZ4e0bq0WRPG7Cj5HHXw6iOJ3Vx1E8ib51arjaIJ22LoFeA/d9/nu1joDvmmSMbOxZF69vB3SujXoa87B3Z+tw77thwDLVB1EU7TD1jNACNzkcdg5gBU9jmdMrVkyr15Z1eaD3ElttI2DKN6xqpMnMy1fqOr8TdUOWy/gakee8TistUk1Q8OSeYWCKJ4CrFPS6ZYBNizpXFX7ZhDF81Z07i9RbKX2wGqHrf8AJ3gcclmPYxlTa5bMq9XP1PcDwNl9nm8Y1pyD++AyreyTBlG8Em6JnOnfKbglbT7YhyozNCyZV6ufZH4TcGGf5wuHqCjos0EUv6Pkc56ArRDJJbl/7mupkyVzMzQsmVckWZIztY+XTgfu6PO0iwBb9vnappmXEtd5B1G8MbB1WecbcL/1NE5RezcYUzuWzKvTb3X59HbY+i8Ql3zeqjyf47U7BFG8ibdIUuTYIOZZ37EMiH95GqfnDW2MaSpL5hXI2SHtjjF/9qppndT2Af4vx+tPKWHf9t2BXpt7PMLwFCT26jFP4zztaRxjas+SeTU+BLy1j9c91A5bI2900/s899y4Nb1NsTzwvRyvfxewv6dY3iSpmv9KHy/9IfA2z+EMCl8FcE95GseY2rNkXo1+q8qnp/y9V02aap8KfB94LccYXw6i+C2e4hnrf4Cl+3jd93GNR8yb+fp/ZcncDA1L5iULong++u+kNTqB9zvNDq6TWlMSyQrtsBUDV+YYYxFc4wqvgih+K/0tgbu+Hbb+jiXzNIt7GqcWTXeMKYMl8/Ll6ZD2egJvh6376f/KYyKwS5+vLdtIxf93c46zTxDFq+cNZowvAwv08brvJ39aMu/M1+2Hv3oax5jas2RevjxT3GOn1vNcnTdlA5lFgyheFNeII09P9onAaX5CgiCKA1xxXq+eBS5K/v52X/EMmLydvABmAP/wMI4xjWDJvETJtOyH+nz5U8nV+Gh5kvmqDeqktkI7bL3GG1e0/dogiGJfMxLfwDV26dVF7bA1siTNrszHCKJ4MrCeh6Fub4etWR7GMaYRLJmXK0+HtE6JO08RHDTn6nxkqv17wMycY52Q1C30LYjiD9L/5jujP5BYMn+zDwE+dim8zcMYxjSGJfNy5UmenZJ5nitzaE4ntakA7bD1IHB1zrFa5OhqFkTxROCbfb787+2wdX0yznzAwv3GMYiSn8WjPA33O0/jGNMIlsxLEkTxVGDtHEN0ugr/G/BSjjGXBt6f4/VlWWHU3/MWwgEcHkTxcn2+9uNAv4V0dlWebVd633ynk4fJ/6HPmEaxZF6evGu7rx37hXbYerXT13vUhDXno/ewvwy3e1oecwMn9fqi5H5uv0vcXsVtFDPCit9GCaJ4TeB0T8P9MKmxMGZoWDIvT56keVsyxdzJRSlf79aOQRTPnXOMor2ezJMPMD/wMOY2QRT3Wox4GP0n4SvaYWv0hxC7Mk8kTYd+jb/bDj5+PoxpFEvmJQiieB1gSo4hooxjP8Nd9fVrYWCLHK8vwwJBFI9ee3w24KNS+ZQgirsqSEzO/7kc5xpbiT/0yTyI4slBFH8N+CP+Evmv2mHLlqSZoWPJvBx5p7JTk3k7bD0O/Cbn+E2oah99df5P3JVcXgFwUJfPPQaYv8/zPAJcPuZrQ5vMgyheKojiaUAb+Dwwp6ehXwEO9jSWMY3S7zIp06Xkym+nHEPc0Q5b943znIuBzXOcY8sgihduh60672W9AnDdqH9/Hvgg/a31Hu3oIIrPb4etR9OeEETxysDeOc5xbHJ7YLSBT+ZJt7oFgEWBVYG1gHWBjcj//62Tk5Jtco0ZOpbMi9dvh7QRWVPsI34KfIf+/3+OdFI7u8/Xl2F0ERztsHVHEMVnAgfmHHch3L3wz2c85wD6Tz53Adrh64OQzB8Kojjt2Bz0v21xP2Lg2BLPZ0yt2DR78fJOYY+bzNth6wnyT7XXvap9aoevfRFIvaLuwd5pRYBBFM9JvpmVQ1Mqqwehmn2hjEeZifwFIGyHredKPKcxtWLJvEDJxiDb5Bjirz1MG+atat8oiOJ+WnmW5U2dtJLbAllX1N16C7BjyrEtgcX6HPfydthKW+/c75hmdjOB3dth6+aqAzGmSpbMi7Ud+a5QupliH/EzXAFQvybQnE5qo50L3OBhnP1Svr5Hn+O9gpu+T9OEnfea4PB22Lq06iCMqZol82IVVsU+lqep9iZUtc8maaZxAJB3k5D1gyhebfQXgiheBNiqz/HOsGKsQr0GHNwOWydXHYgxdWDJvCA5O6QB3N0OW3f1+JqLc5wP4N1BFL875xila4etO4AzPQw19up8J/pr+vE4rte5KcZTwBbtsHVq1YEYUxeWzIuzM/mW3/QyxT4i71Q7NPDqPOGjGG63IIoXHPXvfqfYj6r5Mr8m+wuwbkYtgjFDyZJ5cQqvYh/L01T7Lg3ppDYbT8Vw85Mk8CCKpwDr9zFG2lI0k88TuNspa9jtC2PezJJ5AZIOaWvlGOLedtj6c5+vzTvVvjRuU48m8lEMNzLV3u+HsbSlaKY/z+MasExth61v239bYzqzZF6M0grfOvgp+afa677mvCNPxXCrBFG8Ef1NsWctRTO9uQPYH1iyHbYOSmadjDEpLJkXI28yvKTfF7bD1pPkn2oPG9BJrSNPxXC/B3rtdz7eUjTTvenAlu2wdWY7bM2oOhhjmsCSuWceOqQ90A5bt+UMI+8GMgvjNktpKl87w/ViGJeiXQ38q4Bx3wO0gyjer4n1G8ZUwZK5f3kL3/q+Kh9lmKvafe4M161hXYq2fTtsLQMsArwft0/+d4EbgWdyjr0g8G3gj0mjG2NMBkvmHnnokAb57pcDr0+1X5NzmC2CKPbVY7oKvnaG68ZQL0Vrh62n2mHrunbYOqMdtqQdttbH7c++PK7NaR7rA9ODKD6mqbd+jCmDdU3zazM67CHeg1nA/wRRPMtDLHn3WZ8bt1/5WR5iKV07bM0KovgA4DaKabc5wpaidZAUI/4ziOJDgF/lHG4u3K2TVYFt88ZmzCCyZO5X3sK3CcDHfATiyW40NJmD1zapWWwpWoZ22Lo6iOLLgK09DLdNEMVbtsPW5R7GMmag2DS7J0EUz8/gXTW8v+ad1LpRZDGcLUXrzqHAy57GOsWm2415M0vm/mwLTK46CM8mALtWHUQeBRbD2VK0LrXD1r3AtzwNtzzlFjca0wiWzP1pbPX3OAbh+yqiGG4Yl6LlcRzwiKexpgVRvKynsYwZCJbMPQiieAlg06rjKMi7giheteog8vDYJnXEsC5F61s7bD0DfMHTcPMCp3gay5iBYMncj7wd0uqu8VfnHtukwpAvRcvhXOBWT2N9NIjiLTyNZUzjWTL3o5F7mfdglyCKB+FnxUcxnC1F61MyQ3IwbgmmD6daMZwxziC8QVcqiOIVyNchrQlaNLeT2us8FcPZUrQc2mHrRuB8T8MtD3zO01jGNJol8/wG/ap8xKB8n3mK4Wwpmh/TgOc8jfUFK4YzxpK5D4OS5MbT2E5qo+UohrOlaJ60w9ZDwPGehpsXf8vejGksS+Y5BFG8Lm6qbxgsBGxVdRA+9FkMZ0vR/DoRuN/TWNsEUfwRT2MZ00iWzPNpfJV3jwbp++2lGM6WonnWDlsvAod7HNKK4cxQs2TeJ08d0ppmiyCKF6k6CB96LIazpWgFaIetS4HfehpuCvBZT2MZ0zjWaKV/mwNvyTnGZ9ph6zQfwYwniOKvkb+Sey4gpMHNV8Y4F9gH12YzjS1FK9YhwHT87NNwRBDF57XD1oMexjKmUezKvH95C99mAhf7CKRLP/I0zsBMtXdZDGdL0QrUDlt34u/DkhXDmaFlybwPSYe0bXIOc207bPnaq3pc7bD1V+AOD0NtGETxMh7GqYVxiuFsKVo5jgKe8DTWtlYMZ4aRJfP+bEf+Dmk/8RFIj3xcnTe+k1oH04D1Ojz2rDKoYdEOW48DR3sc0orhzNCxe+b9yTvV/CpwiY9AenQBcAL5P8TtBnwtfzj10A5bzwE3VR3HkPsO8GlgFQ9jjRTDHedhLGMawa7MexRE8duAD+Yc5prkaqRU7bD1MH6qh98VRPFqHsYxBoB22HoVVwznyxFBFL/D43jG1Jol89756JBWxRT7iPM8jTMsO9+ZkrTD1jXAzzwNNy9wsqexjKk9S+a9y5vEXsLfG1Y/LgWe9zDOrgPSSc3Uy2G43xEftgui+MOexjKm1uzNuAdBFK8IrJlzmKvaYetpH/H0ox22ngV+7mGotzMAndRMvbTD1j/xe0VtxXBmKFgy742PqeUqp9hH2JpzU2dfAf7taayp+N021phasmTem7zJ/HngMh+B5HQ13e9LnmWHIIrn8TCOMa9LZo+meRzyiEHaG8GYTiyZdymI4vWA5XIOc1myDKpSSeWwjxmCgemkZmrnPOBmT2NNxnaGMwPOknn3fEwpX+hhDF98TbVbVbvxLtlq92BglqchtwuieHNPYxlTO5bMuxBE8ZzAx3IOMwO4wkM4XrTD1q2Aj/7cA9NJzdRLO2zdjL+llACnBVE8l8fxjKkNS+bd8dEh7WftsOVryY0vPq7O5wJ29DCOMZ1MA571NJYVw5mBZcm8Oz6mkus0xT7ifE/jWFW7KUQ7bP0bV93uy5FWDGcGkSXzcQRRvAD5O6Q9AfzaQzhetcPW/cD1HobawLbONAU6Gfinp7EmYzvDmQFkyXx82+G2hszjknbYesVHMAWwTmqm1pLbU4d5HHJ7K4Yzg8aS+fgGrYp9rIuAlz2MY1XtpjDtsPUz4BqPQ55qxXBmkFgL1PEdA3w15xjX+QikCO2w9UQQxe8D5s87VhDFk9ph67WUw78EPpBj+KdyvLaONsHNaOTxYo7XftDD+V/I+fpe7Q4EHsebTPcfZE8n/zbI9+Z8vW/fBa7KOcZ9PgIx+U2YNcvXMk5jjDHGVMGm2Y0xxpiGs2RujDHGNJwlc2OMMabhLJkbY4wxDWfJ3BhjjGk4S+bGGGNMw1kyN8YYYxrOkrkxxhjTcJbMjTHGmIazZG6MMcY0nCVzY4wxpuEsmRtjjDENZ8ncGGOMaThL5sYYY0zDWTI3xhhjGs6SuTHGGNNwlsyNMcaYhrNkbowxxjScJXNjjDGm4SyZG2OMMQ1nydwYY4xpOEvmxhhjTMNZMjfGGGMazpK5McYY03AT9t13332pLqnPVNXvFnkCEdkHmJT881XgLuAmVZ1V5HlTYpkb+ETK4XNU9cUy4+mHiCwKrAusBbwTeAewFDA/MBmYE3geeA54EngQeAD4K3ArcJeqvlZ64BlEZDtgiZTDv1DVh0uMZWdg4eSfM4F/ADeo6stlxTAmnr2BuTocukRVHyvh/PMDuxd9ngxPqepPihpcROYD9ihq/C48raoXFHkCEVkR+ECfL38FeDp5PJU8Hqzq98EHEZkLWB/YDHg38NbksRjwDPBY8ngUuBm4WlXvHm/cOYBv80ayK9urQKHJHDgDl2BGu1hEdq/gB2I+4MyUY5cAtUzmIrIC8DFgR2DVLl4yH7A4sCzwnjHHZojIL4CLgCtV9VWPofbrc7gPKJ3cDZSWzIFjgKljvvYHEfmoqj5dYhwjvgUs0OHrt+PecIq2COm/M2W4BygsmeM+uFX5/d0HFJrMcYnL5/f4iojcBUwH/oT7wP1/HscvhIhMAY4GtsO9R3ayAO7iaMSuyWv/BVwBnKiq93R64Rz+Qm2UHXGfeg6sOpA6E5HNgcOBTT0OuyDuSmt34CERORM4Q1Wf8niOQfN+4EdJQi99RsmYmpkTWD15fAI4VUT+AJwH/FhVX6gyuLGS2cwTgD3pP+cuDQjwKRE5HzhubFIf5nvmB4jILlUHUUcisoaIXA9chd9EPtbbgeOAe0XkIBEZ1g+X3dgKmFZ1EMbU0ARgI+Bs4K7kIqQWROS9uNmDT+Ln4nkS8HGgLSKzvR8MczIHOEtEVq46iLoQkXlE5FTcve31Szz1YsCpwG9FZKnxnjzEjhWRfu89GjMM3glcJSLniMjY26ulEpGPAn/E1RX5Ngk4XkSipK5k6JP5fMDr/zGGmYgEuCR+ENX9XGwI3CEiH6ro/HU3CfiJfeAxZlx74n5XKpntE5HVgB8D83T5khdwtTmPAS/1cKodSOoRxvtG9wGe7WHgXs0scOxuBcBZwNBOuYvI+sAvccVG3boPV5BxN29UXz6GK+KbN3ksA6yEq3zflPSij9EWx32y/riqnt9DPMPircCFIvKBmhQPVulF0leH+PJMweNneQnYq+BzVPn9gSu+Oybj+ETc+8b8uMKw1YG1gfcxfuH29sA5lLwaQkQWAn5B9vvd07jYrgJuHFvcmnxg3wjYDdgCdyshzQ9g/GT+U1V9fJznDIKdReR6VT296kDKJiIbA5fjlpWN517cp8DLVfXvXTz/1lHnmQfYBPgosBNvLL/q5HngD12MP6w2AL4OHFZ1IBV7pchlYzXw6oB/f+CW/o277GqU8wFE5K3AzsCRuA+4aXYTkfNU9Vc5YuzVNNyFTCezgBOBY1Q19YNUshz2AuCCZNb0MNy98rG3Dq5V1d+CTbOPdqKIrFN1EGUSkVWAnzJ+In8IV0kZqOpJXSby2ajqi6p6hap+Grdk7WjcmtFO/ldV/9XrOYbMoSKyfdVBGFMFVX1UVU8FVsRNZ2c5SURKWX4tIi3g4JTDM4FQVT+blcjHUtW2qn4KWBO3JHTELOCLI/+wZP6GuXDrz99SdSBlEJGFcVfkWVfI4NYZT1HV7/qa1lXVp1X1GFyxyqnA6E1kbgCGboakTz8QkbFr0o0ZGsmS1t1xlexpVgbKqnDfG3eLsZOjVfXSfgdW1b8A6+BuvVwN7K+q140ct6VAs1saOF9EPqKqdbifXyQlu8ryVeAgVf1OYQG4X8SDReRsYF/cDMCJddshrsYWxBVwrlu3tbXGlEVVZ4nIAbj9GFZIedrWuBqfom2T8vUHcGvNc0neG89NHrOxZP5mmwFHAV+qOI7CiMiOuB3d0rwIbFvWfSZVvRNXRW96tyqujmGviuMwpjKq+rKIHAFEKU/ZCtivyBhEZElgjZTDPy56x9Fhnmb/XcaxL9Zp4wGfkv3hx/uEeGjJBSNmfFk/r3smPQiMGWZX4JZ4ddISkU7bEvv0zoxj12Uc82KYk/kBuCYgnUzETbcvXWI8ZTkAV4CW5mJVrXKvaNPZl4DbMo6fJiJpVwXGDLzkVtMtGU9Ja6bkS9b4hfd3GOZk/hIQAmlTH4vhCuI6dYxqpGQDhUMynvIv4FMlhWN6Myfu5/WJlONz4+6fj1fQaMwg+3fGsaKTedaV/9wFn3uok/m8qnob2cltHdyawEER4or80nxTVWeUFYzpybyq+iCuXWZas5V3Aj8UkawNJowZZE9WeO60D9qQPRvqxTAn84kAyZRy1k5jByY9pgdB1i53j5O9vMNUawKAql4BfDXjeVsDny8lImPqJ2sXy6Jb9v4349gOBZ97qJP5aALclXH8rGQXnsYSkfmArD3PT1fV58uKx+RyFPCbjOPHWUMWM6SWzDj2n4LPnbXR1Y4i8p4iT27JHFDV53BT0Gn70M8PXNLwhiwbk76ZAST7+5r6S/ZA2BW3Lr+TSbhtILPe2IwZKCIyL27f9k7+Nnb/c99U9SHgzpTDE4ErRWSlos5vyTyR7A+cVfw10pClqbJamv4zuR9rGkJVH8XtcZ+2K98SwEXWI94MkQ+TfsFyTUkx/Dzj2BLALSKydxEntmQ+iqpeCJyW8ZSdReTAsuLxbL2MY78tLQrjjapeD3wu4ykbAF8rKRxjKpPsvf6ljKeU1bDme7hNt9IsAHxPRKaLyB4+e65bMn+zw4CbMo43tSHLyhnHLJk3lKqeDFyS8ZTDRGS7suIxpiKH43ZD7OQ6Vb2xjCBU9QFcR8PxrA78ELhfRD6fdIHLxZL5GKr6Cm6r07TKxJGGLIuVF1U+yb2krDWWfy4rFlOIvYF7Mo6fIyJTygrGmDKJyCeA41MOz8J1aCzT18nevGa0t+Nmzx4Wkd+Is3g/Jx3vfpqIiM8K5wtVNWtRfy2o6r9EZDfgSjp/4BlpyLJFQxqypPXWHZG1PtLUnKrOEJEdgJvpfM9wQVwB56A1ZJlLRLL2iejHWUlBbB3MWcD3d7aqphX6NkpykXICblfLtL0VTlLVrK2QvVPVF0RkK+B6oNuuhpOATZLHGSLyW9xS4Z91u6f7eMn8K10G0q1byd6hpzZU9WoROYb0+zCb43rJfrm0oPo33q5gVW60YDxQ1TtFZD/gnJSnrAp8G/hEaUEVb27gZM9jXgTUJZnPhf/vLyJ91U4jJFPSewOfJrvz47XAEaUENYaqPiYiG+B6rX+wx5dPwi0j/hDwmIici/uQ+Y+sF1mla7ZjcVXgm6UcP0pEblTVq0uMqR/zZRx7XlVfKi0SUxhVPVdE3gekNV3ZS0SuV1XbHMjUxVIisnHG8XlwG8EsArwLV8j7blzCy/JrXOfHQjuVZVHVR0VkM+BQ4EjGv6jqZHFcPcDhInI58EVVnd7piXbPPEMyhb4b6ZsBNKUhS9b68kLXXprSfQbo+MueOK3ozSuM6cE2uI6AaY8rcVe3Z+BamK5OdiKfCXwL2LoOm2Cp6kxV/SawHG6mO8/M9JbA7SKiIjLP2IN2ZT4OVf1v0v/7Olyzi7HegiuI2zApnquj8ZZKFEJE9sA1rOlXne5fNoKqvigiIXA7na8E5sE1ZHmvqj5VbnTGFOpO4ABVLbzdaK9U9Ungf0XkaOAjuNsEW9E5p2SZAOwLrC0iW6tqPHLArsy7oKo345aspal7Q5ashDh/gZ3hpuHu+fX7WKiguAaaqv4T2JP0hizLYQ1ZzGCYhbvQ2hpYrY6JfDRVfU1Vf6mq2wMtYH/cLYFeLwRXB64ZvaRtvCvz5fBbHPWMx7FKpaqnJfcjd0p5ykEicoOqlrU5QS/Gm0pfjIYUJpruqOovROQE0puujDRkafKmMs+S3QWwH3W67fQ8bumST3X6/vK4HzdtfbmqPlJ1MP1IdnE8EzgzaV28JbB98mc3LVNXBH4uIu9T1ZnjJfMZNhU3m08BqwFp++ueJSJ/VtV2iTF1I6sBAMCiWDIfREcC6wIbpRw/TkRuUtXflxeSV7MG/P1p0L8/gKfo3ABlKbJvAb4TWElVv1dIVCVL/j+fj6vBWgTYGVc4N97+EOviagnOsGn2HiTrM3cgfdp6ftz9yKzq8dIlcWe151u2oFPb/e4KqepruDeFtCuXScBPrCGLqdAFqrrS2AfuFtsU0pdagqvwnlZKlCVS1SeT1twr4e6tzxjnJceJyDyWzHukqn/DtUxNszL1bMhyd8axtCu3vI4B/oL75J32sDXuBUqmIHcCXkt5yhLAhdaQxdSJqs5S1ftU9RO4/RHSfGVQ2/0m99d/AKwBZK0xXxjY3H6BGwmh/wAABzdJREFU+6Cq5yf3z/dLecouyXreM8qMaxw34BpvdLJxESdU1V8Cv8x6joh8CKj7Ov1GU9U/iMgRpO8ZvSFuO8zPlheVMV07BNfadM0OxyYCPxKR1VX1sXLDKoeq3iciH8H1DEnb6nUHuzLv3yG4He3SnCQiab11q3BDxrE1RKSwJWqmeqp6AtntGQ+3hiymjpIlv7uQvnPdUrj+AwO7OiNZofLFjKesbMm8T8nOQjuSvq953Rqy/AZI25d7Eq4XsBlsewL3ZRz/gTVkMXWkqvfilnGl2QJXMDbIziG99mlJS+Y5qOqDwB6kr+ddBjcFVPl/56QI7oqMp2T1xTYDQFWfBkLSNxFaCFfAmbVjoDGVUNXzgB9lPOV4EVmrrHjKlmy7fWfK4bdWnmSaTlWvILshzYeB/03+npb0y3JexrE1k/vXZoCp6h3AgRlPWY3ZC46q/pk1ZrT9SZ9dmhO3OmPBEuMp2wMpX3/ekrkfR+OmsVOPJ4ny1ZLiSXMZ6T8M4NYlmwGXrM09J+Mpe4nIJ5O/V/0za8zrVPUZ3HLLtB3TlgO+W15EpXvTnuyJRyyZe5A0ZNkVeCjlKRNxzQIWo8IrnSTOUzOespGIpHXcMoNlf9yywTSnJw1ZGt0u0wweVb2N7AuPnQb4fextKV+3ZO5LsjXfTqRfybwFuIDxNwAo2rfJvjo/VURWKykWUxFVfQG3AVLaz+M8uN7X1h7X1NE3yV7SeoqIrFJWMGUQkTnpvDwP4C+WzD1S1evJLiRbl4qbhyRFFFnriUe6almTkwGXVAjvlfGU5YCp5URjTPdUdRbwceDRlKfMi9sMaZCKOTchfYvbqyyZe6aqJwOXVB1HFlWNgEsznjIFuFZEWiWFZCqiqj+l3h3/jOlIVf9DdnfAVYBTyopHRNYQkTtE5NciUsSuml9O+fpLwO8smRdjb+CeqoMYx77AwxnHVwNuEZH3lhSPqc404I9VB2FMr1T1KuCkjKfsIyIfKzqOpB/Hz3Hvm5sCvxeR00Wkm+5n3Yz/GVyr7U4uVVWrZi+Cqs7A3Y9M26Slcqr6OLAN2c1QlgT+ICLTipiuShp87Op7XNMbVX0VV++RNmVpTJ0dAdyecfwsEVmu4BiOxvUnH+0A4Ka8NUgiEpL+gWUmrgcGlswLoqp3kr53ey0kVaEfI32ZB8Bk3L7d94qTez9/EXmPiJyJ60m8V97xTH6q+jBuyU9aQxZjainZjTNru9cFcevP5yzi/Emh3SEph1cHpovIJb0mdRGZT0S+AVyE26Wzkx+r6t0A470xv1dEiqy+nqmqtxQ4fqVU9dykIUttl0mo6hUisg2ucnlyxlOXAr4DfFVEfoXbTe4qVc1qrQqAiCyN+6HeGNgO14vY1Iyq/k5EjiJ7E6Q6mSQi6xZ8jhdU9c8FnyPNxBK+vxeTjYQaTVXvEZEDgHNTnrIW7qLk8AJOvyrpyRZgArA9sJ2I/By4GLgmWQE1GxGZBzedvgUubyySMe6DjNrCdrxk/qtxjuf1Km7XnkH2GeC9uDZ2taSqV4rIprgfsreP8/RFcZ+CdwFmicijuH7Zj+Bams7EVVzOj/tEvGLyml79heqX8Q2j44H1gS2rDqQLk4EbCz7HPcAKBZ8jzbwU//3dhyt4bTxV/aGIbAbslvKUQ0XkN6p6pefzXiAiz+KWHs+X8dQJwLbJY+S98wngKWBu3PLlJekuJz4HbDO6U5xNsxdMVV/E7Yf9VNWxZFHVG3FXz5f38LIJuH7YqwGb45aK7IWrF9gcWI/eE/kM3JTVGsl+8qZEyZKfPcjei8CYutqP9O1eJwDnishSvk+qqpfhWgmnbRzWKZYlgAD3PrkGrpdHN4l8BhCOnTGyZF4CVb0fl+hqvc+1qv5XVbfC3UePSz79LOB8YEVVPUVV7d5tRVT1SdwHUNswxjRKst3rLqTXAS1OQc2vVHU6LimfjZuhLMLdwDpJFf9sLJmXJPnkdkLVcXRDVS8GVsLdj+n2k2a/XgDOAt6lqrur6iMFn890QVVvBw6uOg5jeqWqt/JGc6tOPkBBfShU9VFV3Qd3a/Vaj0O/gKtoX2ek4G0sS+blOhJ3X6X2VPW5ZAOc5XBXaZeQ3jqzVzNwTV8+Diyhqvuq6t88jW08UVWlIR9AjRnjG8AZGcePFpENizq5qt6hqhvjak8uBV7uc6gncUn8nap6WLLsuaM5cGvUqkrqZUylHkvnSsP/lHDu2ajqayKyG64n72q4oocRWeu9K5Ms+7gEuCRZa742sAHu/voUYHk6bzH4Gm7d8r9xU/b/wE0R/Qn4c9L0pS7OJr3Y84ES4wA4DdeQZ6y/lxwHAKr6eRG5ElcNPLq4p+gZmxFPk77zVRkeL3j8GVT7/T1Rwjmmk/493lrECZPajwNF5HzSt9FeAbiuiPOPiuMK4Ipke+z3Axvhqt+n4taljxShz8Il7v/g3i+vBX4N3Nbte+X/A0ut34OrXvvqAAAAAElFTkSuQmCC">
+                </div>
+                
+                <div id="monthly-bill-heading">
+				<label class="name-center"><span>Month: <%= Date::MONTHNAMES[date.month] %></span></label> 
+				</div>
+                
+                <div id="date-and-bill">
+                        Date: <%= date %><br>
+                        Bill No.: <%= @bill %><br>
+                </div>
+                
+                <hr id="line1" width="1000">
+
+
+		<div id="customer">
+
+                        <div id="client-label">
+                                Client
+                        </div>
+                        
+                        <div id="client-details">
+                                <div id="client-name">
+                                        <b> <% if not @bank_name = "" %> <%= @bank_name.name %> <% end %></b><br>
+                                </div>
+                                
+                                <div id="client-address">
+                                        <%= @client_detail.bank_branch %>
+                                </div>
+                        </div>
+
+    <!--hr id="line2" width="950"-->
+
+
+            <!--table id="meta">
+                <tr>
+                    <td class="meta-head">Invoice #</td>
+                    <td><textarea>000123</textarea></td>
+                </tr>
+                <tr>
+
+                    <td class="meta-head">Date</td>
+                    <td><textarea id="date">December 15, 2009</textarea></td>
+                </tr>
+                <tr>
+                    <td class="meta-head">Amount Due</td>
+                    <td><div class="due">$875.00</div></td>
+                </tr>
+
+                </table-->
+
+                        <div id="service-tax">
+                                Service Tax Number:<br> APRPK1196BSD001
+                        </div>
+
+		</div>
+
+		<table id="items">
+
+		  <tr>
+		      <th class="description">Description</th>
+		      <th class="rate">Rate</th>
+		      <th class="qty">Quantity</th>
+		      <th class="price">Price</th>
+		  </tr>
+
+		  
+		  <tr class="item-row">
+		      <td class="description"><%= genID %></td>
+		      <td class="rate"><%=@gen_set.genRent %></td>
+		      <td class="qty">1</td>
+		      <td class="price"><%=@gen_set.genRent %></td>
+		  </tr>
+
+		  <tr class="item-row1">
+		      <td class="description">Expenses</td>
+		      <td class="rate">&nbsp;</td>
+		      <td class="qty">&nbsp;</td>
+			  <td class="price"><%= @totalExp %>  </td>
+		  </tr>
+
+		  <tr class="item-row">
+		      <td class="description">&nbsp;</td>
+		      <td class="rate">&nbsp;</td>
+		      <td class="qty">&nbsp;</td>
+		      <td class="price">&nbsp;</td>
+		  </tr>
+
+		  <tr class="item-row1">
+		      <td class="description">&nbsp;</td>
+		      <td class="rate">&nbsp;</td>
+		      <td class="qty">&nbsp;</td>
+		      <td class="price">&nbsp;</td>
+		  </tr>
+
+		  <tr class="item-row">
+		      <td class="description">&nbsp;</td>
+		      <td class="rate">&nbsp;</td>
+		      <td class="qty">&nbsp;</td>
+		      <td class="price">&nbsp;</td>
+                  </tr>
+
+                <tr class="item-row1">
+		      <td class="description"> Sub Total</td>
+		      <td class="rate">&nbsp;</td>
+		      <td class="qty">&nbsp;</td>
+		      <td class="price"><%=@totalwithouttax %></td>
+                </tr>
+
+                <tr class="item-row">
+		      <td class="description">Service tax</td>
+		      <td class="rate"><%= @gen_set.serviceTax %></td>
+		      <td class="qty">&nbsp;</td>
+		      <td class="price"><%= serviceTax %></td>
+                </tr>
+
+                <tr class="item-row1">
+		      <td class="description">Surcharge</td>
+		      <td class="rate"><%= @gen_set.eduTax %></td>
+		      <td class="qty">&nbsp;</td>
+		      <td class="price"><%= surcharge %></td>
+		</tr>
+
+                <tr class="grand-total-item-row">
+                        <td class="description">Grand total</td>
+		      <td class="rate">&nbsp;</td>
+		      <td class="qty">&nbsp;</td>
+		      <td class="price"><%= total %></td>
+		  </tr>
+
+          </table>
+		  <div id="bank" style="float:left; width:50%">
+		  <% @account = Account.find(@client_detail.account_id) %>
+		  <br><br><br><br><br><br><h3>
+		  Account Deposit Details <br>
+		  Account at : 
+		  <%= @account.name %>
+		  <br>Account Number :
+		  <%= @account.number %>
+		  <br>IFSC Code:
+		  <%= @account.ifsc %>
+		  <br>MICR Code:
+		  <%= @account.micr %>
+		  </h3>
+		  </div><div style="">
+          <div id="person-name">
+        <p><%= wicked_pdf_image_tag(@sender_detail.signature.url(:med))%></p><br><br>
+                  Jasvir Singh Sond
+          </div>
+
+          <div id="designation">
+                  (Authorized Signatory)
+				  </div>
+		</div>
+
+		  <br> <br> <br> <br> <br> 
+        <div class="bottom">
+                <div class="address">
+                        <b>Head Office:</b> # 1380, St. No. 31, Janta Nagar
+                        , Bhagwan Chowk, Near Public Health Center, Ludhiana-141003. Punjab<br>
+                        <b>Sub Office:</b> # 48, Wadda Gurdwara Sahib Market,
+                        Opp. G.N.E, College, Near Octroi Post, Gill Road, Ludhiana
+                </div>
+        </div>
+	</div>
+
+</body>
+
+</html>

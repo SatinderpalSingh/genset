@@ -1,0 +1,165 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "compass/typography";
+@import "susy";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,800,300);
+@import "mixins";
+
+
+/* Color Start 
+ */
+
+$black:#222;
+$lessblack:#333;
+$lesserblack:#808080;
+$offwhite:#fafafa;
+$lesswhite:#eee;
+$white: #FFFFFF;
+$green: #0FEB63;
+$rose: #FF3B5B;
+$lessrose: #F24153;
+$purple: #9A65CD;
+$blue: #28AAE2;
+$deepBlue: #10ADED;
+$grey: #F0F0F0;
+$americanRose: #FF3B5B;
+$redpinkmix: #C23E36;
+
+/* Color End 
+ */
+ 
+/* Decorations Start
+ */
+
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+html {
+    font-family:'Open Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizelegibility;
+}
+
+body {
+    font-size: 1.3em;
+}
+
+a:link {
+    text-decoration: none;
+    color: #000;
+}
+
+*:focus {
+    outline: 0;
+}
+
+::selection {
+    background-color: $black;
+    color:$white;
+}
+
+::-moz-selection {
+    background-color: $black;
+    color:$white;
+}
+
+/* Decorations End
+ */
+
+/* Images Start
+ */
+
+$landing-image: "/assets/gear.jpg";
+$header-image: "/assets/header.png";
+$background-image: "/assets/background.png";
+$Money: "/assets/Money.png";
+$Quotation: "/assets/Quotation.png";
+$Report: "/assets/Report.png";
+$View: "/assets/view.png";
+$Details: "/assets/details.png";
+$SenderDetails: "/assets/senderDetails.png";
+$thirdPartProvider: "/assets/thirdPartProvider.png";
+$loader-image: "/assets/loader.gif";
+
+/* Images End
+ */ 
+
+.circular-image {
+    height: 140px;
+    width: 140px;
+    line-height: 175px;
+    max-width: 100%;
+    border-radius: 50%;
+    display: block;
+    color: #FFF;
+    font-size: 55px;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    margin: 0px auto 20px;
+    @include breakpoint(alpha){width:85px; height:85px;};
+}
+
+.hrLine {
+    display: block;
+    width: 35px;
+    margin: 25px auto;
+    border: 2px solid $rose;    
+}
+
+.content {
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);         
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 1;
+}
+
+.input {
+    @include container(98%);
+    color: $lessblack;
+    background: transparent;
+    font-size: 18px;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid #333;
+    width: 60%;
+    height: 30px;
+    font-weight: 200;
+    margin-left:20%;
+    @include breakpoint(alpha){text-align:center; line-height: 2;}
+    @include breakpoint(beta){text-align:center}        
+}
+
+.send {
+    font-size: 1rem;
+    background: $black;
+    border: 1px solid $redpinkmix;
+    width: 200px;
+    height: 40px;
+    border-radius: 3px;
+    color: $offwhite;
+    margin : 2px auto 2px -21px;    
+    curson: pointer;  
+    @include transition(background 0.30s ease-in-out);
+    &:hover {
+        background: $redpinkmix;
+    }
+    @include breakpoint(alpha){width: 240px; height: 50px;};     
+}
+
+label.ll{
+	font-size:18px;
+	padding:5px;
+	margin-left:20%;
+	font-family:'lato',serif;
+	color:#333;
+}
+.quotationForm select#client_detail_sender_details_id{
+	margin:20px 0 20px 0;
+	margin-left:40%;
+}

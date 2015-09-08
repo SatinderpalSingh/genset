@@ -1,0 +1,40 @@
+<%= render 'welcome/header' %> <br><br><br><br><br>
+<table id="quotationViewer" class="display responsive no-wrap">
+  <thead>
+  <tr>
+    <td>Company Name</td>
+    <td>Reference Number</td>
+    <td>Client ID</td>
+    <td>Edit Quotation</td>
+    <td>Approved</td>
+  </tr>
+  <thead>
+  
+  <tbody>
+  <tr>
+  <% @quotations.each do |quotation| %>
+    <td><%= quotation.companyName %></td>
+    <td><%= quotation.referenceNumber %></td>
+    <td><%= quotation.client_details_id %></td>
+    <td><%= link_to 'Edit', "/editor" + quotation_detail_path(quotation.client_details_id) %></td>
+
+    <td><%= button_to 'Approve', "/approved" + quotation_detail_path(quotation.id)  %></td>
+  </tr>
+  <% end %>
+  <tbody>
+
+</table>
+
+<script>
+    $(document).ready(function() {
+    $('#quotationViewer').dataTable({
+      responsive: true
+    });
+  } );
+</script>
+
+
+
+
+
+

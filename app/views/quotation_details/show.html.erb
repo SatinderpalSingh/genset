@@ -1,0 +1,131 @@
+<%= render 'welcome/quotationHeader' %>
+<section class="quotationPage">
+   <div class="preloader"></div>
+    <div class="barline"></div>
+    <div class="address">
+        <h2 class="companyName"><%= @quotation_detail.companyName.html_safe  %><span class="serviceTax"><%= @quotation_detail.serviceTax.html_safe  %></span></h2>
+        <h4 class="companyNameTagline" ><%= @quotation_detail.companyTagLine.html_safe  %><span class="phoneNumbers"><%= @quotation_detail.headerMobileNumber.html_safe  %></span></h4>
+        <h4 class="companyAddress1" ><%= @quotation_detail.companyAddressOne.html_safe  %>,</h4> 
+        <h4 class="companyAddress2" ><%= @quotation_detail.companyAddressTwo.html_safe  %>.</h4>
+    </div>
+    <div  class="referenceNumber">Reference Number : <%= @quotation_detail.referenceNumber %>
+    <div class="dated" data-mercury="simple" id="quotation_date">Date: <%= @quotation_detail.date %></div>
+    </div><br><br>
+
+    <!--  Template content part starts -->
+
+    <div class="contentPart">
+        <div class="contentsToStatement" >To</div>
+		<div class="details"><%= @client_detail.designation.html_safe  %>, 
+			<%	bank=""
+			if not @client_detail.bank_id.blank? 
+				bank= Bank.find(@client_detail.bank_id).name 
+			end	%>
+		<br><%= bank.html_safe %>, 
+		<br> <%= @client_detail.bank_branch.html_safe  %>, 
+			<br> <%= @client_detail.address.html_safe  %>, <br><%= @client_detail.district.html_safe  %>
+        </div>
+        <div  class= "subject" data-mercury="simple" id="quotation_subject"><%= @quotation_detail.subject.html_safe  %></div>
+        <div class="regards" data-mercury="simple" id="quotation_regard"><%= @quotation_detail.regard.html_safe  %></div>
+        <div class="regardContent" data-mercury="simple" data-type="editable" id="quotation_regardContent"><%= @quotation_detail.regardContent.html_safe  %></div><br>
+    </div>
+    <!--  Banks Names Start Here -->
+
+    <div class="banks" >
+        <table class="tg">
+          <tr>
+            <th class="tg-hgcj">Bank</th>
+            <th class="tg-hgcj">Location</th>
+          </tr>
+          <tr>
+            <td class="tg-e3zv">Allahabad Bank : Ludhiana Zone</td>
+            <td class="tg-031e" data-mercury="simple" id="quotation_bankZoneOne"><%= @quotation_detail.bankZoneOne.html_safe %></td>
+          </tr>
+          <tr>
+            <td class="tg-e3zv">Allahabad Bank : Amritsar Zone</td>
+            <td class="tg-031e" data-mercury="simple" id="quotation_bankZoneTwo"><%= @quotation_detail.bankZoneTwo.html_safe %></td>
+          </tr>
+          <tr>
+            <td class="tg-e3zv">Oriental Bank of Commerce</td>
+            <td class="tg-031e" data-mercury="simple" id="quotation_bankNameTwo"><%= @quotation_detail.bankNameTwo.html_safe %></td>
+          </tr>
+          <tr>
+            <td class="tg-e3zv">Bank of Baroda</td>
+            <td class="tg-031e" data-mercury="simple" id="quotation_bankNameThree"><%= @quotation_detail.bankNameThree.html_safe %></td>
+          </tr>
+          <tr>
+            <td class="tg-e3zv">The Federal Bank Limited</td>
+            <td class="tg-031e" data-mercury="simple" id="quotation_bankNameFour"><%= @quotation_detail.bankNameFour.html_safe %></td>
+          </tr>
+          <tr>
+            <td class="tg-e3zv">Central Bank of India</td>
+            <td class="tg-031e" data-mercury="simple" id ="quotation_bankNameFive"><%= @quotation_detail.bankNameFive.html_safe %></td>
+          </tr>
+        </table>    
+    </div><br />
+
+    <!-- Quotations -->
+
+    <div class="quotations" >  
+        <h4 class="quotationLine" data-mercury="simple" id="quotation_quotationLine"><%= @quotation_detail.quotationLine.html_safe  %></h4><br />
+        <div class="genRentAndType">
+          	<table class="tg">
+          	  <thead>
+          	    <tr> 
+                    <th class="tg-hgcj">Generator Type</th> 
+                    <th class="tg-hgcj">Generator Rent</th> 
+                <tr>
+              <tbody>
+              <% 
+                counter = 0
+                @qtnGenType =  Array.new
+                @qtnGenRent = Array.new
+                @quotation_rent.each do |qtn_rent|
+                  @qtnGenType.push(qtn_rent.genType.split(','))
+                  @qtnGenRent.push(qtn_rent.genRent.split(','))
+                end
+                qRent = @qtnGenType.zip(@qtnGenRent)
+              %>
+              <% qRent.each do |qt, qr| %>
+              <tr>
+                <% counter +=1 %>
+                <td class="tg-e3zv" data-mercury="simple" id ="quotation_type<%= counter %>"><%= qt %>  </td>
+                <td class="tg-e3zv" data-mercury="simple" id ="quotation_rent<%= counter %>"> <%= qr %> </td>
+              </tr>
+              <% end %>
+              </tbody>
+            </table>
+        </div>
+    	<div class="counter" data-mercury="simple" id="quotation_counter" style="display:none">
+    		<%= counter %>
+    	</div> <br>
+
+        <h4 class="serviceTax">(Plus Service tax is applicable)</h4>
+    </div>
+
+    <!-- Content of 10% increment-->
+
+    <div class="secondPageContent">
+        <p class="contentPartOne" data-mercury="simple" id="quotation_contentPartOne"><%= @quotation_detail.contentPartOne.html_safe %></p><br><br>
+        <p class="contetnPartTwo" data-mercury="simple" id="quotation_contentPartTwo"><%= @quotation_detail.contentPartTwo.html_safe %></p><br><br>
+        <p class="thankYou" data-mercury="simple" id="quotation_thankYou"><%= @quotation_detail.thankYou.html_safe %></p><br><br>
+        <p class="yoursTruly" data-mercury="simple" id="quotation_yoursTruly"><%= @quotation_detail.yoursTruly.html_safe  %></p><br><br>
+        <p class="nameOfCompany" data-mercury="simple" id="quotation_nameOfCompany"><%= @quotation_detail.nameOfCompany.html_safe  %></p><br>
+        <p><%= image_tag(@sender_detail.signature.url(:med))%></p><br><br>
+        <p class="name"><%= @sender_detail.name.html_safe  %></p><hr class="nameHrLine">
+        
+        <div class="phoneNumbers" style="float:left;">
+            <p class="contactNumberOne" data-mercury="simple" id="quotation_contactNumberOne"><%= @quotation_detail.contactNumberOne.html_safe %></p>
+            <p class="contactNumberTwo" data-mercury="simple" id="quotation_contactNumberTwo"><%= @quotation_detail.contactNumberTwo.html_safe %></p>
+            <p class="contactNumberThree" data-mercury="simple" id="quotation_contactNumberThree"><%= @quotation_detail.contactNumberThree.html_safe %></p>
+        </div>
+
+        <div class="emails" style="float:right; color:blue;">
+            <p class="emailIdOne" data-mercury="simple" id="quotation_emailIdOne"><%= @quotation_detail.emailIdOne.html_safe %></p>
+            <p class="emailIdTwo" data-mercury="simple" id="quotation_emailIdTwo"><%= @quotation_detail.emailIdTwo.html_safe %></p>            
+            <p class="emailIdThree" data-mercury="simple" id="quotation_emailIdThree"><%= @quotation_detail.emailIdThree.html_safe %></p>
+            <p class="emailIdFour" data-mercury="simple" id="quotation_emailIdFour"><%= @quotation_detail.emailIdFour.html_safe %></p>
+        </div>
+        
+    </div>
+</section>

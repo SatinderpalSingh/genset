@@ -1,0 +1,4549 @@
+
+---
+users:
+  columns:
+  - id
+  - email
+  - encrypted_password
+  - reset_password_token
+  - reset_password_sent_at
+  - remember_created_at
+  - sign_in_count
+  - current_sign_in_at
+  - last_sign_in_at
+  - current_sign_in_ip
+  - last_sign_in_ip
+  - created_at
+  - updated_at
+  - username
+  records: 
+  - - 1
+    - vigasdeep@gmail.com
+    - "$2a$10$6TnLGV1tGd9rrHmVcTrckesXI2xQvEagmeg5TMEpR/ZYbvX9Oocv."
+    - 
+    - 
+    - 
+    - 44
+    - '2015-07-15 10:25:44.389519'
+    - '2015-07-13 13:08:20.249664'
+    - 124.253.207.209
+    - 124.253.131.248
+    - '2015-03-31 12:36:29.518766'
+    - '2015-07-15 10:25:44.390210'
+    - vigas
+  - - 2
+    - mandeep@csiom.com
+    - "$2a$10$WkgPAdkYGQV9YkEYvLDnLuCnOI0mWoNb4eMHvG9Z8fXt1ArLCgDZy"
+    - 
+    - 
+    - 
+    - 1
+    - '2015-04-18 18:09:15.038194'
+    - '2015-04-18 18:09:15.038194'
+    - 59.89.156.80
+    - 59.89.156.80
+    - '2015-04-18 18:09:15.035112'
+    - '2015-04-18 18:09:15.038668'
+    - mandy
+  - - 3
+    - vigadeep@gmail.com
+    - "$2a$10$vH0.AnUCRRifngq.3THcSufYV.MLIo.xy1969WHO6xg3DAUl9dCiq"
+    - 
+    - 
+    - 
+    - 2
+    - '2015-04-20 07:46:47.290876'
+    - '2015-04-18 18:10:00.815074'
+    - 124.253.168.3
+    - 117.247.42.16
+    - '2015-04-18 18:10:00.812608'
+    - '2015-04-20 07:46:47.291748'
+    - vigasdeep
+  - - 4
+    - k@csiom.com
+    - "$2a$10$yfesA5O9tSEDuyBwQoJLNOApotb2EoLjQwzevUDgWDfOJc0MAVrxK"
+    - 
+    - 
+    - 
+    - 1
+    - '2015-06-24 12:34:52.138373'
+    - '2015-06-24 12:34:52.138373'
+    - 124.253.110.38
+    - 124.253.110.38
+    - '2015-06-24 12:34:52.135115'
+    - '2015-06-24 12:34:52.138785'
+    - kamal
+  - - 5
+    - nishu@csiom.com
+    - "$2a$10$zq0v0fHFXUpYO9uCSMZ3NuEyOseYfC8KjGsIy3uSAlHfUflREDbs."
+    - 
+    - 
+    - 
+    - 3
+    - '2015-07-17 15:55:04.541371'
+    - '2015-07-17 08:59:00.886261'
+    - 124.253.236.52
+    - 124.253.150.164
+    - '2015-07-16 09:05:03.896576'
+    - '2015-07-17 15:55:04.542120'
+    - nishu
+
+---
+quotation_details:
+  columns:
+  - id
+  - companyName
+  - serviceTax
+  - companyTagLine
+  - headerMobileNumber
+  - companyAddressOne
+  - companyAddressTwo
+  - referenceNumber
+  - subject
+  - regard
+  - regardContent
+  - bankNameOne
+  - bankNameTwo
+  - bankNameThree
+  - bankNameFour
+  - bankNameFive
+  - bankZoneOne
+  - bankZoneTwo
+  - quotationLine
+  - quotationRateList
+  - contentPartOne
+  - contentPartTwo
+  - thankYou
+  - yoursTruly
+  - nameOfCompany
+  - emailIdOne
+  - emailIdTwo
+  - emailIdThree
+  - emailIdFour
+  - contactNumberOne
+  - contactNumberTwo
+  - contactNumberThree
+  - date
+  - client_details_id
+  - sender_details_id
+  - created_at
+  - updated_at
+  - mailStatus
+  - dateOfMail
+  - account_id
+  records: 
+  - - 1
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - 
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - With Regards,,
+    - 'On the captioned subject we are pleased to introduce ourselves as service provider
+      in the field of Generator on monthly rent basis. It is for your kind consideration
+      that we are providing the generator sets on monthly rent basis to the banks
+      and other Govt. offices. We have proper infrastructure and staff to serve best
+      to our customers. At present we proudly declare that we are serving many branches
+      of :'
+    - 'Allahabad Bank:'
+    - 'Oriental Bank of Commerce :'
+    - 'Bank of Baroda :'
+    - 'The Federal Bank Limited :'
+    - 'Central Bank of India :'
+    - 'Ludhiana Zone :'
+    - 'Amritsar Zone :'
+    - 'Through this letter, we are offering our services to bank. Our monthly rent
+      is quoted as:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - We shall increase 10% after two years. The rent will include repairs &amp; maintenances
+      and the cost of diesel. Space will be provided by you. Our generator sets will
+      be soundproof &amp; automatic. We shall install only the branded generator sets.
+      If you want higher capacity generator then we may fulfill your demand. Above
+      rates are for all seasons.
+    - We hope you will consider our application and give an opportunity to serve your
+      bank. We ensure you of our best service.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Date : 09/06/2015'
+    - 1
+    - 1
+    - '2015-03-31 12:42:08.616036'
+    - '2015-03-31 12:43:35.314370'
+    - false
+    - 
+    - 
+  - - 2
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15001
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - With Regards
+    - 'On the captioned subject we are pleased to introduce ourselves as service provider
+      in the field of Generator on monthly rent basis. It is for your kind consideration
+      that we are providing the generator sets on monthly rent basis to the banks
+      and other Govt. offices. We have proper infrastructure and staff to serve best
+      to our customers. At present we proudly declare that we are serving many branches
+      of :'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this letter, we are offering our services to bank. Our monthly rent
+      is quoted as:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - We shall increase 10% after two years. The rent will include repairs & maintenances
+      and the cost of diesel. Space will be provided by you. Our generator sets will
+      be soundproof & automatic. We shall install only the branded generator sets.
+      If you want higher capacity generator then we may fulfill your demand. Above
+      rates are for all seasons.
+    - We hope you will consider our application and give an opportunity to serve your
+      bank. We ensure you of our best service.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Dated : 09/06/2015'
+    - 2
+    - 2
+    - '2015-04-20 07:48:57.998898'
+    - '2015-05-17 21:15:44.128948'
+    - true
+    - '2015-05-18'
+    - 
+  - - 3
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15002
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - With Regards
+    - 'On the captioned subject we are pleased to introduce ourselves as service provider
+      in the field of Generator on monthly rent basis. It is for your kind consideration
+      that we are providing the generator sets on monthly rent basis to the banks
+      and other Govt. offices. We have proper infrastructure and staff to serve best
+      to our customers. At present we proudly declare that we are serving many branches
+      of :'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this letter, we are offering our services to bank. Our monthly rent
+      is quoted as:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - We shall increase 10% after two years. The rent will include repairs & maintenances
+      and the cost of diesel. Space will be provided by you. Our generator sets will
+      be soundproof & automatic. We shall install only the branded generator sets.
+      If you want higher capacity generator then we may fulfill your demand. Above
+      rates are for all seasons.
+    - We hope you will consider our application and give an opportunity to serve your
+      bank. We ensure you of our best service.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Dated : 09/06/2015'
+    - 3
+    - 2
+    - '2015-05-15 08:40:22.638638'
+    - '2015-05-15 09:58:25.238879'
+    - true
+    - '2015-05-15'
+    - 
+  - - 4
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15003
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - With Regards
+    - 'On the captioned subject we are pleased to introduce ourselves as service provider
+      in the field of Generator on monthly rent basis. It is for your kind consideration
+      that we are providing the generator sets on monthly rent basis to the banks
+      and other Govt. offices. We have proper infrastructure and staff to serve best
+      to our customers. At present we proudly declare that we are serving many branches
+      of :'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this letter, we are offering our services to bank. Our monthly rent
+      is quoted as:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - We shall increase 10% after two years. The rent will include repairs & maintenances
+      and the cost of diesel. Space will be provided by you. Our generator sets will
+      be soundproof & automatic. We shall install only the branded generator sets.
+      If you want higher capacity generator then we may fulfill your demand. Above
+      rates are for all seasons.
+    - We hope you will consider our application and give an opportunity to serve your
+      bank. We ensure you of our best service.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Dated : 09/06/2015'
+    - 6
+    - 2
+    - '2015-05-18 12:38:55.536071'
+    - '2015-05-18 12:38:55.536071'
+    - false
+    - 
+    - 
+  - - 5
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15004
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - With Regards
+    - 'On the captioned subject we are pleased to introduce ourselves as service provider
+      in the field of Generator on monthly rent basis. It is for your kind consideration
+      that we are providing the generator sets on monthly rent basis to the banks
+      and other Govt. offices. We have proper infrastructure and staff to serve best
+      to our customers. At present we proudly declare that we are serving many branches
+      of :'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this letter, we are offering our services to bank. Our monthly rent
+      is quoted as:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - We shall increase 10% after two years. The rent will include repairs & maintenances
+      and the cost of diesel. Space will be provided by you. Our generator sets will
+      be soundproof & automatic. We shall install only the branded generator sets.
+      If you want higher capacity generator then we may fulfill your demand. Above
+      rates are for all seasons.
+    - We hope you will consider our application and give an opportunity to serve your
+      bank. We ensure you of our best service.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Dated : 09/06/2015'
+    - 7
+    - 2
+    - '2015-05-18 12:53:56.474542'
+    - '2015-05-18 12:53:56.474542'
+    - false
+    - 
+    - 
+  - - 6
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15005
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - With Regards
+    - 'On the captioned subject we are pleased to introduce ourselves as service provider
+      in the field of Generator on monthly rent basis. It is for your kind consideration
+      that we are providing the generator sets on monthly rent basis to the banks
+      and other Govt. offices. We have proper infrastructure and staff to serve best
+      to our customers. At present we proudly declare that we are serving many branches
+      of :'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this letter, we are offering our services to bank. Our monthly rent
+      is quoted as:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - We shall increase 10% after two years. The rent will include repairs & maintenances
+      and the cost of diesel. Space will be provided by you. Our generator sets will
+      be soundproof & automatic. We shall install only the branded generator sets.
+      If you want higher capacity generator then we may fulfill your demand. Above
+      rates are for all seasons.
+    - We hope you will consider our application and give an opportunity to serve your
+      bank. We ensure you of our best service.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Dated : 09/06/2015'
+    - 8
+    - 2
+    - '2015-05-19 07:32:10.473513'
+    - '2015-05-19 07:32:10.473513'
+    - false
+    - 
+    - 
+  - - 7
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15006
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - With Regards
+    - 'On the captioned subject we are pleased to introduce ourselves as service provider
+      in the field of Generator on monthly rent basis. It is for your kind consideration
+      that we are providing the generator sets on monthly rent basis to the banks
+      and other Govt. offices. We have proper infrastructure and staff to serve best
+      to our customers. At present we proudly declare that we are serving many branches
+      of :'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this letter, we are offering our services to bank. Our monthly rent
+      is quoted as:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - We shall increase 10% after two years. The rent will include repairs & maintenances
+      and the cost of diesel. Space will be provided by you. Our generator sets will
+      be soundproof & automatic. We shall install only the branded generator sets.
+      If you want higher capacity generator then we may fulfill your demand. Above
+      rates are for all seasons.
+    - We hope you will consider our application and give an opportunity to serve your
+      bank. We ensure you of our best service.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Dated : 09/06/2015'
+    - 9
+    - 2
+    - '2015-05-19 15:05:21.566535'
+    - '2015-05-19 15:05:21.566535'
+    - false
+    - 
+    - 
+  - - 8
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15007
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - With Regards
+    - 'On the captioned subject we are pleased to introduce ourselves as service provider
+      in the field of Generator on monthly rent basis. It is for your kind consideration
+      that we are providing the generator sets on monthly rent basis to the banks
+      and other Govt. offices. We have proper infrastructure and staff to serve best
+      to our customers. At present we proudly declare that we are serving many branches
+      of :'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this letter, we are offering our services to bank. Our monthly rent
+      is quoted as:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - We shall increase 10% after two years. The rent will include repairs & maintenances
+      and the cost of diesel. Space will be provided by you. Our generator sets will
+      be soundproof & automatic. We shall install only the branded generator sets.
+      If you want higher capacity generator then we may fulfill your demand. Above
+      rates are for all seasons.
+    - We hope you will consider our application and give an opportunity to serve your
+      bank. We ensure you of our best service.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Dated : 09/06/2015'
+    - 10
+    - 2
+    - '2015-05-19 17:30:20.210135'
+    - '2015-05-19 17:30:20.210135'
+    - false
+    - 
+    - 
+  - - 9
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15008
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - With Regards
+    - 'On the captioned subject we are pleased to introduce ourselves as service provider
+      in the field of Generator on monthly rent basis. It is for your kind consideration
+      that we are providing the generator sets on monthly rent basis to the banks
+      and other Govt. offices. We have proper infrastructure and staff to serve best
+      to our customers. At present we proudly declare that we are serving many branches
+      of :'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this letter, we are offering our services to bank. Our monthly rent
+      is quoted as:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - We shall increase 10% after two years. The rent will include repairs & maintenances
+      and the cost of diesel. Space will be provided by you. Our generator sets will
+      be soundproof & automatic. We shall install only the branded generator sets.
+      If you want higher capacity generator then we may fulfill your demand. Above
+      rates are for all seasons.
+    - We hope you will consider our application and give an opportunity to serve your
+      bank. We ensure you of our best service.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Dated : 09/06/2015'
+    - 11
+    - 2
+    - '2015-05-20 06:24:13.170904'
+    - '2015-05-20 06:24:13.170904'
+    - false
+    - 
+    - 
+  - - 10
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15009
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - With Regards
+    - 'On the captioned subject we are pleased to introduce ourselves as service provider
+      in the field of Generator on monthly rent basis. It is for your kind consideration
+      that we are providing the generator sets on monthly rent basis to the banks
+      and other Govt. offices. We have proper infrastructure and staff to serve best
+      to our customers. At present we proudly declare that we are serving many branches
+      of :'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this letter, we are offering our services to bank. Our monthly rent
+      is quoted as:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - We shall increase 10% after two years. The rent will include repairs & maintenances
+      and the cost of diesel. Space will be provided by you. Our generator sets will
+      be soundproof & automatic. We shall install only the branded generator sets.
+      If you want higher capacity generator then we may fulfill your demand. Above
+      rates are for all seasons.
+    - We hope you will consider our application and give an opportunity to serve your
+      bank. We ensure you of our best service.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Dated : 09/06/2015'
+    - 12
+    - 2
+    - '2015-05-20 08:55:37.088873'
+    - '2015-05-20 08:55:37.088873'
+    - false
+    - 
+    - 
+  - - 11
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15010
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - With Regards
+    - 'On the captioned subject we are pleased to introduce ourselves as service provider
+      in the field of Generator on monthly rent basis. It is for your kind consideration
+      that we are providing the generator sets on monthly rent basis to the banks
+      and other Govt. offices. We have proper infrastructure and staff to serve best
+      to our customers. At present we proudly declare that we are serving many branches
+      of :'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this letter, we are offering our services to bank. Our monthly rent
+      is quoted as:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - We shall increase 10% after two years. The rent will include repairs & maintenances
+      and the cost of diesel. Space will be provided by you. Our generator sets will
+      be soundproof & automatic. We shall install only the branded generator sets.
+      If you want higher capacity generator then we may fulfill your demand. Above
+      rates are for all seasons.
+    - We hope you will consider our application and give an opportunity to serve your
+      bank. We ensure you of our best service.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Dated : 09/06/2015'
+    - 13
+    - 2
+    - '2015-05-20 10:41:48.442897'
+    - '2015-05-20 10:41:48.442897'
+    - false
+    - 
+    - 
+  - - 12
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15011
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - With Regards
+    - 'On the captioned subject we are pleased to introduce ourselves as service provider
+      in the field of Generator on monthly rent basis. It is for your kind consideration
+      that we are providing the generator sets on monthly rent basis to the banks
+      and other Govt. offices. We have proper infrastructure and staff to serve best
+      to our customers. At present we proudly declare that we are serving many branches
+      of :'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this letter, we are offering our services to bank. Our monthly rent
+      is quoted as:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - We shall increase 10% after two years. The rent will include repairs & maintenances
+      and the cost of diesel. Space will be provided by you. Our generator sets will
+      be soundproof & automatic. We shall install only the branded generator sets.
+      If you want higher capacity generator then we may fulfill your demand. Above
+      rates are for all seasons.
+    - We hope you will consider our application and give an opportunity to serve your
+      bank. We ensure you of our best service.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Dated : 09/06/2015'
+    - 14
+    - 2
+    - '2015-05-21 10:06:51.287811'
+    - '2015-05-21 10:06:51.287811'
+    - false
+    - 
+    - 
+  - - 13
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15012
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - With Regards
+    - 'On the captioned subject we are pleased to introduce ourselves as service provider
+      in the field of Generator on monthly rent basis. It is for your kind consideration
+      that we are providing the generator sets on monthly rent basis to the banks
+      and other Govt. offices. We have proper infrastructure and staff to serve best
+      to our customers. At present we proudly declare that we are serving many branches
+      of :'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this letter, we are offering our services to bank. Our monthly rent
+      is quoted as:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - We shall increase 10% after two years. The rent will include repairs & maintenances
+      and the cost of diesel. Space will be provided by you. Our generator sets will
+      be soundproof & automatic. We shall install only the branded generator sets.
+      If you want higher capacity generator then we may fulfill your demand. Above
+      rates are for all seasons.
+    - We hope you will consider our application and give an opportunity to serve your
+      bank. We ensure you of our best service.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Dated : 09/06/2015'
+    - 15
+    - 2
+    - '2015-05-21 10:11:52.692416'
+    - '2015-05-21 10:11:52.692416'
+    - false
+    - 
+    - 
+  - - 14
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15013
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - With Regards
+    - 'On the captioned subject we are pleased to introduce ourselves as service provider
+      in the field of Generator on monthly rent basis. It is for your kind consideration
+      that we are providing the generator sets on monthly rent basis to the banks
+      and other Govt. offices. We have proper infrastructure and staff to serve best
+      to our customers. At present we proudly declare that we are serving many branches
+      of :'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this letter, we are offering our services to bank. Our monthly rent
+      is quoted as:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - We shall increase 10% after two years. The rent will include repairs & maintenances
+      and the cost of diesel. Space will be provided by you. Our generator sets will
+      be soundproof & automatic. We shall install only the branded generator sets.
+      If you want higher capacity generator then we may fulfill your demand. Above
+      rates are for all seasons.
+    - We hope you will consider our application and give an opportunity to serve your
+      bank. We ensure you of our best service.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Dated : 09/06/2015'
+    - 16
+    - 2
+    - '2015-05-21 10:13:53.413846'
+    - '2015-05-21 10:13:53.413846'
+    - false
+    - 
+    - 
+  - - 15
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15014
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - With Regards
+    - 'On the captioned subject we are pleased to introduce ourselves as service provider
+      in the field of Generator on monthly rent basis. It is for your kind consideration
+      that we are providing the generator sets on monthly rent basis to the banks
+      and other Govt. offices. We have proper infrastructure and staff to serve best
+      to our customers. At present we proudly declare that we are serving many branches
+      of :'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this letter, we are offering our services to bank. Our monthly rent
+      is quoted as:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - We shall increase 10% after two years. The rent will include repairs & maintenances
+      and the cost of diesel. Space will be provided by you. Our generator sets will
+      be soundproof & automatic. We shall install only the branded generator sets.
+      If you want higher capacity generator then we may fulfill your demand. Above
+      rates are for all seasons.
+    - We hope you will consider our application and give an opportunity to serve your
+      bank. We ensure you of our best service.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Dated : 09/06/2015'
+    - 17
+    - 2
+    - '2015-05-21 11:56:31.211666'
+    - '2015-05-21 11:56:31.211666'
+    - false
+    - 
+    - 
+  - - 16
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15015
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - With Regards
+    - 'On the captioned subject we are pleased to introduce ourselves as service provider
+      in the field of Generator on monthly rent basis. It is for your kind consideration
+      that we are providing the generator sets on monthly rent basis to the banks
+      and other Govt. offices. We have proper infrastructure and staff to serve best
+      to our customers. At present we proudly declare that we are serving many branches
+      of :'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this letter, we are offering our services to bank. Our monthly rent
+      is quoted as:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - We shall increase 10% after two years. The rent will include repairs & maintenances
+      and the cost of diesel. Space will be provided by you. Our generator sets will
+      be soundproof & automatic. We shall install only the branded generator sets.
+      If you want higher capacity generator then we may fulfill your demand. Above
+      rates are for all seasons.
+    - We hope you will consider our application and give an opportunity to serve your
+      bank. We ensure you of our best service.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Dated : 09/06/2015'
+    - 19
+    - 2
+    - '2015-05-21 13:14:21.329732'
+    - '2015-05-21 13:14:21.329732'
+    - false
+    - 
+    - 
+  - - 17
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15016
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - With Regards
+    - 'On the captioned subject we are pleased to introduce ourselves as service provider
+      in the field of Generator on monthly rent basis. It is for your kind consideration
+      that we are providing the generator sets on monthly rent basis to the banks
+      and other Govt. offices. We have proper infrastructure and staff to serve best
+      to our customers. At present we proudly declare that we are serving many branches
+      of :'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this letter, we are offering our services to bank. Our monthly rent
+      is quoted as:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - We shall increase 10% after two years. The rent will include repairs & maintenances
+      and the cost of diesel. Space will be provided by you. Our generator sets will
+      be soundproof & automatic. We shall install only the branded generator sets.
+      If you want higher capacity generator then we may fulfill your demand. Above
+      rates are for all seasons.
+    - We hope you will consider our application and give an opportunity to serve your
+      bank. We ensure you of our best service.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Dated : 09/06/2015'
+    - 20
+    - 2
+    - '2015-05-22 09:51:39.493278'
+    - '2015-05-22 09:51:39.493278'
+    - false
+    - 
+    - 
+  - - 18
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15017
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - With Regards
+    - 'On the captioned subject we are pleased to introduce ourselves as service provider
+      in the field of Generator on monthly rent basis. It is for your kind consideration
+      that we are providing the generator sets on monthly rent basis to the banks
+      and other Govt. offices. We have proper infrastructure and staff to serve best
+      to our customers. At present we proudly declare that we are serving many branches
+      of :'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this letter, we are offering our services to bank. Our monthly rent
+      is quoted as:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - We shall increase 10% after two years. The rent will include repairs & maintenances
+      and the cost of diesel. Space will be provided by you. Our generator sets will
+      be soundproof & automatic. We shall install only the branded generator sets.
+      If you want higher capacity generator then we may fulfill your demand. Above
+      rates are for all seasons.
+    - We hope you will consider our application and give an opportunity to serve your
+      bank. We ensure you of our best service.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Dated : 09/06/2015'
+    - 25
+    - 2
+    - '2015-06-06 07:34:49.076250'
+    - '2015-06-06 07:34:49.076250'
+    - false
+    - 
+    - 
+  - - 19
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15018
+    - sadasd
+    - 'Date: 2015-dsfasd06-09'
+    - 'On the captioned subject we are pleased to introduce ourselves as service provider
+      in the field of Generator on monthly rent basis. It is for your kind consideration
+      that we are providing the generator sets on monthly rent basis to the banks
+      and other Govt. offices. We have proper infrastructure and staff to serve best
+      to our customers. At present we proudly declare that we are serving many branches
+      of :'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this letter, we are offering our services to bank. Our monthly rent
+      is quoted as:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - We shall increase 10% after two years. The rent will include repairs & maintenances
+      and the cost of diesel. Space will be provided by you. Our generator sets will
+      be soundproof & automatic. We shall install only the branded generator sets.
+      If you want higher capacity generator then we may fulfill your demand. Above
+      rates are for all seasons.
+    - We hope you will consider our application and give an opportunity to serve your
+      bank. We ensure you of our best service.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-095"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Date: 2015-dsfasd06-09'
+    - 26
+    - 2
+    - '2015-06-07 19:34:58.417089'
+    - '2015-06-09 11:52:38.459619'
+    - false
+    - 
+    - 
+  - - 20
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15019
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - Madam / sir
+    - 'We are involved in the business of providing automatic generator sets on monthly
+      rental basis to Government as well as private sector banks. We have proper infrastructure
+      and well trained staff to offer quality services to customers. At present, we
+      are proudly serving several esteemed brands of banking sector such as:'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this business proposal, we are offering following generator sets at
+      their corresponding monthly rent for your branch:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - " Above mentioned rates are valid for all seasons.<br/><br/>\n                                            <div
+      class='closing-part'>                                                                     \n
+      \                                             We install only branded generator
+      sets that are soundproof and automatic. Kindly let us know in case you have
+      demand for higher capacity generator    set. We will fulfil your all requirements.<br/><br/></div>
+      \                         \n                                              <div
+      class='terms-conditions-heading'>Terms and Conditions</div>\n                                              <ul
+      class='terms-conditions'>                                                                  \n
+      \                                               <li>Rent will be increased 10%
+      after every two years.</li>            \n                                                <li>Rent
+      will cover diesel, repair and maintenances costs.</li>       \n                                                <li>Space
+      for installation of generator set will be provided by customer. </li>\n                                              </ul>"
+    - We hope you will consider our application and give us an opportunity to serve
+      your bank.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Dated : 09/06/2015'
+    - 28
+    - 2
+    - '2015-06-17 16:37:52.180623'
+    - '2015-06-17 16:37:52.180623'
+    - false
+    - 
+    - 
+  - - 21
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15020
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - Madam / sir
+    - 'We are involved in the business of providing automatic generator sets on monthly
+      rental basis to Government as well as private sector banks. We have proper infrastructure
+      and well trained staff to offer quality services to customers. At present, we
+      are proudly serving several esteemed brands of banking sector such as:'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this business proposal, we are offering following generator sets at
+      their corresponding monthly rent for your branch:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - " Above mentioned rates are valid for all seasons.<br/><br/>\n                                            <div
+      class='closing-part'>                                                                     \n
+      \                                             We install only branded generator
+      sets that are soundproof and automatic. Kindly let us know in case you have
+      demand for higher capacity generator    set. We will fulfil your all requirements.<br/><br/></div>
+      \                         \n                                              <div
+      class='terms-conditions-heading'>Terms and Conditions</div>\n                                              <ul
+      class='terms-conditions'>                                                                  \n
+      \                                               <li>Rent will be increased 10%
+      after every two years.</li>            \n                                                <li>Rent
+      will cover diesel, repair and maintenances costs.</li>       \n                                                <li>Space
+      for installation of generator set will be provided by customer. </li>\n                                              </ul>"
+    - We hope you will consider our application and give us an opportunity to serve
+      your bank.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Dated : 09/06/2015'
+    - 29
+    - 2
+    - '2015-06-19 07:00:16.267362'
+    - '2015-06-19 07:00:16.267362'
+    - false
+    - 
+    - 
+  - - 22
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15021
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - Madam / sir
+    - 'We are involved in the business of providing automatic generator sets on monthly
+      rental basis to Government as well as private sector banks. We have proper infrastructure
+      and well trained staff to offer quality services to customers. At present, we
+      are proudly serving several esteemed brands of banking sector such as:'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this business proposal, we are offering following generator sets at
+      their corresponding monthly rent for your branch:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - " Above mentioned rates are valid for all seasons.<br/><br/>\n                                            <div
+      class='closing-part'>                                                                     \n
+      \                                             We install only branded generator
+      sets that are soundproof and automatic. Kindly let us know in case you have
+      demand for higher capacity generator    set. We will fulfil your all requirements.<br/><br/></div>
+      \                         \n                                              <div
+      class='terms-conditions-heading'>Terms and Conditions</div>\n                                              <ul
+      class='terms-conditions'>                                                                  \n
+      \                                               <li>Rent will be increased 10%
+      after every two years.</li>            \n                                                <li>Rent
+      will cover diesel, repair and maintenances costs.</li>       \n                                                <li>Space
+      for installation of generator set will be provided by customer. </li>\n                                              </ul>"
+    - We hope you will consider our application and give us an opportunity to serve
+      your bank.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Dated : 09/06/2015'
+    - 30
+    - 2
+    - '2015-06-19 08:51:34.158046'
+    - '2015-06-19 08:51:34.158046'
+    - false
+    - 
+    - 
+  - - 23
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15022
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - Madam / sir
+    - 'We are involved in the business of providing automatic generator sets on monthly
+      rental basis to Government as well as private sector banks. We have proper infrastructure
+      and well trained staff to offer quality services to customers. At present, we
+      are proudly serving several esteemed brands of banking sector such as:'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this business proposal, we are offering following generator sets at
+      their corresponding monthly rent for your branch:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - " Above mentioned rates are valid for all seasons.<br/><br/>\n                                            <div
+      class='closing-part'>                                                                     \n
+      \                                             We install only branded generator
+      sets that are soundproof and automatic. Kindly let us know in case you have
+      demand for higher capacity generator    set. We will fulfil your all requirements.<br/><br/></div>
+      \                         \n                                              <div
+      class='terms-conditions-heading'>Terms and Conditions</div>\n                                              <ul
+      class='terms-conditions'>                                                                  \n
+      \                                               <li>Rent will be increased 10%
+      after every two years.</li>            \n                                                <li>Rent
+      will cover diesel, repair and maintenances costs.</li>       \n                                                <li>Space
+      for installation of generator set will be provided by customer. </li>\n                                              </ul>"
+    - We hope you will consider our application and give us an opportunity to serve
+      your bank.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Dated : 09/06/2015'
+    - 31
+    - 2
+    - '2015-06-21 09:21:57.155194'
+    - '2015-06-21 09:21:57.155194'
+    - false
+    - 
+    - 
+  - - 24
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15023
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - Madam / sir
+    - 'We are involved in the business of providing automatic generator sets on monthly
+      rental basis to Government as well as private sector banks. We have proper infrastructure
+      and well trained staff to offer quality services to customers. At present, we
+      are proudly serving several esteemed brands of banking sector such as:'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this business proposal, we are offering following generator sets at
+      their corresponding monthly rent for your branch:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - " Above mentioned rates are valid for all seasons.<br/><br/>\n                                            <div
+      class='closing-part'>                                                                     \n
+      \                                             We install only branded generator
+      sets that are soundproof and automatic. Kindly let us know in case you have
+      demand for higher capacity generator    set. We will fulfil your all requirements.<br/><br/></div>
+      \                         \n                                              <div
+      class='terms-conditions-heading'>Terms and Conditions</div>\n                                              <ul
+      class='terms-conditions'>                                                                  \n
+      \                                               <li>Rent will be increased 10%
+      after every two years.</li>            \n                                                <li>Rent
+      will cover diesel, repair and maintenances costs.</li>       \n                                                <li>Space
+      for installation of generator set will be provided by customer. </li>\n                                              </ul>"
+    - We hope you will consider our application and give us an opportunity to serve
+      your bank.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Dated : 09/06/2015'
+    - 32
+    - 2
+    - '2015-06-21 12:48:02.545384'
+    - '2015-06-21 12:48:02.545384'
+    - false
+    - 
+    - 
+  - - 25
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15024
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - Madam / sir
+    - 'We are involved in the business of providing automatic generator sets on monthly
+      rental basis to Government as well as private sector banks. We have proper infrastructure
+      and well trained staff to offer quality services to customers. At present, we
+      are proudly serving several esteemed brands of banking sector such as:'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this business proposal, we are offering following generator sets at
+      their corresponding monthly rent for your branch:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - " Above mentioned rates are valid for all seasons.<br/><br/>\n                                            <div
+      class='closing-part'>                                                                     \n
+      \                                             We install only branded generator
+      sets that are soundproof and automatic. Kindly let us know in case you have
+      demand for higher capacity generator    set. We will fulfil your all requirements.<br/><br/></div>
+      \                         \n                                              <div
+      class='terms-conditions-heading'>Terms and Conditions</div>\n                                              <ul
+      class='terms-conditions'>                                                                  \n
+      \                                               <li>Rent will be increased 10%
+      after every two years.</li>            \n                                                <li>Rent
+      will cover diesel, repair and maintenances costs.</li>       \n                                                <li>Space
+      for installation of generator set will be provided by customer. </li>\n                                              </ul>"
+    - We hope you will consider our application and give us an opportunity to serve
+      your bank.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Dated : 09/06/2015'
+    - 33
+    - 2
+    - '2015-06-22 02:42:32.740508'
+    - '2015-06-22 02:42:32.740508'
+    - false
+    - 
+    - 
+  - - 26
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15025
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - Madam / sir
+    - 'We are involved in the business of providing automatic generator sets on monthly
+      rental basis to Government as well as private sector banks. We have proper infrastructure
+      and well trained staff to offer quality services to customers. At present, we
+      are proudly serving several esteemed brands of banking sector such as:'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this business proposal, we are offering following generator sets at
+      their corresponding monthly rent for your branch:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - " Above mentioned rates are valid for all seasons.\n                                            "
+    - We hope you will consider our application and give us an opportunity to serve
+      your bank.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Date: 2015-06-26 17:29:55 UTC'
+    - 35
+    - 2
+    - '2015-06-22 05:15:53.573788'
+    - '2015-06-22 19:21:03.524549'
+    - true
+    - '2015-06-23'
+    - 
+  - - 27
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15026
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - Madam / sir
+    - 'We are involved in the business of providing automatic generator sets on monthly
+      rental basis to Government as well as private sector banks. We have proper infrastructure
+      and well trained staff to offer quality services to customers. At present, we
+      are proudly serving several esteemed brands of banking sector such as:'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this business proposal, we are offering following generator sets at
+      their corresponding monthly rent for your branch:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - " Above mentioned rates are valid for all seasons.<br/><br/>\n                                            <div
+      class='closing-part'>                                                                     \n
+      \                                             We install only branded generator
+      sets that are soundproof and automatic. Kindly let us know in case you have
+      demand for higher capacity generator    set. We will fulfil your all requirements.<br/><br/></div>
+      \                         \n                                              <div
+      class='terms-conditions-heading'>Terms and Conditions</div>\n                                              <ul
+      class='terms-conditions'>                                                                  \n
+      \                                               <li>Rent will be increased 10%
+      after every two years.</li>            \n                                                <li>Rent
+      will cover diesel, repair and maintenances costs.</li>       \n                                                <li>Space
+      for installation of generator set will be provided by customer. </li>\n                                              </ul>"
+    - We hope you will consider our application and give us an opportunity to serve
+      your bank.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Dated : 09/06/2015'
+    - 36
+    - 2
+    - '2015-06-22 17:52:27.027109'
+    - '2015-06-22 17:52:51.741899'
+    - true
+    - '2015-06-22'
+    - 
+  - - 28
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15027
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - Madam / sir
+    - 'We are involved in the business of providing automatic generator sets on monthly
+      rental basis to Government as well as private sector banks. We have proper infrastructure
+      and well trained staff to offer quality services to customers. At present, we
+      are proudly serving several esteemed brands of banking sector such as:'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this business proposal, we are offering following generator sets at
+      their corresponding monthly rent for your branch:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - " Above mentioned rates are valid for all seasons.\n                                            "
+    - We hope you will consider our application and give us an opportunity to serve
+      your bank.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Date: 2015-06-26'
+    - 35
+    - 2
+    - '2015-06-23 04:38:52.411573'
+    - '2015-06-23 04:38:52.411573'
+    - false
+    - 
+    - 
+  - - 29
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15028
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - Madam / sir
+    - 'We are involved in the business of providing automatic generator sets on monthly
+      rental basis to Government as well as private sector banks. We have proper infrastructure
+      and well trained staff to offer quality services to customers. At present, we
+      are proudly serving several esteemed brands of banking sector such as:'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this business proposal, we are offering following generator sets at
+      their corresponding monthly rent for your branch:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - " Above mentioned rates are valid for all seasons.\n                                            "
+    - We hope you will consider our application and give us an opportunity to serve
+      your bank.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Date: 2015-06-26'
+    - 35
+    - 2
+    - '2015-06-23 04:39:01.937905'
+    - '2015-06-23 04:39:01.937905'
+    - false
+    - 
+    - 
+  - - 30
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15029
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - Madam / sir
+    - 'We are involved in the business of providing automatic generator sets on monthly
+      rental basis to Government as well as private sector banks. We have proper infrastructure
+      and well trained staff to offer quality services to customers. At present, we
+      are proudly serving several esteemed brands of banking sector such as:'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this business proposal, we are offering following generator sets at
+      their corresponding monthly rent for your branch:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - " Above mentioned rates are valid for all seasons.\n                                            "
+    - We hope you will consider our application and give us an opportunity to serve
+      your bank.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Date: 2015-06-26'
+    - 35
+    - 2
+    - '2015-06-23 04:40:05.804411'
+    - '2015-06-23 04:40:05.804411'
+    - false
+    - 
+    - 
+  - - 31
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15030
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - Madam / sir
+    - 'We are involved in the business of providing automatic generator sets on monthly
+      rental basis to Government as well as private sector banks. We have proper infrastructure
+      and well trained staff to offer quality services to customers. At present, we
+      are proudly serving several esteemed brands of banking sector such as:'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this business proposal, we are offering following generator sets at
+      their corresponding monthly rent for your branch:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - " Above mentioned rates are valid for all seasons.\n                                            "
+    - We hope you will consider our application and give us an opportunity to serve
+      your bank.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Date: Date: 09/06/201'
+    - 36
+    - 2
+    - '2015-06-23 04:40:35.643818'
+    - '2015-06-23 04:50:13.965513'
+    - false
+    - 
+    - 
+  - - 32
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15031
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - Madam / sir
+    - 'We are involved in the business of providing automatic generator sets on monthly
+      rental basis to Government as well as private sector banks. We have proper infrastructure
+      and well trained staff to offer quality services to customers. At present, we
+      are proudly serving several esteemed brands of banking sector such as:'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this business proposal, we are offering following generator sets at
+      their corresponding monthly rent for your branch:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - " Above mentioned rates are valid for all seasons.\n                                            "
+    - We hope you will consider our application and give us an opportunity to serve
+      your bank.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Date: Dated : 09/06/215'
+    - 36
+    - 2
+    - '2015-06-23 04:41:04.720683'
+    - '2015-06-23 04:41:04.720683'
+    - false
+    - 
+    - 
+  - - 33
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15032
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - Madam / sir
+    - 'We are involved in the business of providing automatic generator sets on monthly
+      rental basis to Government as well as private sector banks. We have proper infrastructure
+      and well trained staff to offer quality services to customers. At present, we
+      are proudly serving several esteemed brands of banking sector such as:'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this business proposal, we are offering following generator sets at
+      their corresponding monthly rent for your branch:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - " Above mentioned rates are valid for all seasons.<br/><br/>\n                                            <div
+      class='closing-part'>                                                                     \n
+      \                                             We install only branded generator
+      sets that are soundproof and automatic. Kindly let us know in case you have
+      demand for higher capacity generator    set. We will fulfil your all requirements.<br/><br/></div>
+      \                         \n                                              <div
+      class='terms-conditions-heading'>Terms and Conditions</div>\n                                              <ul
+      class='terms-conditions'>                                                                  \n
+      \                                               <li>Rent will be increased 10%
+      after every two years.</li>            \n                                                <li>Rent
+      will cover diesel, repair and maintenances costs.</li>       \n                                                <li>Space
+      for installation of generator set will be provided by customer. </li>\n                                              </ul>"
+    - We hope you will consider our application and give us an opportunity to serve
+      your bank.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Dated : 09/06/2015'
+    - 38
+    - 2
+    - '2015-06-24 04:32:07.666051'
+    - '2015-06-24 07:04:12.346383'
+    - true
+    - '2015-06-24'
+    - 
+  - - 34
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AE15033
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - Madam / sir
+    - 'We are involved in the business of providing automatic generator sets on monthly
+      rental basis to Government as well as private sector banks. We have proper infrastructure
+      and well trained staff to offer quality services to customers. At present, we
+      are proudly serving several esteemed brands of banking sector such as:'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this business proposal, we are offering following generator sets at
+      their corresponding monthly rent for your branch:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Kva</li>"
+    - " Above mentioned rates are valid for all seasons.<br/><br/>\n                                            <div
+      class='closing-part'>                                                                     \n
+      \                                             We install only branded generator
+      sets that are soundproof and automatic. Kindly let us know in case you have
+      demand for higher capacity generator    set. We will fulfil your all requirements.<br/><br/></div>
+      \                         \n                                              <div
+      class='terms-conditions-heading'>Terms and Conditions</div>\n                                              <ul
+      class='terms-conditions'>                                                                  \n
+      \                                               <li>Rent will be increased 10%
+      after every two years.</li>            \n                                                <li>Rent
+      will cover diesel, repair and maintenances costs.</li>       \n                                                <li>Space
+      for installation of generator set will be provided by customer. </li>\n                                              </ul>"
+    - We hope you will consider our application and give us an opportunity to serve
+      your bank.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Dated : 09/06/2015'
+    - 39
+    - 2
+    - '2015-06-24 05:31:39.374776'
+    - '2015-06-24 13:13:49.208525'
+    - true
+    - '2015-06-24'
+    - 
+
+---
+sender_details:
+  columns:
+  - id
+  - name
+  - emailID
+  - address
+  - contactNo
+  - signature_file_name
+  - signature_content_type
+  - signature_file_size
+  - signature_updated_at
+  - created_at
+  - updated_at
+  - quotationType
+  records: 
+  - - 2
+    - BOngo
+    - vigadeep@gmail.com
+    - '12'
+    - 9897871243
+    - IMG_20150309_143033.jpg
+    - image/jpeg
+    - 971911
+    - '2015-04-20 07:48:06.275213'
+    - '2015-04-20 07:48:07.086448'
+    - '2015-06-22 17:50:00.589512'
+    - Real
+  - - 3
+    - Fake Quotation Man
+    - bongo@techgeek.co.in
+    - '112'
+    - 9876544432
+    - cropped-copy-copy-cropped-colouredOnTransparent-e13803531599171.png
+    - image/png
+    - 4742
+    - '2015-05-15 08:42:54.656308'
+    - '2015-05-15 08:42:54.729194'
+    - '2015-05-15 08:42:54.729194'
+    - Fake
+  - - 4
+    - Test Man
+    - vigasdeep@gmail.com
+    - '11'
+    - 918231121
+    - 1091120_673119522718367_154990999_o.png
+    - image/png
+    - 11014
+    - '2015-05-17 21:13:25.201699'
+    - '2015-05-17 21:13:25.356819'
+    - '2015-05-17 21:13:25.356819'
+    - Fake
+
+---
+gaurd_details:
+  columns:
+  - id
+  - name
+  - address
+  - contactNo
+  - created_at
+  - updated_at
+  - monthlySalary
+  records: 
+  - - 1
+    - BS SING
+    - 
+    - 9912233412
+    - '2015-05-18 07:09:04.655507'
+    - '2015-05-18 07:09:04.655507'
+    - 10000
+  - - 2
+    - BS SING
+    - 
+    - 9912233412
+    - '2015-05-18 07:17:52.026578'
+    - '2015-05-18 07:17:52.026578'
+    - 10000
+  - - 3
+    - BS SING
+    - 
+    - 9912233412
+    - '2015-05-18 07:22:08.419208'
+    - '2015-05-18 07:22:08.419208'
+    - 10000
+  - - 4
+    - BS SING
+    - 
+    - 9912233412
+    - '2015-05-18 07:23:15.368665'
+    - '2015-05-18 07:23:15.368665'
+    - 10000
+  - - 5
+    - BS SING
+    - 
+    - 9912233412
+    - '2015-05-18 07:23:57.873328'
+    - '2015-05-18 07:23:57.873328'
+    - 10000
+  - - 6
+    - BAnta Singh
+    - 
+    - 9912233412
+    - '2015-05-18 12:34:32.092041'
+    - '2015-05-18 12:34:32.092041'
+    - 10000
+  - - 7
+    - BAnta Singh
+    - 
+    - 9912233412
+    - '2015-05-18 12:40:52.233184'
+    - '2015-05-18 12:40:52.233184'
+    - 30000
+  - - 8
+    - BAnta Singh
+    - 
+    - 9912233412
+    - '2015-05-18 12:54:28.775061'
+    - '2015-05-18 12:54:28.775061'
+    - 10000
+  - - 9
+    - BAnta Singh
+    - 
+    - 9912233412
+    - '2015-05-19 07:37:02.810328'
+    - '2015-05-19 07:37:02.810328'
+    - 10000
+  - - 10
+    - BSMOGNA
+    - 
+    - 897892311
+    - '2015-05-19 16:49:13.854411'
+    - '2015-05-19 16:49:13.854411'
+    - 8000
+  - - 11
+    - BSMOGNA
+    - 
+    - 897892311
+    - '2015-05-19 16:50:31.930310'
+    - '2015-05-19 16:50:31.930310'
+    - 8000
+  - - 12
+    - BSMOGNA
+    - 
+    - 9876543211
+    - '2015-05-19 18:14:56.398075'
+    - '2015-05-19 18:14:56.398075'
+    - 8000
+  - - 13
+    - BAKJDA
+    - 
+    - 98765432111
+    - '2015-05-20 07:09:51.069996'
+    - '2015-05-20 07:09:51.069996'
+    - 98761
+  - - 14
+    - BAKJDA
+    - 
+    - 98765432111
+    - '2015-05-20 07:10:25.512775'
+    - '2015-05-20 07:10:25.512775'
+    - 98761
+  - - 15
+    - BAKJDA
+    - 
+    - 98765432111
+    - '2015-05-20 07:12:35.576427'
+    - '2015-05-20 07:12:35.576427'
+    - 98761
+  - - 16
+    - Third Party Man
+    - 
+    - 8712893792
+    - '2015-05-20 08:56:59.336214'
+    - '2015-05-20 08:56:59.336214'
+    - 7900
+  - - 17
+    - NOMO
+    - 
+    - 876555678
+    - '2015-05-21 08:16:57.276855'
+    - '2015-05-21 08:16:57.276855'
+    - 900001
+  - - 18
+    - BAKJDA
+    - 
+    - 9912233412
+    - '2015-05-21 10:08:34.905906'
+    - '2015-05-21 10:08:34.905906'
+    - 10000
+  - - 19
+    - bongo ji
+    - 
+    - 123231241
+    - '2015-05-21 10:12:27.261560'
+    - '2015-05-21 10:12:27.261560'
+    - 900
+  - - 20
+    - harman
+    - 
+    - 9876543212
+    - '2015-05-21 10:14:43.852592'
+    - '2015-05-21 10:14:43.852592'
+    - 10000
+  - - 21
+    - MY Guard
+    - 
+    - 8934819341
+    - '2015-05-21 11:57:28.136631'
+    - '2015-05-21 11:57:28.136631'
+    - 91000
+  - - 22
+    - Pan Signh Tomar
+    - 
+    - 987654321
+    - '2015-06-09 07:30:20.497831'
+    - '2015-06-09 07:30:20.497831'
+    - 10000
+  - - 23
+    - BSMOGNA
+    - 
+    - 9876543211
+    - '2015-06-17 17:06:18.807181'
+    - '2015-06-17 17:06:18.807181'
+    - 8000
+  - - 24
+    - babes singh
+    - 
+    - 987654321
+    - '2015-06-21 00:04:46.879547'
+    - '2015-06-21 00:04:46.879547'
+    - 8800
+  - - 25
+    - dasdfa
+    - 
+    - 8908978988
+    - '2015-06-21 08:37:03.724634'
+    - '2015-06-21 08:37:03.724634'
+    - 8700
+  - - 26
+    - sdfdsafa
+    - 
+    - 8798789
+    - '2015-06-21 09:22:43.501156'
+    - '2015-06-21 09:22:43.501156'
+    - 4000
+  - - 27
+    - Banna
+    - 
+    - 978979
+    - '2015-06-21 12:59:03.343630'
+    - '2015-06-21 12:59:03.343630'
+    - 7000
+  - - 28
+    - dfasda
+    - 
+    - 97879897
+    - '2015-06-22 06:21:25.725523'
+    - '2015-06-22 06:21:25.725523'
+    - 8500
+  - - 29
+    - baba
+    - 
+    - 87654321
+    - '2015-06-22 12:24:16.630068'
+    - '2015-06-22 12:24:16.630068'
+    - 8100
+  - - 30
+    - Bango
+    - 
+    - 8968789897
+    - '2015-06-23 05:13:14.912929'
+    - '2015-06-23 05:13:14.912929'
+    - 800
+  - - 31
+    - NA
+    - 
+    - 7878917231
+    - '2015-06-25 19:16:30.515362'
+    - '2015-06-25 19:16:30.515362'
+    - 9000
+  - - 32
+    - selfei
+    - 
+    - 1234567890
+    - '2015-07-18 05:47:20.376118'
+    - '2015-07-18 05:47:20.376118'
+    - 10
+  - - 33
+    - '100'
+    - 
+    - 1234567890
+    - '2015-07-18 08:46:58.294854'
+    - '2015-07-18 08:46:58.294854'
+    - 100
+  - - 34
+    - '100'
+    - 
+    - 1234567890
+    - '2015-07-18 09:24:30.881366'
+    - '2015-07-18 09:24:30.881366'
+    - 100
+
+---
+third_party_providers:
+  columns:
+  - id
+  - name
+  - address
+  - contactNo
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - Provider 1
+    - '112'
+    - 9892321123
+    - '2015-05-19 16:04:31.328167'
+    - '2015-05-19 16:04:31.328167'
+
+---
+client_gen_sets:
+  columns:
+  - id
+  - genRent
+  - monthlyTax
+  - quotation_detail_id
+  - client_detail_id
+  - gen_avail_id
+  - gaurd_detail_id
+  - created_at
+  - updated_at
+  - serviceTax
+  - eduTax
+  - third_party_gens_id
+  - approveDate
+  - approveMonth
+  - approveYear
+  - tds
+  records: 
+  - - 20
+    - 1000
+    - 
+    - 20
+    - 28
+    - 
+    - 23
+    - '2015-06-17 17:06:18.830687'
+    - '2015-06-17 17:06:18.830687'
+    - 12
+    - 3
+    - 21
+    - '17'
+    - '6'
+    - '2015'
+    - 10
+  - - 21
+    - 20000
+    - 
+    - 21
+    - 29
+    - 74
+    - 24
+    - '2015-06-21 00:04:46.885564'
+    - '2015-06-21 00:04:46.885564'
+    - 12
+    - 3
+    - 
+    - '21'
+    - '6'
+    - '2015'
+    - 10
+  - - 22
+    - 10000
+    - 
+    - 22
+    - 30
+    - 
+    - 25
+    - '2015-06-21 08:37:03.732752'
+    - '2015-06-21 08:37:03.732752'
+    - 12
+    - 3
+    - 22
+    - '21'
+    - '6'
+    - '2015'
+    - 10
+  - - 23
+    - 2000
+    - 
+    - 23
+    - 31
+    - 
+    - 26
+    - '2015-06-21 09:22:43.509952'
+    - '2015-06-21 09:22:43.509952'
+    - 12
+    - 3
+    - 23
+    - '21'
+    - '6'
+    - '2015'
+    - 10
+  - - 24
+    - 9000
+    - 
+    - 24
+    - 32
+    - 
+    - 27
+    - '2015-06-21 12:59:03.359199'
+    - '2015-06-21 12:59:03.359199'
+    - 12
+    - 3
+    - 24
+    - '21'
+    - '6'
+    - '2015'
+    - 10
+  - - 25
+    - 1000
+    - 
+    - 25
+    - 33
+    - 
+    - 28
+    - '2015-06-22 06:21:25.742041'
+    - '2015-06-22 06:21:25.742041'
+    - 12
+    - 3
+    - 25
+    - '22'
+    - '6'
+    - '2015'
+    - 9
+  - - 26
+    - 20000
+    - 
+    - 26
+    - 35
+    - 75
+    - 29
+    - '2015-06-22 12:24:16.636317'
+    - '2015-06-22 12:24:16.636317'
+    - 12
+    - 3
+    - 
+    - '22'
+    - '6'
+    - '2015'
+    - 9
+  - - 27
+    - 50000
+    - 
+    - 32
+    - 36
+    - 
+    - 30
+    - '2015-06-23 05:13:14.925432'
+    - '2015-06-23 05:13:14.925432'
+    - 12
+    - 3
+    - 26
+    - '23'
+    - '6'
+    - '2015'
+    - 1
+  - - 28
+    - 30000
+    - 
+    - 33
+    - 38
+    - 
+    - 31
+    - '2015-06-25 19:16:30.527366'
+    - '2015-06-25 19:16:30.527366'
+    - 12
+    - 3
+    - 27
+    - '26'
+    - '6'
+    - '2015'
+    - 3
+  - - 29
+    - 10
+    - 
+    - 34
+    - 39
+    - 
+    - 32
+    - '2015-07-18 05:47:20.395098'
+    - '2015-07-18 05:47:20.395098'
+    - 14
+    - 3
+    - 28
+    - '18'
+    - '7'
+    - '2015'
+    - 10
+  - - 30
+    - 100
+    - 
+    - 34
+    - 39
+    - 
+    - 33
+    - '2015-07-18 08:46:58.312313'
+    - '2015-07-18 08:46:58.312313'
+    - 14
+    - 3
+    - 29
+    - '18'
+    - '7'
+    - '2015'
+    - 100
+  - - 31
+    - 100
+    - 
+    - 34
+    - 39
+    - 
+    - 34
+    - '2015-07-18 09:24:30.897333'
+    - '2015-07-18 09:24:30.897333'
+    - 14
+    - 3
+    - 30
+    - '18'
+    - '7'
+    - '2015'
+    - 100
+
+---
+gen_expenses:
+  columns:
+  - id
+  - date
+  - reading
+  - readingBy
+  - batteryStatus
+  - radiatorStatus
+  - dieselCharge
+  - otherExpenses
+  - client_detail_id
+  - created_at
+  - updated_at
+  records: 
+  - - 4
+    - '2015-05-19'
+    - ok
+    - Self
+    - ok
+    - ok
+    - 0
+    - 100
+    - 8
+    - '2015-05-19 08:34:59.733665'
+    - '2015-05-19 08:34:59.733665'
+  - - 6
+    - '2015-05-19'
+    - ok
+    - Self
+    - ok
+    - ok
+    - 100
+    - 100
+    - 8
+    - '2015-05-19 08:43:17.261542'
+    - '2015-05-19 08:43:17.261542'
+  - - 8
+    - '2015-05-19'
+    - ok
+    - Self
+    - ok
+    - ok
+    - 100
+    - 100
+    - 8
+    - '2015-05-19 08:43:54.143582'
+    - '2015-05-19 08:43:54.143582'
+  - - 11
+    - '2015-05-19'
+    - ok
+    - Self
+    - ok
+    - ok
+    - 100
+    - 100
+    - 8
+    - '2015-05-19 08:44:30.342354'
+    - '2015-05-19 08:44:30.342354'
+  - - 12
+    - '2015-05-19'
+    - ok
+    - Telephonic
+    - okn
+    - ok
+    - 100
+    - 100
+    - 8
+    - '2015-05-19 08:44:38.808387'
+    - '2015-05-19 14:33:46.903006'
+  - - 13
+    - '2015-05-19'
+    - ok
+    - Self
+    - ok
+    - ok
+    - 100
+    - 100
+    - 8
+    - '2015-05-19 08:47:23.575511'
+    - '2015-05-19 08:47:23.575511'
+  - - 14
+    - '2015-05-19'
+    - ok
+    - Self
+    - ok
+    - ok
+    - 100
+    - 100
+    - 8
+    - '2015-05-19 08:48:01.048543'
+    - '2015-05-19 08:48:01.048543'
+  - - 15
+    - '2015-05-19'
+    - ok
+    - Self
+    - ok
+    - ok
+    - 100
+    - 100
+    - 8
+    - '2015-05-19 08:48:21.156527'
+    - '2015-05-19 08:48:21.156527'
+  - - 16
+    - '2015-05-19'
+    - ok
+    - Self
+    - ok
+    - ok
+    - 100
+    - 100
+    - 8
+    - '2015-05-19 08:48:32.099838'
+    - '2015-05-19 08:48:32.099838'
+  - - 17
+    - '2015-05-19'
+    - ok
+    - Self
+    - ok
+    - ok
+    - 100
+    - 100
+    - 8
+    - '2015-05-19 08:48:46.194460'
+    - '2015-05-19 08:48:46.194460'
+  - - 18
+    - '2015-05-19'
+    - ok
+    - Self
+    - ok
+    - ok
+    - 100
+    - 100
+    - 8
+    - '2015-05-19 08:48:47.912537'
+    - '2015-05-19 08:48:47.912537'
+  - - 19
+    - '2015-05-19'
+    - ok
+    - Self
+    - ok
+    - ok
+    - 100
+    - 100
+    - 8
+    - '2015-05-19 08:48:59.300371'
+    - '2015-05-19 08:48:59.300371'
+  - - 20
+    - '2015-05-19'
+    - ok
+    - Self
+    - ok
+    - ok
+    - 100
+    - 100
+    - 8
+    - '2015-05-19 08:49:52.634883'
+    - '2015-05-19 08:49:52.634883'
+  - - 21
+    - '2015-05-19'
+    - ok
+    - Self
+    - ok
+    - ok
+    - 100
+    - 100
+    - 8
+    - '2015-05-19 08:50:41.419554'
+    - '2015-05-19 08:50:41.419554'
+  - - 22
+    - '2015-05-19'
+    - ok
+    - Self
+    - ok
+    - ok
+    - 100
+    - 100
+    - 8
+    - '2015-05-19 08:54:04.280726'
+    - '2015-05-19 08:54:04.280726'
+  - - 23
+    - '2015-05-19'
+    - ok
+    - Self
+    - ok
+    - ok
+    - 100
+    - 100
+    - 8
+    - '2015-05-19 08:59:30.048758'
+    - '2015-05-19 08:59:30.048758'
+  - - 24
+    - '2015-05-19'
+    - ok
+    - Self
+    - ok
+    - ok
+    - 100
+    - 100
+    - 8
+    - '2015-05-19 08:59:55.802203'
+    - '2015-05-19 08:59:55.802203'
+  - - 25
+    - '2015-05-19'
+    - ok
+    - Self
+    - ok
+    - ok
+    - 100
+    - 100
+    - 8
+    - '2015-05-19 09:00:14.837547'
+    - '2015-05-19 09:00:14.837547'
+  - - 26
+    - '2015-05-19'
+    - ok
+    - Self
+    - ok
+    - ok
+    - 100
+    - 100
+    - 8
+    - '2015-05-19 09:00:48.538630'
+    - '2015-05-19 09:00:48.538630'
+  - - 27
+    - '2015-05-19'
+    - ok
+    - Self
+    - ok
+    - ok
+    - 100
+    - 100
+    - 8
+    - '2015-05-19 09:01:25.948065'
+    - '2015-05-19 09:01:25.948065'
+  - - 28
+    - '2015-05-19'
+    - ok
+    - Self
+    - ok
+    - ok
+    - 100
+    - 100
+    - 8
+    - '2015-05-19 09:05:32.902059'
+    - '2015-05-19 09:05:32.902059'
+  - - 29
+    - '2015-05-19'
+    - ok
+    - Telephonic
+    - ok
+    - ok
+    - 100
+    - 100
+    - 8
+    - '2015-05-19 09:06:09.590839'
+    - '2015-05-19 09:06:09.590839'
+  - - 30
+    - '2015-06-11'
+    - ok
+    - Self
+    - ok
+    - ok
+    - 1000
+    - 200
+    - 26
+    - '2015-06-10 08:17:46.970544'
+    - '2015-06-10 08:17:46.970544'
+  - - 31
+    - '2015-06-21'
+    - ok
+    - Self
+    - ok
+    - ok
+    - 100
+    - 200
+    - 30
+    - '2015-06-21 11:23:52.896132'
+    - '2015-06-21 11:23:52.896132'
+  - - 32
+    - '2015-06-21'
+    - ok
+    - Telephonic
+    - ok
+    - ok
+    - 800
+    - 3000
+    - 31
+    - '2015-06-21 13:00:26.081854'
+    - '2015-06-21 13:00:26.081854'
+  - - 33
+    - '2015-06-21'
+    - ok
+    - Self
+    - ok
+    - ok
+    - 112
+    - 821
+    - 31
+    - '2015-06-21 13:32:01.779056'
+    - '2015-06-21 13:32:01.779056'
+  - - 34
+    - '2015-06-22'
+    - ok
+    - Self
+    - ok
+    - ok
+    - 3000
+    - 800
+    - 32
+    - '2015-06-22 05:18:27.755868'
+    - '2015-06-22 05:18:27.755868'
+  - - 35
+    - '2015-06-22'
+    - ok
+    - Telephonic
+    - ok
+    - ok
+    - 100
+    - 900
+    - 33
+    - '2015-06-22 06:49:52.229682'
+    - '2015-06-22 06:49:52.229682'
+
+---
+quotation_rents:
+  columns:
+  - id
+  - client_detail_id
+  - quotation_detail_id
+  - genType
+  - genRent
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - 2
+    - 2
+    - ''
+    - ''
+    - '2015-04-20 07:48:58.008679'
+    - '2015-04-20 07:48:58.008679'
+  - - 2
+    - 3
+    - 3
+    - '123'
+    - '2000.0'
+    - '2015-05-15 08:40:22.648310'
+    - '2015-05-15 08:40:22.648310'
+  - - 3
+    - 6
+    - 4
+    - '123'
+    - '2000.0'
+    - '2015-05-18 12:38:55.540177'
+    - '2015-05-18 12:38:55.540177'
+  - - 4
+    - 7
+    - 5
+    - '123'
+    - '2000.0'
+    - '2015-05-18 12:53:56.478428'
+    - '2015-05-18 12:53:56.478428'
+  - - 5
+    - 8
+    - 6
+    - '123'
+    - '2000.0'
+    - '2015-05-19 07:32:10.480426'
+    - '2015-05-19 07:32:10.480426'
+  - - 6
+    - 9
+    - 7
+    - '122,123'
+    - 12000.0,12000.0
+    - '2015-05-19 15:05:21.573770'
+    - '2015-05-19 15:05:21.573770'
+  - - 7
+    - 10
+    - 8
+    - 122,12KK
+    - 12000.0,100.0
+    - '2015-05-19 17:30:20.221327'
+    - '2015-05-19 17:30:20.221327'
+  - - 8
+    - 11
+    - 9
+    - 122,12KK
+    - 12000.0,100.0
+    - '2015-05-20 06:24:13.175389'
+    - '2015-05-20 06:24:13.175389'
+  - - 9
+    - 12
+    - 10
+    - 122,12KK
+    - 12000.0,100.0
+    - '2015-05-20 08:55:37.099536'
+    - '2015-05-20 08:55:37.099536'
+  - - 10
+    - 13
+    - 11
+    - 122,12KK
+    - 12000.0,100.0
+    - '2015-05-20 10:41:48.446532'
+    - '2015-05-20 10:41:48.446532'
+  - - 11
+    - 14
+    - 12
+    - 122,12KK
+    - 12000.0,100.0
+    - '2015-05-21 10:06:51.292008'
+    - '2015-05-21 10:06:51.292008'
+  - - 12
+    - 15
+    - 13
+    - 122,12KK
+    - 12000.0,100.0
+    - '2015-05-21 10:11:52.698500'
+    - '2015-05-21 10:11:52.698500'
+  - - 13
+    - 16
+    - 14
+    - 122,12KK
+    - 12000.0,100.0
+    - '2015-05-21 10:13:53.417701'
+    - '2015-05-21 10:13:53.417701'
+  - - 14
+    - 17
+    - 15
+    - 122,12KK
+    - 12000.0,100.0
+    - '2015-05-21 11:56:31.219500'
+    - '2015-05-21 11:56:31.219500'
+  - - 15
+    - 19
+    - 16
+    - 122,12KK
+    - 12000.0,100.0
+    - '2015-05-21 13:14:21.334171'
+    - '2015-05-21 13:14:21.334171'
+  - - 16
+    - 20
+    - 17
+    - 122,12KK
+    - 12000.0,100.0
+    - '2015-05-22 09:51:39.497017'
+    - '2015-05-22 09:51:39.497017'
+  - - 17
+    - 25
+    - 18
+    - 12KK,12KV
+    - 100.0,20000.0
+    - '2015-06-06 07:34:49.084019'
+    - '2015-06-06 07:34:49.084019'
+  - - 18
+    - 26
+    - 19
+    - '["[\"    \"]  "]  ,'
+    - ' [" [\" [\\\" [\\\\\\\" [\\\\\\\\\\\\\\\" [\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
+      [\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\" [\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
+      [\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
+      [\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"12\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]
+      \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]
+      \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]
+      \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"] \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]
+      \\\\\\\\\\\\\\\"] \\\\\\\"] \\\"] \"] "] ,'
+    - '2015-06-07 19:34:58.424639'
+    - '2015-06-09 11:52:38.463327'
+  - - 19
+    - 28
+    - 20
+    - 12KK,12KV
+    - 100.0,20000.0
+    - '2015-06-17 16:37:52.189016'
+    - '2015-06-17 16:37:52.189016'
+  - - 20
+    - 29
+    - 21
+    - 12KK,12KV
+    - 100.0,20000.0
+    - '2015-06-19 07:00:16.277088'
+    - '2015-06-19 07:00:16.277088'
+  - - 21
+    - 30
+    - 22
+    - 12KK,12KV
+    - 100.0,20000.0
+    - '2015-06-19 08:51:34.162034'
+    - '2015-06-19 08:51:34.162034'
+  - - 22
+    - 31
+    - 23
+    - 12KK,12KV
+    - 100.0,20000.0
+    - '2015-06-21 09:21:57.159139'
+    - '2015-06-21 09:21:57.159139'
+  - - 23
+    - 32
+    - 24
+    - 12KK,12KV
+    - 100.0,20000.0
+    - '2015-06-21 12:48:02.554820'
+    - '2015-06-21 12:48:02.554820'
+  - - 24
+    - 33
+    - 25
+    - 12KK,12KV
+    - 100.0,20000.0
+    - '2015-06-22 02:42:32.752362'
+    - '2015-06-22 02:42:32.752362'
+  - - 25
+    - 35
+    - 26
+    - '["[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"12KK\\\\\\\\\\\\\\\"\\\\\\\"\\\"\"", "
+      \" \\\" \\\\\\\" \\\\\\\\\\\\\\\"12KV\\\\\\\\\\\\\\\"]  \\\\\\\"]  \\\"]  \"]  "]  ,'
+    - ' [" [\" [\\\" [\\\\\\\" [\\\\\\\\\\\\\\\"100.0\\\\\\\\\\\\\\\"\\\\\\\"\\\"\"",
+      " \" \\\" \\\\\\\" \\\\\\\\\\\\\\\"20000.0\\\\\\\\\\\\\\\"] \\\\\\\"] \\\"]
+      \"] "] ,'
+    - '2015-06-22 05:15:53.591937'
+    - '2015-06-22 17:35:39.015384'
+  - - 26
+    - 36
+    - 27
+    - 12KK,12KV
+    - 100.0,20000.0
+    - '2015-06-22 17:52:27.032754'
+    - '2015-06-22 17:52:27.032754'
+  - - 27
+    - 35
+    - 26
+    - 12KK,12KV
+    - 100.0,20000.0
+    - '2015-06-23 04:40:05.813007'
+    - '2015-06-23 04:40:05.813007'
+  - - 28
+    - 36
+    - 27
+    - 12KK,12KV
+    - 100.0,20000.0
+    - '2015-06-23 04:40:35.647960'
+    - '2015-06-23 04:40:35.647960'
+  - - 29
+    - 36
+    - 27
+    - 12KK,12KV
+    - 100.0,20000.0
+    - '2015-06-23 04:41:04.725253'
+    - '2015-06-23 04:41:04.725253'
+  - - 30
+    - 38
+    - 33
+    - 12KK,12KV
+    - 100.0,20000.0
+    - '2015-06-24 04:32:07.669587'
+    - '2015-06-24 04:32:07.669587'
+  - - 31
+    - 39
+    - 34
+    - 12KK,12KV
+    - 100.0,20000.0
+    - '2015-06-24 05:31:39.381037'
+    - '2015-06-24 05:31:39.381037'
+
+---
+fake_quotations:
+  columns:
+  - id
+  - companyName
+  - serviceTax
+  - companyTagLine
+  - headerMobileNumber
+  - companyAddressOne
+  - companyAddressTwo
+  - referenceNumber
+  - subject
+  - regard
+  - regardContent
+  - bankNameOne
+  - bankNameTwo
+  - bankNameThree
+  - bankNameFour
+  - bankNameFive
+  - bankZoneOne
+  - bankZoneTwo
+  - quotationLine
+  - quotationRateList
+  - contentPartOne
+  - contentPartTwo
+  - thankYou
+  - yoursTruly
+  - nameOfCompany
+  - emailIdOne
+  - emailIdTwo
+  - emailIdThree
+  - emailIdFour
+  - contactNumberOne
+  - contactNumberTwo
+  - contactNumberThree
+  - date
+  - client_details_id
+  - sender_details_id
+  - created_at
+  - updated_at
+  - mailStatus
+  - dateOfMail
+  records: 
+  - - 9
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AEQF15009
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - With Regards,
+    - 'On the captioned subject we are pleased to introduce ourselves as service provider
+      in the field of Generator on monthly rent basis. It is for your kind consideration
+      that we are providing the generator sets on monthly rent basis to the banks
+      and other Govt. offices. We have proper infrastructure and staff to serve best
+      to our customers. At present we proudly declare that we are serving many branches
+      of :'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this letter, we are offering our services to bank. Our monthly rent
+      is quoted as:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Ksva</li>"
+    - We shall increase 10% after two years. The rent will include repairs & maintenances
+      and the cost of diesel. Space will be provided by you. Our generator sets will
+      be soundproof & automatic. We shall install only the branded generator sets.
+      If you want higher capacity generator then we may fulfill your demand. Above
+      rates are for all seasons.
+    - We hope you will consider our application and give an opportunity to serve your
+      bank. We ensure you of our best service.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - '2015-06-21'
+    - 34
+    - 4
+    - '2015-06-22 03:00:38.337773'
+    - '2015-06-22 03:01:16.066508'
+    - false
+    - 
+  - - 10
+    - Amrit Engineering
+    - 'Service Tax No. : APRPK1196BSD001'
+    - 'Providing Generator on Rent Basis & Allied Services '
+    - 87270 - 09500 <br /> 0161 - 2493500 <br /> 80540 - 70500
+    - "# 1380, St. No. 31, Janta Nagar, Bhagwan Chowk"
+    - Near Public Health Center, Ludhiana-141003
+    - AEQF15010
+    - 'Subject: Providing Automation Silent Generator on Monthly Rent Basis'
+    - With Regards,
+    - 'On the captioned subject we are pleased to introduce ourselves as service provider
+      in the field of Generator on monthly rent basis. It is for your kind consideration
+      that we are providing the generator sets on monthly rent basis to the banks
+      and other Govt. offices. We have proper infrastructure and staff to serve best
+      to our customers. At present we proudly declare that we are serving many branches
+      of :'
+    - 'Allahabad Bank:'
+    - Gill, Pakhowal & Gujjarwal
+    - Dugri, Tagore Nagar, Focal Point, Ferozepur Road, Bahadur Ke Road
+    - 'Kalsi Nagar '
+    - 'Mandi Gobindgarh, Mullanpur Dakha, Khanna '
+    - 'Mandi Ahmedgarh, Malerkotla, Patiala, Shiv Puri, Raj Guru Nagar, Pakhowal Road,
+      Bagha Purana, Bathinda, Dugri Road, Focal Point, Haiobwal, IFB Cheema Chowk '
+    - 'Jalandher, Balachure, Rattewal, Batala, Nakodhar, Shanker, Patti, Dasuya, Shahkot,
+      Raiya & Zonal Office Amritsar '
+    - 'Through this letter, we are offering our services to bank. Our monthly rent
+      is quoted as:'
+    - "<li>Rs-7250.00 for 5.0 Kva</li><li>Rs-9500.00 for 7.5 Kva</li><li>Rs-11000.00
+      for 10.0 Kva</li><li>Rs-12500.00 for 12.5 Kva</li><li>Rs-13000.00 for 15 Kva</li><li>Rs-13500.00
+      for 20 Kva</li><li>Rs-17000.00 for 25.00 Kva</li><li>Rs-19500.00 for 31.05 Kva</li><li>Rs-21500.00
+      for 35.00 Kva</li><li>Rs-27000.00 for 40 Kva</li><li>Rs-29500.00 for 50 Kva</li><li>Rs-39500.00
+      for 62.5 Kva</li><li>Rs-43500.00 for 75.0 Ksva</li>"
+    - We shall increase 10% after two years. The rent will include repairs & maintenances
+      and the cost of diesel. Space will be provided by you. Our generator sets will
+      be soundproof & automatic. We shall install only the branded generator sets.
+      If you want higher capacity generator then we may fulfill your demand. Above
+      rates are for all seasons.
+    - We hope you will consider our application and give an opportunity to serve your
+      bank. We ensure you of our best service.
+    - Thanking You
+    - Yours Truly
+    - For Amrit Engineers
+    - ishnoorsingh@in.com
+    - jasvirsinghsond@gmail.com
+    - amritengineers80@gmail.com
+    - amritengineers@yahoo.in
+    - "+91 98140-09500"
+    - "+91 87270-09500"
+    - 0161-2439500
+    - 'Dated : 09/06/2015'
+    - 37
+    - 3
+    - '2015-06-23 14:09:09.387182'
+    - '2015-06-24 07:00:55.237678'
+    - true
+    - '2015-06-24'
+
+---
+custom_auto_increments:
+  columns:
+  - id
+  - counter_model_name
+  - counter
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - quotation_detail
+    - 33
+    - '2015-04-20 07:48:58.001573'
+    - '2015-06-24 05:31:39.375637'
+  - - 2
+    - gen_avail
+    - 101
+    - '2015-04-20 07:49:45.925175'
+    - '2015-07-17 12:43:45.024880'
+  - - 3
+    - fake_quotation
+    - 10
+    - '2015-05-15 08:48:37.479321'
+    - '2015-06-23 14:09:09.389460'
+  - - 4
+    - third_party_gen
+    - 30
+    - '2015-05-18 07:09:04.661504'
+    - '2015-07-18 09:24:30.888336'
+
+---
+taxes:
+  columns:
+  - id
+  - taxName
+  - taxPercentage
+  - created_at
+  - updated_at
+  records: 
+  - - 3
+    - Service Tax
+    - 14
+    - '2015-05-18 12:40:05.241927'
+    - '2015-07-08 06:50:25.254642'
+  - - 4
+    - Education Tax
+    - 3
+    - '2015-05-18 12:40:16.511352'
+    - '2015-05-18 12:40:16.511352'
+
+---
+third_party_gens:
+  columns:
+  - id
+  - genID
+  - genRent
+  - gen_detail_id
+  - third_party_provider_id
+  - created_at
+  - updated_at
+  - GenDetail_id
+  - genConsumption
+  - service_due_hours
+  records: 
+  - - 17
+    - TP017
+    - 20000
+    - 11
+    - 1
+    - '2015-05-21 08:16:57.282238'
+    - '2015-05-21 08:16:57.282238'
+    - 
+    - 
+    - 
+  - - 18
+    - TP018
+    - 1000
+    - 11
+    - 1
+    - '2015-05-21 10:08:34.908492'
+    - '2015-05-21 10:08:34.908492'
+    - 
+    - 
+    - 
+  - - 19
+    - TP019
+    - 9000
+    - 11
+    - 1
+    - '2015-05-21 10:12:27.266532'
+    - '2015-05-21 10:12:27.266532'
+    - 
+    - 
+    - 
+  - - 20
+    - TP020
+    - 1990
+    - 11
+    - 1
+    - '2015-05-21 11:57:28.139310'
+    - '2015-05-21 11:57:28.139310'
+    - 
+    - 
+    - 
+  - - 21
+    - TP021
+    - 1000
+    - 11
+    - 1
+    - '2015-06-17 17:06:18.812942'
+    - '2015-06-17 17:06:18.812942'
+    - 
+    - 
+    - 
+  - - 22
+    - TP022
+    - 10000
+    - 11
+    - 1
+    - '2015-06-21 08:37:03.727341'
+    - '2015-06-21 08:37:03.727341'
+    - 
+    - 
+    - 
+  - - 23
+    - TP023
+    - 2000
+    - 11
+    - 1
+    - '2015-06-21 09:22:43.503938'
+    - '2015-06-21 09:22:43.503938'
+    - 
+    - 
+    - 
+  - - 24
+    - TP024
+    - 9000
+    - 11
+    - 1
+    - '2015-06-21 12:59:03.348678'
+    - '2015-06-21 12:59:03.348678'
+    - 
+    - 
+    - 
+  - - 25
+    - TP025
+    - 1000
+    - 11
+    - 1
+    - '2015-06-22 06:21:25.731009'
+    - '2015-06-22 06:21:25.731009'
+    - 
+    - 
+    - 
+  - - 26
+    - TP026
+    - 50000
+    - 11
+    - 1
+    - '2015-06-23 05:13:14.916493'
+    - '2015-06-23 05:13:14.916493'
+    - 
+    - 
+    - 
+  - - 27
+    - TP027
+    - 30000
+    - 11
+    - 1
+    - '2015-06-25 19:16:30.518906'
+    - '2015-06-25 19:16:30.518906'
+    - 
+    - 
+    - 
+  - - 28
+    - TP028
+    - 10
+    - 11
+    - 1
+    - '2015-07-18 05:47:20.382456'
+    - '2015-07-18 05:47:20.382456'
+    - 
+    - 
+    - 
+  - - 29
+    - TP029
+    - 100
+    - 11
+    - 1
+    - '2015-07-18 08:46:58.301134'
+    - '2015-07-18 08:46:58.301134'
+    - 
+    - 
+    - 
+  - - 30
+    - TP030
+    - 100
+    - 11
+    - 1
+    - '2015-07-18 09:24:30.887533'
+    - '2015-07-18 09:24:30.887533'
+    - 
+    - 100
+    - 100
+
+---
+banks:
+  columns:
+  - id
+  - name
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - 
+    - '2015-06-05 09:19:16.633385'
+    - '2015-06-05 09:19:16.633385'
+  - - 2
+    - Allahabad bank
+    - '2015-06-05 09:24:41.145720'
+    - '2015-07-19 08:32:50.744458'
+  - - 3
+    - Axis bankssss
+    - '2015-06-05 10:27:34.377336'
+    - '2015-07-19 08:33:04.139055'
+  - - 4
+    - SOme new bank
+    - '2015-06-08 10:57:37.438910'
+    - '2015-06-08 10:57:37.438910'
+  - - 5
+    - Central Bank Of India
+    - '2015-07-08 06:35:32.316259'
+    - '2015-07-08 06:35:32.316259'
+  - - 6
+    - obc bank
+    - '2015-07-19 08:33:51.993797'
+    - '2015-07-19 08:33:51.993797'
+  - - 7
+    - abc bank
+    - '2015-07-19 08:34:14.217753'
+    - '2015-07-19 08:34:14.217753'
+  - - 8
+    - ''
+    - '2015-07-19 09:31:52.352530'
+    - '2015-07-19 09:31:52.352530'
+
+---
+client_details:
+  columns:
+  - id
+  - designation
+  - bank_branch
+  - address
+  - district
+  - contactNo
+  - emailID
+  - approved
+  - sender_details_id
+  - created_at
+  - updated_at
+  - mailStatus
+  - contract
+  - bank_id
+  - account_id
+  records: 
+  - - 28
+    - Hii
+    - Ludhiana
+    - LDH
+    - '123'
+    - 9812312314
+    - vigas@csiom.com
+    - true
+    - 2
+    - '2015-06-17 16:37:52.166727'
+    - '2015-06-23 04:37:39.475710'
+    - false
+    - false
+    - 2
+    - 2
+  - - 29
+    - Phullanwal
+    - Yo branch
+    - 127 Central Town
+    - Ludhiana
+    - 9876543211
+    - vigas@csiom.com
+    - true
+    - 2
+    - '2015-06-19 07:00:16.247728'
+    - '2015-06-23 04:37:49.734989'
+    - false
+    - false
+    - 3
+    - 2
+  - - 30
+    - Manager
+    - Fake
+    - jkh
+    - lDh
+    - 9812312314
+    - vigas@csiom.com
+    - true
+    - 2
+    - '2015-06-19 08:51:34.154700'
+    - '2015-06-21 08:37:03.730948'
+    - false
+    - true
+    - 3
+    - 2
+  - - 31
+    - NEw D
+    - dfas
+    - sdfa
+    - LUDH
+    - 9878978979
+    - v@csiom.com
+    - true
+    - 2
+    - '2015-06-21 09:21:57.151823'
+    - '2015-06-21 09:22:43.507852'
+    - false
+    - true
+    - 3
+    - 2
+  - - 32
+    - eww
+    - dfas
+    - sdfa
+    - LUDH
+    - 9878978979
+    - v@csiom.com
+    - true
+    - 2
+    - '2015-06-21 12:48:02.530567'
+    - '2015-06-21 12:59:03.357209'
+    - false
+    - true
+    - 2
+    - 2
+  - - 33
+    - 'Testing '
+    - dfas
+    - sdfa
+    - LUDH
+    - 9878978979
+    - v@csiom.com
+    - true
+    - 2
+    - '2015-06-22 02:42:32.727629'
+    - '2015-06-22 06:21:25.739944'
+    - false
+    - true
+    - 2
+    - 2
+  - - 34
+    - eww
+    - dfas
+    - sdfa
+    - LUDH
+    - 9878978979
+    - v@csiom.com
+    - false
+    - 4
+    - '2015-06-22 03:00:38.321955'
+    - '2015-06-22 03:00:38.321955'
+    - false
+    - true
+    - 3
+    - 2
+  - - 35
+    - Some D
+    - Ludhiana
+    - '991'
+    - lDh
+    - 987654321
+    - vigas@csiom.com
+    - true
+    - 2
+    - '2015-06-22 05:15:53.561496'
+    - '2015-06-22 12:24:16.633667'
+    - false
+    - true
+    - 3
+    - 2
+  - - 36
+    - New Design
+    - sda
+    - sdfa
+    - LUDH
+    - 9878978979
+    - vigasdeep@gmail.com
+    - true
+    - 2
+    - '2015-06-22 17:52:27.023567'
+    - '2015-06-23 05:13:14.923167'
+    - false
+    - true
+    - 2
+    - 1
+  - - 37
+    - jh
+    - sda
+    - sdfa
+    - LUDH
+    - 9878978979
+    - vigasdeep@gmail.com
+    - false
+    - 3
+    - '2015-06-23 14:09:09.383699'
+    - '2015-06-23 14:09:09.383699'
+    - false
+    - true
+    - 2
+    - 1
+  - - 38
+    - HEsat
+    - Ludhiana
+    - IDK
+    - IDK
+    - 34234324
+    - vigasdeep@gmail.com
+    - true
+    - 2
+    - '2015-06-24 04:32:07.662608'
+    - '2015-06-25 19:16:30.524267'
+    - false
+    - true
+    - 2
+    - 2
+  - - 39
+    - jh
+    - Ludhiana
+    - jkha
+    - dfa
+    - 8989
+    - vigasdeep@gmail.com
+    - true
+    - 2
+    - '2015-06-24 05:31:39.371381'
+    - '2015-07-18 05:47:20.392770'
+    - false
+    - true
+    - 2
+    - 1
+
+---
+transactions:
+  columns:
+  - id
+  - bill_id
+  - amount
+  - date
+  - created_at
+  - updated_at
+  - transaction_remarks
+  - payment_type
+  records: 
+  - - 2
+    - 3
+    - 9000
+    - '2015-03-06'
+    - '2015-06-21 11:05:12.016035'
+    - '2015-06-21 11:05:12.016035'
+    - 
+    - 
+  - - 3
+    - 3
+    - 9000
+    - '2015-03-06'
+    - '2015-06-21 11:21:06.535022'
+    - '2015-06-21 11:21:06.535022'
+    - 
+    - 
+  - - 4
+    - 3
+    - 9000
+    - '2015-03-06'
+    - '2015-06-21 11:21:22.570829'
+    - '2015-06-21 11:21:22.570829'
+    - 
+    - 
+  - - 5
+    - 3
+    - 800
+    - 
+    - '2015-06-21 11:26:19.653857'
+    - '2015-06-21 11:26:19.653857'
+    - 
+    - 
+  - - 6
+    - 3
+    - 800
+    - 
+    - '2015-06-21 11:27:09.126385'
+    - '2015-06-21 11:27:09.126385'
+    - 
+    - 
+  - - 7
+    - 3
+    - 800
+    - 
+    - '2015-06-21 11:27:24.775631'
+    - '2015-06-21 11:27:24.775631'
+    - 
+    - 
+  - - 8
+    - 3
+    - 800
+    - 
+    - '2015-06-21 11:28:28.685058'
+    - '2015-06-21 11:28:28.685058'
+    - 
+    - 
+  - - 9
+    - 3
+    - 800
+    - 
+    - '2015-06-21 11:29:13.026891'
+    - '2015-06-21 11:29:13.026891'
+    - 
+    - 
+  - - 10
+    - 3
+    - 800
+    - 
+    - '2015-06-21 11:30:01.177874'
+    - '2015-06-21 11:30:01.177874'
+    - 
+    - 
+  - - 11
+    - 3
+    - 800
+    - 
+    - '2015-06-21 11:30:10.897653'
+    - '2015-06-21 11:30:10.897653'
+    - 
+    - 
+  - - 12
+    - 3
+    - 800
+    - 
+    - '2015-06-21 11:31:43.234905'
+    - '2015-06-21 11:31:43.234905'
+    - 
+    - 
+  - - 13
+    - 3
+    - 800
+    - 
+    - '2015-06-21 11:33:44.137857'
+    - '2015-06-21 11:33:44.137857'
+    - 
+    - 
+  - - 14
+    - 3
+    - 800
+    - 
+    - '2015-06-21 11:36:29.550648'
+    - '2015-06-21 11:36:29.550648'
+    - 
+    - 
+  - - 15
+    - 18
+    - 5000
+    - 
+    - '2015-06-21 16:27:37.140162'
+    - '2015-06-21 16:27:37.140162'
+    - 
+    - 
+  - - 16
+    - 18
+    - 5000
+    - 
+    - '2015-06-21 16:27:55.329347'
+    - '2015-06-21 16:27:55.329347'
+    - 
+    - 
+  - - 17
+    - 18
+    - 5000
+    - 
+    - '2015-06-21 16:28:42.914770'
+    - '2015-06-21 16:28:42.914770'
+    - 
+    - 
+  - - 18
+    - 18
+    - 7059
+    - 
+    - '2015-06-21 16:31:50.701002'
+    - '2015-06-21 16:31:50.701002'
+    - 
+    - 
+  - - 19
+    - 18
+    - 200
+    - 
+    - '2015-06-21 16:32:03.135955'
+    - '2015-06-21 16:32:03.135955'
+    - 
+    - 
+  - - 20
+    - 22
+    - 10000
+    - 
+    - '2015-06-22 05:19:56.009627'
+    - '2015-06-22 05:19:56.009627'
+    - 
+    - 
+  - - 21
+    - 59
+    - 15221
+    - 
+    - '2015-06-23 05:27:20.004869'
+    - '2015-06-23 05:27:20.004869'
+    - 
+    - 
+  - - 22
+    - 61
+    - 15000
+    - '2015-07-07'
+    - '2015-07-08 06:42:28.976786'
+    - '2015-07-08 06:42:28.976786'
+    - 
+    - 
+  - - 23
+    - 57
+    - 200
+    - '2015-02-07'
+    - '2015-07-18 10:48:00.239113'
+    - '2015-07-18 10:48:00.239113'
+    - it is 200
+    - 
+  - - 24
+    - 57
+    - 57
+    - 
+    - '2015-07-18 12:51:51.260548'
+    - '2015-07-18 12:51:51.260548'
+    - this is 57
+    - 
+  - - 25
+    - 57
+    - 54
+    - 
+    - '2015-07-18 12:54:56.623532'
+    - '2015-07-18 12:54:56.623532'
+    - '54444444'
+    - 
+  - - 26
+    - 57
+    - 1
+    - 
+    - '2015-07-18 13:02:00.307506'
+    - '2015-07-18 13:02:00.307506'
+    - '1'
+    - Cheque
+  - - 27
+    - 57
+    - 2500
+    - 
+    - '2015-07-18 13:04:11.989482'
+    - '2015-07-18 13:04:11.989482'
+    - this is success msg of 2500 trasaction.
+    - Debit Note
+
+---
+bill_tables:
+  columns:
+  - id
+  - bill_id
+  - monthly_rent
+  - mail_sent
+  - third_party_payment
+  - owner_payment
+  - quotation_id
+  - created_at
+  - updated_at
+  - bank_name
+  - bank_branch
+  - gen_desc
+  - rate
+  - quantity
+  - service_tax
+  - surcharge
+  - date
+  - bill_no
+  - tds
+  - total
+  - pending_payment
+  - total_exp
+  records: 
+  - - 57
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 25
+    - '2015-06-22 11:55:10.616001'
+    - '2015-07-18 13:04:11.992539'
+    - Allahabad bank1
+    - dfas
+    - TP025
+    - '1000.0'
+    - 
+    - '12.0'
+    - '3.0'
+    - '2015-06-22'
+    - 201506-AE-000025
+    - 9
+    - 4325.9
+    - 1513
+    - 3550
+  - - 58
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 26
+    - '2015-06-22 12:24:37.954296'
+    - '2015-06-22 12:24:37.954296'
+    - Axis bank
+    - Ludhiana
+    - G15075
+    - '20000.0'
+    - 
+    - '12.0'
+    - '3.0'
+    - '2015-06-22'
+    - 201506-AE-000026
+    - 9
+    - 9471.9
+    - 9471.9
+    - 2430
+  - - 59
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 32
+    - '2015-06-23 05:17:02.467307'
+    - '2015-06-23 05:27:20.012532'
+    - Allahabad bank1
+    - sda
+    - TP026
+    - '50000.0'
+    - 
+    - '12.0'
+    - '3.0'
+    - '2015-06-23'
+    - 201506-AE-000027
+    - 1
+    - 15221
+    - 0
+    - 213.3
+  - - 60
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 33
+    - '2015-06-25 19:16:37.994674'
+    - '2015-06-25 19:16:37.994674'
+    - Allahabad bank1
+    - Ludhiana
+    - TP027
+    - '30000.0'
+    - 
+    - '12.0'
+    - '3.0'
+    - '2015-06-26'
+    - 201506-AE-000028
+    - 3
+    - 7303.4
+    - 7303.4
+    - 1500
+  - - 61
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 33
+    - '2015-07-08 06:39:25.016859'
+    - '2015-07-08 06:42:28.980027'
+    - Allahabad bank1
+    - Ludhiana
+    - TP027
+    - '30000.0'
+    - 
+    - '12.0'
+    - '3.0'
+    - '2015-07-08'
+    - 201507-AE-000028
+    - 3
+    - 43820.4
+    - 28820
+    - 9000
+
+---
+Accounts:
+  columns:
+  - id
+  - name
+  - number
+  - ifsc
+  - micr
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - AXIS Bank
+    - '91001'
+    - UTIB0000196
+    - MCIJA000034
+    - '2015-06-21 19:55:40.967392'
+    - '2015-07-19 10:34:23.576412'
+  - - 2
+    - Vigas Bank
+    - '9100100002387611'
+    - UTIB000019611
+    - MCIJA00003411
+    - '2015-06-22 02:39:34.684589'
+    - '2015-07-19 10:42:51.008721'
+
+---
+gen_details:
+  columns:
+  - id
+  - genType
+  - genRent
+  - totalGen
+  - created_at
+  - updated_at
+  - genConsumption
+  - service_due_after
+  records: 
+  - - 11
+    - 12KK
+    - 100
+    - 2
+    - '2015-05-19 16:07:13.833323'
+    - '2015-05-27 09:11:27.386546'
+    - 
+    - 
+  - - 12
+    - 12KV
+    - 20000
+    - 10
+    - '2015-05-28 05:17:00.243747'
+    - '2015-05-28 05:17:00.243747'
+    - 
+    - 
+  - - 13
+    - home_gen
+    - 100
+    - 6
+    - '2015-07-16 09:12:30.018341'
+    - '2015-07-16 09:21:05.370180'
+    - 
+    - 
+  - - 14
+    - miame
+    - 20
+    - 4
+    - '2015-07-16 09:58:48.488908'
+    - '2015-07-16 10:40:06.021167'
+    - 20
+    - 
+  - - 15
+    - sultan
+    - 30
+    - 1
+    - '2015-07-17 09:02:02.405636'
+    - '2015-07-17 09:02:02.405636'
+    - 10.27
+    - 
+  - - 16
+    - khush
+    - 30
+    - 2
+    - '2015-07-17 09:24:13.839194'
+    - '2015-07-17 10:12:01.263203'
+    - 30
+    - 30
+  - - 17
+    - vigas
+    - 10
+    - 1
+    - '2015-07-17 12:22:26.917065'
+    - '2015-07-17 12:22:26.917065'
+    - 10.1
+    - 10
+  - - 18
+    - raghav_gen
+    - 10
+    - 2
+    - '2015-07-17 12:30:51.958408'
+    - '2015-07-17 12:30:51.958408'
+    - 200
+    - 20
+  - - 19
+    - genconsum_test
+    - 10
+    - 2
+    - '2015-07-17 12:43:45.014526'
+    - '2015-07-17 12:43:45.014526'
+    - 11
+    - 10
+
+---
+gen_avails:
+  columns:
+  - id
+  - genID
+  - available
+  - gen_detail_id
+  - created_at
+  - updated_at
+  - genConsumption
+  - service_due_after
+  records: 
+  - - 71
+    - G15071
+    - false
+    - 11
+    - '2015-05-19 16:07:13.835898'
+    - '2015-05-28 08:53:21.570390'
+    - 
+    - 
+  - - 72
+    - G15072
+    - false
+    - 11
+    - '2015-05-27 09:11:27.381578'
+    - '2015-06-09 07:30:20.505851'
+    - 
+    - 
+  - - 73
+    - G15073
+    - false
+    - 12
+    - '2015-05-28 05:17:00.246637'
+    - '2015-05-28 08:55:53.270810'
+    - 
+    - 
+  - - 74
+    - G15074
+    - false
+    - 12
+    - '2015-05-28 05:17:00.251411'
+    - '2015-06-21 00:04:46.887494'
+    - 
+    - 
+  - - 75
+    - G15075
+    - false
+    - 12
+    - '2015-05-28 05:17:00.256650'
+    - '2015-06-22 12:24:16.638607'
+    - 
+    - 
+  - - 76
+    - G15076
+    - true
+    - 12
+    - '2015-05-28 05:17:00.261615'
+    - '2015-05-28 05:17:00.261615'
+    - 
+    - 
+  - - 77
+    - G15077
+    - true
+    - 12
+    - '2015-05-28 05:17:00.266702'
+    - '2015-05-28 05:17:00.266702'
+    - 
+    - 
+  - - 78
+    - G15078
+    - true
+    - 12
+    - '2015-05-28 05:17:00.271787'
+    - '2015-05-28 05:17:00.271787'
+    - 
+    - 
+  - - 79
+    - G15079
+    - true
+    - 12
+    - '2015-05-28 05:17:00.277011'
+    - '2015-05-28 05:17:00.277011'
+    - 
+    - 
+  - - 80
+    - G15080
+    - true
+    - 12
+    - '2015-05-28 05:17:00.282457'
+    - '2015-05-28 05:17:00.282457'
+    - 
+    - 
+  - - 81
+    - G15081
+    - true
+    - 12
+    - '2015-05-28 05:17:00.286502'
+    - '2015-05-28 05:17:00.286502'
+    - 
+    - 
+  - - 82
+    - G15082
+    - true
+    - 12
+    - '2015-05-28 05:17:00.290539'
+    - '2015-05-28 05:17:00.290539'
+    - 
+    - 
+  - - 83
+    - G15083
+    - true
+    - 13
+    - '2015-07-16 09:12:30.022521'
+    - '2015-07-16 09:12:30.022521'
+    - 
+    - 
+  - - 84
+    - G15084
+    - true
+    - 13
+    - '2015-07-16 09:12:30.028883'
+    - '2015-07-16 09:12:30.028883'
+    - 
+    - 
+  - - 85
+    - G15085
+    - true
+    - 13
+    - '2015-07-16 09:12:30.034027'
+    - '2015-07-16 09:12:30.034027'
+    - 
+    - 
+  - - 86
+    - G15086
+    - true
+    - 13
+    - '2015-07-16 09:12:30.042817'
+    - '2015-07-16 09:12:30.042817'
+    - 
+    - 
+  - - 87
+    - G15087
+    - true
+    - 13
+    - '2015-07-16 09:12:30.050838'
+    - '2015-07-16 09:12:30.050838'
+    - 
+    - 
+  - - 88
+    - G15088
+    - true
+    - 13
+    - '2015-07-16 09:21:05.364531'
+    - '2015-07-16 09:21:05.364531'
+    - 
+    - 
+  - - 90
+    - G15090
+    - true
+    - 14
+    - '2015-07-16 10:02:32.897684'
+    - '2015-07-16 10:03:13.700425'
+    - 
+    - 
+  - - 91
+    - G15091
+    - true
+    - 14
+    - '2015-07-16 10:04:12.152497'
+    - '2015-07-16 10:04:12.152497'
+    - 
+    - 
+  - - 92
+    - G15092
+    - true
+    - 14
+    - '2015-07-16 10:31:36.607483'
+    - '2015-07-16 10:31:36.607483'
+    - 67
+    - 
+  - - 93
+    - G15093
+    - true
+    - 14
+    - '2015-07-16 10:40:06.012674'
+    - '2015-07-16 10:40:06.012674'
+    - 94
+    - 
+  - - 94
+    - G15094
+    - true
+    - 15
+    - '2015-07-17 09:02:02.409954'
+    - '2015-07-17 09:02:02.409954'
+    - 
+    - 
+  - - 95
+    - G15095
+    - true
+    - 16
+    - '2015-07-17 09:24:13.844460'
+    - '2015-07-17 09:24:13.844460'
+    - 
+    - 
+  - - 96
+    - G15096
+    - true
+    - 16
+    - '2015-07-17 10:12:01.257840'
+    - '2015-07-18 10:13:55.349808'
+    - 1290
+    - 200
+  - - 97
+    - G15097
+    - true
+    - 17
+    - '2015-07-17 12:22:26.923677'
+    - '2015-07-17 12:22:26.923677'
+    - 
+    - 
+  - - 98
+    - G15098
+    - true
+    - 18
+    - '2015-07-17 12:30:51.961300'
+    - '2015-07-17 12:30:51.961300'
+    - 
+    - 
+  - - 99
+    - G15099
+    - true
+    - 18
+    - '2015-07-17 12:30:51.965082'
+    - '2015-07-17 12:30:51.965082'
+    - 
+    - 
+  - - 100
+    - G15100
+    - true
+    - 19
+    - '2015-07-17 12:43:45.020621'
+    - '2015-07-17 12:43:45.020621'
+    - 11
+    - 
+  - - 101
+    - G15101
+    - true
+    - 19
+    - '2015-07-17 12:43:45.024319'
+    - '2015-07-17 12:43:45.024319'
+    - 11
+    - 
+
+---
+email_addresses:
+  columns:
+  - id
+  - name
+  - address
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - navdeepBagga
+    - bagga@csiom.comBagga
+    - 1
+    - '2015-07-19 09:48:03.563710'
+  - - 2
+    - meow
+    - 
+    - '2015-07-19 09:10:36.785894'
+    - '2015-07-19 09:10:36.785894'
+  - - 3
+    - meow
+    - 
+    - '2015-07-19 09:11:53.303940'
+    - '2015-07-19 09:11:53.303940'
+  - - 4
+    - meow
+    - 
+    - '2015-07-19 09:12:50.970954'
+    - '2015-07-19 09:12:50.970954'
+  - - 5
+    - ratz
+    - 
+    - '2015-07-19 09:15:09.967475'
+    - '2015-07-19 09:15:09.967475'
+  - - 6
+    - meowratz
+    - 
+    - '2015-07-19 09:27:38.781915'
+    - '2015-07-19 09:27:38.781915'
+  - - 7
+    - bindia
+    - 
+    - '2015-07-19 09:39:03.900231'
+    - '2015-07-19 09:39:03.900231'
+  - - 8
+    - gopul
+    - gopul@gi.com
+    - '2015-07-19 09:40:06.920128'
+    - '2015-07-19 09:40:06.920128'

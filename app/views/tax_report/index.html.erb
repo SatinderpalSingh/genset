@@ -1,0 +1,109 @@
+<%= render 'welcome/header' %> 
+<div class="container">
+
+<section class="quotation_Section">
+<div class="quotation_Form">
+<h2 class="table-heading">Service Tax / Surcharge / Tds</h2>
+
+        <div style="margin-left:10%;">
+        	<%= form_for :Date do |f| %>
+                	From <%= select_date Date.today, prefix: :start_date %>
+			To <%= select_date Date.today, prefix: :end_date %>
+	<span class="actions">
+		<%= f.submit value:"Filter Result", :class=> 'form_submit' %>
+	<span>
+        </div>
+		<% end %>
+<%
+
+        if not params[:start_date].blank?
+                start_d =  Date::civil(params[:start_date][:year].to_i, params[:start_date][:month].to_i, params[:start_date][:day].to_i)
+                end_d = Date::civil(params[:end_date][:year].to_i, params[:end_date][:month].to_i, params[:end_date][:day].to_i)
+
+                start_d = start_d.beginning_of_day
+                end_d = end_d.end_of_day
+end
+%>
+
+<%
+				if not params[:start_date].blank?
+                	@bill = @bill.where(created_at: (start_d)..end_d)
+                end
+			%>
+				<%= line_chart [
+					{name: "Service Tax", data: @bill.map{|record| [record.created_at, record.calc_stax]}},
+					{name: "Surcharge", data: @bill.map{|record| [record.created_at, record.calc_surcharge]}},
+					{name: "TDS", data: @bill.map{|record| [record.created_at, record.calc_tds ]}}
+				], { library:{width: 1200} } %>
+			<%
+					dates = Hash.new
+			if not params[:start_date].blank?
+					dates["start_date[month]"] = params[:start_date][:month]
+					dates["start_date[year]"] = params[:start_date][:year]
+					dates["start_date[day]"] = params[:start_date][:day]
+					dates["end_date[month]"] = params[:end_date][:month]
+					dates["end_date[year]"] = params[:end_date][:year]
+					dates["end_date[day]"] = params[:end_date][:day]
+			end
+						%>
+					<p style="float:right">
+						<%= button_to "Email Accountant", mail_report_path(format: "json"), params: dates, id: "emailAccountant", class: "send pull-right", remote: true, data: { disable_with: "Please wait.." } %> 
+						<%= button_to "Download CSV", tax_report_path(format: "csv"), params: dates, class: "send pull-right" %>
+<script>
+	$(document).ready(function(){
+		$('.button_to').on('ajax:success',function(e, data, status, xhr){
+			alert("Email Sent to accountant for the selected range.");
+    });
+  });
+</script>
+
+					</p>
+<table id="service_tax" class="display responsive no-wrap">
+
+	<thead>
+		<tr>
+			<th></th>
+			<th>Bill Number</th>
+			<th>Service Tax</th>
+			<th>Surcharge</th>
+			<th>TDS</th>
+		</tr>
+	</thead>   
+	<tbody>
+  	<% 
+	i = 0
+	@bill.each do |b| 
+	i= i+1
+  	%>   
+		<tr>
+			<td><%= i %></td>
+			<td><%= b.bill_no %></td>
+			<td><%= b.calc_stax %></td>
+			<td><%= b.calc_surcharge %></td>
+			<td><%= b.calc_tds %></td>
+
+		</tr>
+  	<% end %>  
+  	</tbody>
+
+</table>
+</div>
+
+
+<script>
+	$(document).ready(function() {
+		$('#service_tax').dataTable({
+			responsive: true
+		});
+	} );
+</script>
+
+<script>
+	$(document).ready(function() {
+		$('#tds').dataTable({
+			responsive: true
+		});
+	} );
+</script>
+</section>
+</div>

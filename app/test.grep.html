@@ -1,0 +1,147 @@
+./assets/stylesheets/mercury.css: * found at https://github.com/jejacks0n/mercury
+./assets/stylesheets/mercury.css: *= require mercury/bootstrap-ish
+./assets/stylesheets/mercury.css: *= require mercury/mercury
+./assets/javascripts/mercury.js: * found at https://github.com/jejacks0n/mercury
+./assets/javascripts/mercury.js: * require mercury/support/history
+./assets/javascripts/mercury.js: *= require mercury/mercury
+./assets/javascripts/mercury.js: * require mercury/locales/swedish_chef.locale
+./assets/javascripts/mercury.js: * require mercury/plugins/save_as_xml/plugin.js
+./assets/javascripts/mercury.js: * require mercury_overrides
+./assets/javascripts/mercury.js:        insertLink:            ['Link', 'Insert Link', { modal: '/mercury/modals/link.html', regions: ['full', 'markdown'] }],
+./assets/javascripts/mercury.js:        insertMedia:           ['Media', 'Insert Media (images and videos)', { modal: '/mercury/modals/media.html', regions: ['full', 'markdown'] }],
+./assets/javascripts/mercury.js:        insertTable:           ['Table', 'Insert Table', { modal: '/mercury/modals/table.html', regions: ['full', 'markdown'] }],
+./assets/javascripts/mercury.js:        insertCharacter:       ['Character', 'Special Characters', { modal: '/mercury/modals/character.html', regions: ['full', 'markdown'] }],
+./assets/javascripts/mercury.js:        snippetPanel:          ['Snippet', 'Snippet Panel', { panel: '/mercury/panels/snippets.html' }],
+./assets/javascripts/mercury.js:        historyPanel:          ['History', 'Page Version History', { panel: '/mercury/panels/history.html' }],
+./assets/javascripts/mercury.js:        notesPanel:            ['Notes', 'Page Notes', { panel: '/mercury/panels/notes.html' }]
+./assets/javascripts/mercury.js:          style:               ['Style', null, { select: '/mercury/selects/style.html', preload: true }],
+./assets/javascripts/mercury.js:          formatblock:         ['Block Format', null, { select: '/mercury/selects/formatblock.html', preload: true }],
+./assets/javascripts/mercury.js:          backColor:           ['Background Color', null, { palette: '/mercury/palettes/backcolor.html', context: true, preload: true, regions: ['full'] }],
+./assets/javascripts/mercury.js:          foreColor:           ['Text Color', null, { palette: '/mercury/palettes/forecolor.html', context: true, preload: true, regions: ['full'] }],
+./assets/javascripts/mercury.js:    // attribute: Mercury identifies editable regions by a data-mercury attribute.  This attribute has to be added in
+./assets/javascripts/mercury.js:      attribute: 'data-mercury',
+./assets/javascripts/mercury.js:    // **Note:** `:name` will be replaced with the snippet name in the urls (eg. /mercury/snippets/example/options.html)
+./assets/javascripts/mercury.js:      optionsUrl: '/mercury/snippets/:name/options.html',
+./assets/javascripts/mercury.js:      previewUrl: '/mercury/snippets/:name/preview.html'
+./assets/javascripts/mercury.js:      url: '/mercury/images',
+./assets/javascripts/mercury.js:      htmlEditor: function() { Mercury.modal('/mercury/modals/htmleditor.html', { title: 'HTML Editor', fullHeight: true, handler: 'htmlEditor' }); }
+./assets/javascripts/mercury.js:      '[data-mercury]       { min-height: 10px; outline: 1px dotted #09F } ' +
+./assets/javascripts/mercury.js:      '[data-mercury]:focus { outline: none; -webkit-box-shadow: 0 0 10px #09F, 0 0 1px #045; box-shadow: 0 0 10px #09F, 0 0 1px #045 }' +
+./assets/javascripts/mercury.js:      '[data-mercury].focus { outline: none; -webkit-box-shadow: 0 0 10px #09F, 0 0 1px #045; box-shadow: 0 0 10px #09F, 0 0 1px #045 }' +
+./assets/javascripts/mercury.js:      '[data-mercury]:after { content: "."; display: block; visibility: hidden; clear: both; height: 0; overflow: hidden; }' +
+./assets/javascripts/mercury.js:      '[data-mercury] table { border: 1px dotted red; min-width: 6px; }' +
+./assets/javascripts/mercury.js:      '[data-mercury] th    { border: 1px dotted red; min-width: 6px; }' +
+./assets/javascripts/mercury.js:      '[data-mercury] td    { border: 1px dotted red; min-width: 6px; }' +
+./assets/javascripts/mercury.js:      '[data-mercury] .mercury-textarea       { border: 0; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; resize: none; }' +
+./assets/javascripts/mercury.js:      '[data-mercury] .mercury-textarea:focus { outline: none; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }'
+./assets/javascripts/mercury.js:$(window).bind('mercury:ready', function() {
+./assets/javascripts/mercury.js:  var link = $('#mercury_iframe').contents().find('#edit_link');
+./assets/javascripts/mercury.js:  var header = $('#mercury_iframe').contents().find('#quotationHeader')
+./assets/javascripts/mercury.js:$(window).bind('mercury:saved', function() {
+./models/mercury/image.rb:  self.table_name = :mercury_images
+./views/fake_quotations/show.html.erb:    <div class="dated" data-mercury="simple" id="fakeQuotation_date"><%= @fake_quotation.updated_at.to_date %></div>
+./views/fake_quotations/show.html.erb:        <div  class= "subject" data-mercury="simple" id="fakeQuotation_subject"><%= @fake_quotation.subject.html_safe  %></div>
+./views/fake_quotations/show.html.erb:        <div class="regards" data-mercury="simple" id="fakeQuotation_regard"><%= @fake_quotation.regard.html_safe  %></div>
+./views/fake_quotations/show.html.erb:        <div class="regardContent" data-mercury="simple" data-type="editable" id="fakeQuotation_regardContent"><%= @fake_quotation.regardContent.html_safe  %></div><br>
+./views/fake_quotations/show.html.erb:            <td class="tg-031e" data-mercury="simple" id="fakeQuotation_bankZoneOne"><%= @fake_quotation.bankZoneOne.html_safe %></td>
+./views/fake_quotations/show.html.erb:            <td class="tg-031e" data-mercury="simple" id="fakeQuotation_bankZoneTwo"><%= @fake_quotation.bankZoneTwo.html_safe %></td>
+./views/fake_quotations/show.html.erb:            <td class="tg-031e" data-mercury="simple" id="fakeQuotation_bankNameTwo"><%= @fake_quotation.bankNameTwo.html_safe %></td>
+./views/fake_quotations/show.html.erb:            <td class="tg-031e" data-mercury="simple" id="fakeQuotation_bankNameThree"><%= @fake_quotation.bankNameThree.html_safe %></td>
+./views/fake_quotations/show.html.erb:            <td class="tg-031e" data-mercury="simple" id="fakeQuotation_bankNameFour"><%= @fake_quotation.bankNameFour.html_safe %></td>
+./views/fake_quotations/show.html.erb:            <td class="tg-031e" data-mercury="simple" id ="fakeQuotation_bankNameFive"><%= @fake_quotation.bankNameFive.html_safe %></td>
+./views/fake_quotations/show.html.erb:        <h4 class="quotationLine" data-mercury="simple" id="fakeQuotation_quotationLine"><%= @fake_quotation.quotationLine.html_safe  %></h4>
+./views/fake_quotations/show.html.erb:        <ul class="quotationsList" style="list-style-type:none" data-mercury="full" id="fakeQuotation_quotationRateList">
+./views/fake_quotations/show.html.erb:        <p class="contentPartOne" data-mercury="simple" id="fakeQuotation_contentPartOne"><%= @fake_quotation.contentPartOne.html_safe %></p><br><br>
+./views/fake_quotations/show.html.erb:        <p class="contetnPartTwo" data-mercury="simple" id="fakeQuotation_contentPartTwo"><%= @fake_quotation.contentPartTwo.html_safe %></p><br><br>
+./views/fake_quotations/show.html.erb:        <p class="thankYou" data-mercury="simple" id="fakeQuotation_thankYou"><%= @fake_quotation.thankYou.html_safe %></p><br><br>
+./views/fake_quotations/show.html.erb:        <p class="yoursTruly" data-mercury="simple" id="fakeQuotation_yoursTruly"><%= @fake_quotation.yoursTruly.html_safe  %></p><br><br>
+./views/fake_quotations/show.html.erb:        <p class="nameOfCompany" data-mercury="simple" id="fakeQuotation_nameOfCompany"><%= @fake_quotation.nameOfCompany.html_safe  %></p><br>
+./views/fake_quotations/show.html.erb:            <p class="contactNumberOne" data-mercury="simple" id="fakeQuotation_contactNumberOne"><%= @fake_quotation.contactNumberOne.html_safe %></p>
+./views/fake_quotations/show.html.erb:            <p class="contactNumberTwo" data-mercury="simple" id="fakeQuotation_contactNumberTwo"><%= @fake_quotation.contactNumberTwo.html_safe %></p>
+./views/fake_quotations/show.html.erb:            <p class="contactNumberThree" data-mercury="simple" id="fakeQuotation_contactNumberThree"><%= @fake_quotation.contactNumberThree.html_safe %></p>
+./views/fake_quotations/show.html.erb:            <p class="emailIdOne" data-mercury="simple" id="fakeQuotation_emailIdOne"><%= @fake_quotation.emailIdOne.html_safe %></p>
+./views/fake_quotations/show.html.erb:            <p class="emailIdTwo" data-mercury="simple" id="fakeQuotation_emailIdTwo"><%= @fake_quotation.emailIdTwo.html_safe %></p>            
+./views/fake_quotations/show.html.erb:            <p class="emailIdThree" data-mercury="simple" id="fakeQuotation_emailIdThree"><%= @fake_quotation.emailIdThree.html_safe %></p>
+./views/fake_quotations/show.html.erb:            <p class="emailIdFour" data-mercury="simple" id="fakeQuotation_emailIdFour"><%= @fake_quotation.emailIdFour.html_safe %></p>
+./views/client_details/show.html.erb:        <div  class= "subject" data-mercury="full" id="quotation_subject"><%= quotation.subject.html_safe  %></div>
+./views/client_details/show.html.erb:        <div class="regards" data-mercury="full" id="quotation_regard"><%= quotation.regard.html_safe  %>,</div>
+./views/client_details/show.html.erb:        <div class="regardContent" data-mercury="full" data-type="editable" id="quotation_regardContent"><%= quotation.regardContent.html_safe  %></div><br>
+./views/client_details/show.html.erb:        <p class="bankName1" data-mercury="full" id="quotation_bankNameOne"><%= quotation.bankNameOne.html_safe  %></p>
+./views/client_details/show.html.erb:            <li><span class="zoneInBold" data-mercury="full" id="quotation_bankZoneOne">Ludhiana Zone : </span><%= quotation.bankZoneOne.html_safe  %></li>
+./views/client_details/show.html.erb:            <li><span class="zoneInBold" data-mercury="full" id="quotation_bankZoneTwo">Amritsar Zone : </span><%= quotation.bankZoneTwo.html_safe  %></li>
+./views/client_details/show.html.erb:        <p><span class="bankName2" data-mercury="full" id="quotation_bankNameTwo">Oriental Bank of Commerce : </span><%= quotation.bankNameTwo.html_safe  %></p>
+./views/client_details/show.html.erb:        <p><span class="bankName3" data-mercury="full" id="quotation_bankNameThree">Bank of Baroda : </span><%= quotation.bankNameThree.html_safe  %></p>
+./views/client_details/show.html.erb:        <p><span class="bankName4" data-mercury="full" id="quotation_bankNameFour">The Federal Bank Limited :</span><%= quotation.bankNameFour.html_safe  %></p>
+./views/client_details/show.html.erb:        <p><span class="bankName5" data-mercury="full" id ="quotation_bankNameFive">Central Bank of India : </span><%= quotation.bankNameFive.html_safe  %></p><br>
+./views/client_details/show.html.erb:        <h4 class="quotationLine" data-mercury="full" id="quotation_quotationLine"><%= quotation.quotationLine.html_safe  %></h4> <br>
+./views/client_details/show.html.erb:        <p class="contentPartOne" data-mercury="full" id="quotation_contentPartOne"><%= quotation.contentPartOne.html_safe %></p><br><br>
+./views/client_details/show.html.erb:        <p class="contetnPartTwo" data-mercury="full" id="quotation_contentPartTwo"><%= quotation.contentPartTwo.html_safe %></p><br><br>
+./views/client_details/show.html.erb:        <p class="thankYou" data-mercury="full" id="quotation_thankYou"><%= quotation.thankYou.html_safe %></p><br><br>
+./views/client_details/show.html.erb:        <p class="yoursTruly" data-mercury="full" id="quotation_yoursTruly"><%= quotation.yoursTruly.html_safe  %></p><br><br>
+./views/client_details/show.html.erb:        <p class="nameOfCompany" data-mercury="full" id="quotation_nameOfCompany"><%= quotation.nameOfCompany.html_safe  %></p><br><br><br>
+./views/client_details/show.html.erb:            <p class="contactNumberOne" data-mercury="full" id="quotation_contactNumberOne"><%= quotation.contactNumberOne.html_safe %></p>
+./views/client_details/show.html.erb:            <p class="contactNumberTwo" data-mercury="full" id="quotation_contactNumberTwo"><%= quotation.contactNumberTwo.html_safe %></p>
+./views/client_details/show.html.erb:            <p class="contactNumberThree" data-mercury="full" id="quotation_contactNumberThree"><%= quotation.contactNumberThree.html_safe %></p>
+./views/client_details/show.html.erb:            <p class="emailIdOne" data-mercury="full" id="quotation_emailIdOne"><%= quotation.emailIdOne.html_safe %></p>
+./views/client_details/show.html.erb:            <p class="emailIdTwo" data-mercury="full" id="quotation_emailIdTwo"><%= quotation.emailIdTwo.html_safe %></p>            
+./views/client_details/show.html.erb:            <p class="emailIdThree" data-mercury="full" id="quotation_emailIdThree"><%= quotation.emailIdThree.html_safe %></p>
+./views/client_details/show.html.erb:            <p class="emailIdFour" data-mercury="full" id="quotation_emailIdFour"><%= quotation.emailIdFour.html_safe %></p>
+./views/quotation_details/show.html.erb:    <div class="dated" data-mercury="simple" id="quotation_date">date: <%= @quotation_detail.updated_at.to_date %></div>
+./views/quotation_details/show.html.erb:        <div  class= "subject" data-mercury="simple" id="quotation_subject"><%= @quotation_detail.subject.html_safe  %></div>
+./views/quotation_details/show.html.erb:        <div class="regards" data-mercury="simple" id="quotation_regard"><%= @quotation_detail.regard.html_safe  %></div>
+./views/quotation_details/show.html.erb:        <div class="regardContent" data-mercury="simple" data-type="editable" id="quotation_regardContent"><%= @quotation_detail.regardContent.html_safe  %></div><br>
+./views/quotation_details/show.html.erb:            <td class="tg-031e" data-mercury="simple" id="quotation_bankZoneOne"><%= @quotation_detail.bankZoneOne.html_safe %></td>
+./views/quotation_details/show.html.erb:            <td class="tg-031e" data-mercury="simple" id="quotation_bankZoneTwo"><%= @quotation_detail.bankZoneTwo.html_safe %></td>
+./views/quotation_details/show.html.erb:            <td class="tg-031e" data-mercury="simple" id="quotation_bankNameTwo"><%= @quotation_detail.bankNameTwo.html_safe %></td>
+./views/quotation_details/show.html.erb:            <td class="tg-031e" data-mercury="simple" id="quotation_bankNameThree"><%= @quotation_detail.bankNameThree.html_safe %></td>
+./views/quotation_details/show.html.erb:            <td class="tg-031e" data-mercury="simple" id="quotation_bankNameFour"><%= @quotation_detail.bankNameFour.html_safe %></td>
+./views/quotation_details/show.html.erb:            <td class="tg-031e" data-mercury="simple" id ="quotation_bankNameFive"><%= @quotation_detail.bankNameFive.html_safe %></td>
+./views/quotation_details/show.html.erb:        <h4 class="quotationLine" data-mercury="simple" id="quotation_quotationLine"><%= @quotation_detail.quotationLine.html_safe  %></h4><br />
+./views/quotation_details/show.html.erb:                <td class="tg-e3zv" data-mercury="simple" id ="quotation_type<%= counter %>"><%= qt %>  </td>
+./views/quotation_details/show.html.erb:                <td class="tg-e3zv" data-mercury="simple" id ="quotation_rent<%= counter %>"> <%= qr %> </td>
+./views/quotation_details/show.html.erb:    	<div class="counter" data-mercury="simple" id="quotation_counter" style="display:none">
+./views/quotation_details/show.html.erb:        <p class="contentPartOne" data-mercury="simple" id="quotation_contentPartOne"><%= @quotation_detail.contentPartOne.html_safe %></p><br><br>
+./views/quotation_details/show.html.erb:        <p class="contetnPartTwo" data-mercury="simple" id="quotation_contentPartTwo"><%= @quotation_detail.contentPartTwo.html_safe %></p><br><br>
+./views/quotation_details/show.html.erb:        <p class="thankYou" data-mercury="simple" id="quotation_thankYou"><%= @quotation_detail.thankYou.html_safe %></p><br><br>
+./views/quotation_details/show.html.erb:        <p class="yoursTruly" data-mercury="simple" id="quotation_yoursTruly"><%= @quotation_detail.yoursTruly.html_safe  %></p><br><br>
+./views/quotation_details/show.html.erb:        <p class="nameOfCompany" data-mercury="simple" id="quotation_nameOfCompany"><%= @quotation_detail.nameOfCompany.html_safe  %></p><br>
+./views/quotation_details/show.html.erb:            <p class="contactNumberOne" data-mercury="simple" id="quotation_contactNumberOne"><%= @quotation_detail.contactNumberOne.html_safe %></p>
+./views/quotation_details/show.html.erb:            <p class="contactNumberTwo" data-mercury="simple" id="quotation_contactNumberTwo"><%= @quotation_detail.contactNumberTwo.html_safe %></p>
+./views/quotation_details/show.html.erb:            <p class="contactNumberThree" data-mercury="simple" id="quotation_contactNumberThree"><%= @quotation_detail.contactNumberThree.html_safe %></p>
+./views/quotation_details/show.html.erb:            <p class="emailIdOne" data-mercury="simple" id="quotation_emailIdOne"><%= @quotation_detail.emailIdOne.html_safe %></p>
+./views/quotation_details/show.html.erb:            <p class="emailIdTwo" data-mercury="simple" id="quotation_emailIdTwo"><%= @quotation_detail.emailIdTwo.html_safe %></p>            
+./views/quotation_details/show.html.erb:            <p class="emailIdThree" data-mercury="simple" id="quotation_emailIdThree"><%= @quotation_detail.emailIdThree.html_safe %></p>
+./views/quotation_details/show.html.erb:            <p class="emailIdFour" data-mercury="simple" id="quotation_emailIdFour"><%= @quotation_detail.emailIdFour.html_safe %></p>
+./views/quotation_details/mail.pdf.erb:                    <td class ="type" data-mercury="full" id ="quotation_type<%= counter %>"> <%= qt %>  </td>
+./views/quotation_details/mail.pdf.erb:                    <td class ="rent" data-mercury="full" id ="quotation_rent<%= counter %>"> <%= qr %> </td>
+./views/quotation_details/mail.pdf.erb:        <div class="counter" data-mercury="full" id="quotation_counter" style="display:none">
+./views/quotation_details/mail.html.erb:        <div  class= "subject" data-mercury="simple" id="quotation_subject"><%= @quotation_detail.subject.html_safe  %></div>
+./views/quotation_details/mail.html.erb:        <div class="regards" data-mercury="simple" id="quotation_regard"><%= @quotation_detail.regard.html_safe  %></div>
+./views/quotation_details/mail.html.erb:        <div class="regardContent" data-mercury="simple" data-type="editable" id="quotation_regardContent"><%= @quotation_detail.regardContent.html_safe  %></div><br>
+./views/quotation_details/mail.html.erb:            <td class="tg-031e" data-mercury="simple" id="quotation_bankZoneOne"><%= @quotation_detail.bankZoneOne.html_safe %></td>
+./views/quotation_details/mail.html.erb:            <td class="tg-031e" data-mercury="simple" id="quotation_bankZoneTwo"><%= @quotation_detail.bankZoneTwo.html_safe %></td>
+./views/quotation_details/mail.html.erb:            <td class="tg-031e" data-mercury="simple" id="quotation_bankNameTwo"><%= @quotation_detail.bankNameTwo.html_safe %></td>
+./views/quotation_details/mail.html.erb:            <td class="tg-031e" data-mercury="simple" id="quotation_bankNameThree"><%= @quotation_detail.bankNameThree.html_safe %></td>
+./views/quotation_details/mail.html.erb:            <td class="tg-031e" data-mercury="simple" id="quotation_bankNameFour"><%= @quotation_detail.bankNameFour.html_safe %></td>
+./views/quotation_details/mail.html.erb:            <td class="tg-031e" data-mercury="simple" id ="quotation_bankNameFive"><%= @quotation_detail.bankNameFive.html_safe %></td>
+./views/quotation_details/mail.html.erb:        <h4 class="quotationLine" data-mercury="simple" id="quotation_quotationLine"><%= @quotation_detail.quotationLine.html_safe  %></h4><br />
+./views/quotation_details/mail.html.erb:                <td class="tg-e3zv" data-mercury="simple" id ="quotation_type<%= counter %>"><%= qt %>  </td>
+./views/quotation_details/mail.html.erb:                <td class="tg-e3zv" data-mercury="simple" id ="quotation_rent<%= counter %>"> <%= qr %> </td>
+./views/quotation_details/mail.html.erb:    	<div class="counter" data-mercury="simple" id="quotation_counter" style="display:none">
+./views/quotation_details/mail.html.erb:        <p class="contentPartOne" data-mercury="simple" id="quotation_contentPartOne"><%= @quotation_detail.contentPartOne.html_safe %></p><br><br>
+./views/quotation_details/mail.html.erb:        <p class="contetnPartTwo" data-mercury="simple" id="quotation_contentPartTwo"><%= @quotation_detail.contentPartTwo.html_safe %></p><br><br>
+./views/quotation_details/mail.html.erb:        <p class="thankYou" data-mercury="simple" id="quotation_thankYou"><%= @quotation_detail.thankYou.html_safe %></p><br><br>
+./views/quotation_details/mail.html.erb:        <p class="yoursTruly" data-mercury="simple" id="quotation_yoursTruly"><%= @quotation_detail.yoursTruly.html_safe  %></p><br><br>
+./views/quotation_details/mail.html.erb:        <p class="nameOfCompany" data-mercury="simple" id="quotation_nameOfCompany"><%= @quotation_detail.nameOfCompany.html_safe  %></p><br>
+./views/quotation_details/mail.html.erb:            <p class="contactNumberOne" data-mercury="simple" id="quotation_contactNumberOne"><%= @quotation_detail.contactNumberOne.html_safe %></p>
+./views/quotation_details/mail.html.erb:            <p class="contactNumberTwo" data-mercury="simple" id="quotation_contactNumberTwo"><%= @quotation_detail.contactNumberTwo.html_safe %></p>
+./views/quotation_details/mail.html.erb:            <p class="contactNumberThree" data-mercury="simple" id="quotation_contactNumberThree"><%= @quotation_detail.contactNumberThree.html_safe %></p>
+./views/quotation_details/mail.html.erb:            <p class="emailIdOne" data-mercury="simple" id="quotation_emailIdOne"><%= @quotation_detail.emailIdOne.html_safe %></p>
+./views/quotation_details/mail.html.erb:            <p class="emailIdTwo" data-mercury="simple" id="quotation_emailIdTwo"><%= @quotation_detail.emailIdTwo.html_safe %></p>            
+./views/quotation_details/mail.html.erb:            <p class="emailIdThree" data-mercury="simple" id="quotation_emailIdThree"><%= @quotation_detail.emailIdThree.html_safe %></p>
+./views/quotation_details/mail.html.erb:            <p class="emailIdFour" data-mercury="simple" id="quotation_emailIdFour"><%= @quotation_detail.emailIdFour.html_safe %></p>
+./views/quotation_details/show.pdf.erb:                    <td class ="type" data-mercury="full" id ="quotation_type<%= counter %>"> <%= qt %>  </td>
+./views/quotation_details/show.pdf.erb:                    <td class ="rent" data-mercury="full" id ="quotation_rent<%= counter %>"> <%= qr %> </td>
+./views/quotation_details/show.pdf.erb:        <div class="counter" data-mercury="full" id="quotation_counter" style="display:none">
+./views/layouts/mercury.html.erb:    <%= stylesheet_link_tag    'mercury' %>
+./views/layouts/mercury.html.erb:    <%= javascript_include_tag 'jquery-1.7', 'mercury' %>

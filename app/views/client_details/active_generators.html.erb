@@ -1,0 +1,195 @@
+<%= render 'welcome/header' %> 
+<style>
+	input[name="diesel_reading[remaining_fuel]"], input[name="service_hour[working_hours]"]{
+		width: 50px !important;
+	}
+</style>
+<div class="container">
+	<h2 class="table-heading">Active generators</h2>
+<table id="realQuotations" class="display responsive no-wrap">
+
+	<thead>
+		<tr>
+			<th>S no</th>
+			<th>Generator id</th>
+			<th>Client name</th>
+			<th>Bank & branch</th>
+			<th>Diesel left</th>
+			<th>Edit </th>
+			<th>Running for </th>
+			<th>Hours to service</th>
+			<th>Add Expenses </th>
+		</tr>
+	</thead>   
+  <tbody>
+	  <% @active_generators.each_with_index do |a, index| %>
+
+		  <%# This loop finds the active generator id %>
+		  <% if not a.gen_avail_id.blank?
+				 gen = GenAvail.find_by(id: a.gen_avail_id)
+				 service_due_after = gen.service_due_after.to_i
+			  gen_id = gen.genID
+		  else
+			  if not a.third_party_gen_id.blank?
+				  gen = ThirdPartyGen.find_by(id: a.third_party_gen_id)
+				  service_due_after = gen.service_due_hours.to_i
+			      gen_id = gen.genID
+			  end
+		  end %>
+
+    	  <%# Now find the bank branch and name %>
+	      <% client_detail = ClientDetail.find_by(id: a.client_detail_id) %>
+	      <% bank_branch = client_detail.bank_branch %>
+	      <% bank_id = client_detail.bank_id %>
+	      <% bank = Bank.find_by(id: bank_id) %> <%#= bank_branch %> 
+		<% if not bank.blank? %>
+	      <% bank_name = bank.name %>
+		<% else %>
+		<% bank_name = "" %>
+		<% end %>
+
+		<%#Get the client name  %>
+              <% client_detail = ClientDetail.find_by(id: a.client_detail_id) %>
+              <% client_name = client_detail.name %>
+
+	      <%# Find remaining diesel in this generator %>
+		  <% diesel_reading = DieselReading.where(client_gen_set_id: a.id).order("created_at").last %>
+		  <%# If remaining diesel value does not yet exist for a generator yet, then show only those which exist %>
+			  <% if  not diesel_reading.blank? %>
+				  <% remaining_diesel = nil %>
+				  <% remaining_diesel = diesel_reading.remaining_fuel %>
+			  <% end %>
+
+			  <% index=index+1 %>
+			  <tr>
+	
+		<td><%= index %></td>
+		<td><%= gen_id %></td>
+		<td><%= client_name %></td>
+		<td>
+	<% if bank.blank? %>
+	<%= bank_branch %></td></td>
+	<% else %>
+	<%= bank_name + ', ' + bank_branch %></td></td>
+ 	<% end %>
+	<% if remaining_diesel.to_i < 15 %>
+			   <td id="r_<%= a.id %>" class="fuel" style="color:red"><%= remaining_diesel %></td>
+	<% else%>
+		<td id="r_<%= a.id %>" class = "fuel" ><%= remaining_diesel %></td>  
+	<% end %>
+	<td>
+		<%= form_for(@diesel_reading, :html => {:id => "new_diesel_reading_on_#{a.id}"}, remote: true, update: {success: "response", failure: "error"	}) do |f| %>
+	<%= f.hidden_field :client_gen_set_id, :value => a.id %>
+	<%= f.text_field :remaining_fuel, :id => "t_#{a.id}", autofocus: false, :required => true, :class => "common", :placeholder => 'Remaining fuel', :title => 'Remaining Fuel', :value => "#{remaining_diesel}", :width=> '150px' %>
+
+<%= f.submit :class => 'quotation_submit', :value => 'OK', :disabled => false, :disable_with => "Please wait...", data: { confirm: 'Are you sure to update remaining diesel value?'} %>
+
+<script>
+  $(document).ready(function(){
+	  $('#new_diesel_reading_on_<%= a.id %>').on('ajax:success',function(e, data, status, xhr){
+		  entered_value = $('#t_<%=a.id%>').val();
+		  $('#r_<%= a.id %>').text(entered_value);
+		  $('#r_<%= a.id %>').css('color', 'green');
+//		  $('#reportalert_<%= a.id %>').text('Done.');
+	  }).on('ajax:error',function(e, xhr, status, error){
+		  $('#t_<%=a.id%>').css('color', 'red');
+		  alert("ERROR! Invalid value!");
+//		$('#reportalert_<%= a.id %>').text('Failed.');
+    });
+  });
+</script>
+<% end %>
+</td>
+
+<% service_hour = ServiceHour.where(client_gen_set_id: a.id).order("created_at").last %>
+	<% if not service_hour.blank? %>
+		<% working_hours = service_hour.working_hours.to_i %>
+	<% else %>
+		<% working_hours = '0' %>
+	<% end %>
+	<!-- <>td id="saved_hours_<%#= a.id %>" class="saved_hours"> -->
+ <%#=	working_hours %> 
+<td>
+
+		<%= form_for(@service_hours, :html => {:id => "new_service_hours_on_#{a.id}"}, remote: true, update: {success: "response", failure: "error"	}) do |h| %>
+	<%= h.hidden_field :client_gen_set_id, :value => a.id %>
+	<%= h.text_field :working_hours, :id => "hours_#{a.id}", autofocus: false, :required => true, :class => "common", :placeholder => 'Hours left', :title => 'Hours left', :value => "#{working_hours}", :width=> '150px' %>
+
+<%= h.submit :class => 'quotation_submit', :value => 'OK', :disabled => false, :disable_with => "Please wait...", data: { confirm: 'Are you sure to update the hours left to service?'} %>
+<script>
+  $(document).ready(function(){
+	  $('#new_service_hours_on_<%= a.id %>').on('ajax:success',function(e, data, status, xhr){
+		  entered_value = $('#hours_<%=a.id%>').val();
+		  $('#saved_hours_<%= a.id %>').text(entered_value);
+		  $('#hours_<%= a.id %>').css('color', 'green');
+		  location.reload(); 
+//		  $('#reportalert_<%= a.id %>').text('Done.');
+	  }).on('ajax:error',function(e, xhr, status, error){
+		  $('#hours_<%=a.id%>').css('color', 'red');
+		  alert("ERROR! Invalid value!");
+//		$('#reportalert_<%= a.id %>').text('Failed.');
+    });
+  });
+</script>
+<% end %>
+</td>
+<%# if not working_hours.blank? %>
+	<% hours_to_service = working_hours % service_due_after %>
+<%# else %>
+	<%# hours_to_service = '' %>
+<%# end %>
+<% hours_to_service = service_due_after.to_i - hours_to_service.to_i %>
+	<% if hours_to_service.to_i < 25 %>
+			   <td id="r_<%= a.id %>" class="fuel" style="color:red"><%= hours_to_service  %></td>
+	<% else%>
+		<td id="r_<%= a.id %>" class = "fuel" ><%= hours_to_service %></td>  
+	<% end %>
+<td><%= link_to "Add Expenses", controller: "gen_expenses", action: "new", id: a.client_detail_id %></td> 
+<!--<button class="ok" onClick=" save('<%= a.id %>')" id="<%= a.id %>"> &#10004; </button> </td> -->
+</tr>
+	  <% end %>
+  </tbody>
+
+</table>
+</div>
+<script>
+	$(document).ready(function() {
+		$('#realQuotations').dataTable({
+			responsive: true
+		});
+	} );
+</script>
+
+<script>
+	$(document).ready(function() {
+		$('#fakeQuotations').dataTable({
+			responsive: true
+		});
+	} );
+</script>
+<script>
+	$(document).ready(function() {
+    $('.fuel').click(function(){
+		id = this.id;
+		var copyData = $.trim($("#" + id).html());
+		var changed_class = "edit";
+		var new_input = "<input id=" + id + " " + "class=" + changed_class + ">" ;
+		var editableText = $(new_input);
+	    editableText.val(copyData);
+		$(this).replaceWith(editableText);
+		//editableText.select();
+		editableText.focus();
+		//alert(id);
+	})
+	})
+
+</script>
+
+	<script>
+		function save(id){
+			value = document.getElementById(id).value;
+
+		alert(value);
+	}
+	</script>
+

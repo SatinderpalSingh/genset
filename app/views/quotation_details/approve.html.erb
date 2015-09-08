@@ -1,0 +1,143 @@
+<%= render 'welcome/header' %><br><br><br>
+<script type="text/javascript">
+	var gen_avails = new Array();
+	var gen_details = new Array();
+	var qtn_rents = new Array();
+	$('.third').css({"display":"none"});
+	<% @gen_avails = GenAvail.all %>
+	<% @gen_details = GenDetail.all %>
+	<% @qtn_rents = QuotationRent.all %>
+<%  @gen_avails.each do |avail| %>
+	gen_avails.push(new Array("<%=  avail.gen_detail_id %>"," <%=  avail.genID %> ", "<%= avail.id %>", "<%= avail.available %>"));
+
+<%  end %>
+<% @gen_details.each do |detail| %>
+	gen_details.push(new Array("<%= detail.id %>","<%= detail.genRent %>","<%= detail.genType %>"));
+<% end %>
+var type;
+var rent;
+<% @qtn_rents.each do |rent| %>
+ 	type = "<%= rent.genType %>".split(',');	
+	rent = "<%= rent.genRent %>".split(',');
+
+<% end %>
+
+var gen_id, options;
+function genSelected() {
+	$('.third').css({"display":"none"});
+	$('.gen_avail').css({"display":"block"});
+	$(".gen_avail").attr('required', '');
+	 gen_id = $('#client_gen_set_gen_detail_id option:selected').text();
+	if(gen_id == "Please select"){
+	$('#client_gen_set_gen_avail_id').find('option').remove();
+	return
+
+	}
+
+	$('#client_gen_set_gen_avail_id').find('option').remove();
+	$.each(gen_details, function(i, gen_detail){
+		if(gen_id == gen_detail[2]){
+			$.each(gen_avails, function(j, gen_avail){
+			$('#client_gen_set_gen_avail_id_label').css({"display":"block"});
+				if(gen_detail[0] == gen_avail[0] && gen_avail[3] == 'true'){
+					$('#client_gen_set_gen_avail_id').append("<option value="+gen_avail[2]+">"+gen_avail[1]+"</option>");
+					$("#client_gen_set_gen_avail_id").attr('required', '');
+					$('select#client_gen_set_gen_avail_id').css({"width":"100px","margin":"auto"});
+				}
+			});
+		}
+	});
+
+	if(!($('#client_gen_set_gen_avail_id').val())){
+			$('.gen_avail').css({"display":"none"});
+			$('#client_gen_set_genRent').css({"display":"none"});
+			$('#client_gen_set_genRent_label').css({"display":"none"});
+			$('#client_gen_set_gen_avail_id_label').css({"display":"none"});
+			$('.third').css({"display":""});
+			$("#client_gen_set_third_party_provider_id").attr('required', '');
+			$("#third_party_gens_genRent").attr('required', '');
+			$("#third_party_gens_genConsumption").attr('required', '');
+			$("#third_party_gens_service_due_after").attr('required', '');
+			$('q-submit').css({"margin-top":"40px"});
+	}else{
+		$('#client_gen_set_genRent').css({"display":"block"});
+		$("#client_gen_set_genRent").attr('required', '');
+		$('#client_gen_set_genRent_label').css({"display":"block"});
+	}
+
+	$.each(gen_details, function(i, gen_detail){
+		if(gen_id == type[i]) {
+			$('#client_gen_set_genRent').val(rent[i]);
+		}
+	});
+}
+</script>
+<section class="approved">
+	<h2 class="gen-head">Generator and Guard Details</h2><br>
+  <%= form_for :client_gen_set ,url: {action: "create"}, :html => {:class => "approvedForm"} do |f| %>
+    <%= f.hidden_field :thirdparty,:value => 0, :id =>"thirdparty" %>
+    <%= f.hidden_field :client_detail_id, :value => params[:id] %>
+    <%= f.hidden_field :qid, :value => @qid %>
+
+    <% date = DateTime.now.to_date %>
+    <%= f.hidden_field :approveDate, :value => date.day %>
+    <%= f.hidden_field :approveMonth, :value => date.month %>
+    <%= f.hidden_field :approveYear, :value => date.year %>
+    <br>
+
+    <%= f.label :gen_detail_id, "Generator Type", :class => "labels" %>
+	<%= f.collection_select(:gen_detail_id, GenDetail.all.order(genType: :asc), :id, :genType, {prompt: true}, {:required => true, :onchange => "genSelected();"}) %> 
+    <br>
+    <%= f.label :gen_avail_id, "Available Generator", :class => "labels gen_avail", :id => "client_gen_set_gen_avail_id_label", :style => 'display:none;'%>
+	<%= f.collection_select :gen_avail_id, GenAvail.where("available" => true), :id, :genID, {prompt: true}, {autofocus: true, :class => 'gen_avail', :style => 'display:none;' } %>
+    <br>
+    <%= f.label :third_party_provider_id, "Third Party Provider", :class => 'labels third', :style => 'display:none;' %>
+    <%= f.collection_select :third_party_provider_id, ThirdPartyProvider.all, :id, :name, {prompt: true}, {autofocus: true, :class => 'third', :style => 'display:none;'} %> 
+<br>
+    <div class="approveForm">
+<div style="float:left; width:100%">
+    <%= fields_for :third_party_gens do |t| %>
+	<%= t.label :genRent, "Third party Generator Rent", :class => 'labels third', :style => 'display:none;' %>
+	<%= t.text_field :genRent, :class => 'afterApprovalForm third', :style => 'display:none;' %>
+	<%= t.label :genConsumption, "Third party Generator Consumption", :class => 'labels third', :style => 'display:none;' %>
+	<%= t.text_field :genConsumption, :class => 'afterApprovalForm third', :style => 'display:none;' %>
+	<%= t.label :service_due_after, "Third party Generator Service due Hours", :class => 'labels third', :style => 'display:none;' %>
+	<%= t.text_field :service_due_after, :class => 'afterApprovalForm third', :style => 'display:none;' %>
+	<br>
+    <% end %>
+</div>
+    <br>
+    <%= f.label :genRent, "Generator Rent" , :class => "labels gen_avail", :id => "client_gen_set_genRent_label", :style => 'display:none;' %>
+    <%= f.text_field :genRent, :class => "afterApprovalForm gen_avail", :style=>"font-size: 18px;display:none;" %>
+    <br>
+    
+    <% list = @taxesLabel.zip(@taxesPercentage) %>
+    <% list.each do |l, p| %>
+	<% if l == "Service Tax"%>
+	<%=f.label :serviceTax, "Service Tax", :class => "labels" %> 
+	<%= f.text_field :serviceTax, :value => p, :class => "afterApprovalForm", :style=>"font-size: 18px;" %><br>
+	<% end %>
+	
+	<% if l == "Education Tax" %>
+	<%= f.label :eduTax, "Surcharge/Education Tax", :class => "labels" %>
+	<%= f.text_field :eduTax, :value => p, :class => "afterApprovalForm", :style=>"font-size: 18px;" %><br>
+	<% end %>
+    <% end %>
+
+	<%= f.label :tds, "TDS", :class => "labels" %>
+	<%= f.text_field :tds, :required => true, :class => "afterApprovalForm", :style=>"font-size: 18px;" %><br>
+    <%= fields_for :gaurd_detail do |g| %> 
+    <%= g.label :name, "Guard Name", :class => "labels" %>
+	<%= g.text_field :name, :required => true, :class => "afterApprovalForm", :style=>"font-size: 18px;" %>
+    <%= g.label :contactNo, "Contact No", :class => "labels" %>
+	<%= g.text_field :contactNo, :required => true, :class => "afterApprovalForm", :style=>"font-size: 18px;" %>
+    <%= g.label :monthlySalary, "Monthly Salary", :class => "labels" %>
+	<%= g.text_field :monthlySalary, :required => true, :class => "afterApprovalForm", :style=>"font-size: 18px;" %>
+    <% end %>
+     <br> 
+  </div>
+
+     <br><p style="padding-bottom: 40px;"><%= submit_tag "Submit", :id => "submit", :name => "submit", :class => "form_submit", :disabled => false, :disable_with => "Please wait..." %></p>
+  <% end %>
+</section>
+

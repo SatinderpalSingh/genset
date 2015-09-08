@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Gen Avails</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gen_avails.each do |gen_avail| %>
+      <tr>
+	<td><%= gen_avail.genID %></td>
+        <td><%= link_to 'Show', gen_avail %></td>
+        <td><%= link_to 'Edit', edit_gen_avail_path(gen_avail) %></td>
+        <td><%= link_to 'Destroy', gen_avail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gen avail', new_gen_avail_path %>

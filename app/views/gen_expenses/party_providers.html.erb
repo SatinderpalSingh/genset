@@ -1,0 +1,91 @@
+<%= render 'welcome/header' %> <br><br>
+<h2 class="table-heading">Third Party Providers </h2>
+
+<div class="container">
+	<div style="margin-left:18%;"> 
+		<br>
+		<%= form_for :Date do |f| %>
+			From <%= select_date Date.today, prefix: :start_date %>
+
+		To		<%= select_date Date.today, prefix: :end_date %></p>
+</div></br>
+<div class="actions">
+	<%= f.submit value:"Filter Result", :class=> 'form_submit' %>
+</div>
+<% end %>
+<% 
+	if not params[:start_date].blank?
+					start_d =  Date::civil(params[:start_date][:year].to_i, params[:start_date][:month].to_i, params[:start_date][:day].to_i) 
+					end_d = Date::civil(params[:end_date][:year].to_i, params[:end_date][:month].to_i, params[:end_date][:day].to_i)
+					start_d = start_d.beginning_of_day
+					end_d = end_d.end_of_day
+		@bill = BillTable.where(created_at: (start_d)..end_d)
+else
+	 @bill = BillTable.all
+		end
+
+@bill = @bill.where.not(third_party_provider_id: nil)
+				%>
+<%= line_chart [
+	{name: "Total", data: @bill.map{|record| [record.created_at,record.total]}},
+	{name: "Expenses", data: @bill.map{|record| [record.created_at, record.total_exp]}},
+	{name: "Amount To Forward", data: @bill.map{|record| [record.created_at, record.total.to_d - record.total_exp.to_d - record.calc_tds.to_d ]}}
+], { library:{width: 1200} } %>
+<table id="genExpenses" class="display responsive no-wrap">
+	<thead>
+		<tr>
+			<th> </th>
+			<th>Name</th>	
+			<th>Address</th>
+			<th>Contact No</th>
+			<th>Total</th>
+			<th>TDS</th>
+			<th>Amount to be forwarded</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%
+
+	%>
+<% i = 0 %>
+<%  i += 1 %>
+<%	@providers = ThirdPartyProvider.all %>
+<% @providers.each do |p| %>
+	<%	if not params[:start_date].blank? %>
+		<% @total= BillTable.where(third_party_provider_id: p.id, created_at: (start_d)..end_d).sum(:total).to_i.round(1) %>
+		<% @tds = BillTable.where(third_party_provider_id: p.id, created_at: (start_d)..end_d).sum(:tds).to_i %>
+		<% @total_exp = BillTable.where(third_party_provider_id: p.id, created_at: (start_d)..end_d).sum(:total_exp).to_i %> 
+	<% else %>
+		<% @total= BillTable.where(third_party_provider_id: p.id).sum(:total).to_i.round(1) %>
+		<% @tds = BillTable.where(third_party_provider_id: p.id).sum(:tds).to_i %>
+		<% @total_exp = BillTable.where(third_party_provider_id: p.id).sum(:total_exp).to_i %> 
+	<% end %>
+	<% #Find the actual tds amount after subtracting from total %>
+	<% @tds = ((@total.to_d / 100) * @tds.to_d).round(1) %>
+	<% @to_forward = (@total - @tds - @total_exp).round(1)%>
+	<%#= debug @total.inspect %> 
+	<%#= debug @tds.inspect %>
+	<%#= debug @to_forward.inspect %> 
+	<tr>
+		<td><%= p.id %></td>
+		<td><%= link_to p.name, third_party_provider_path(p) %></td>
+		<td><%= p.address%></td>
+		<td><%= p.contactNo %></td>
+		<td><%= @total %></td>
+		<td><%= @tds %></td>
+		<td><%= @to_forward%></td>
+	</tr>
+<%	end %>
+
+
+		</tbody>
+	</table>
+</div>
+
+<script>
+	$(document).ready(function() {
+		$('#genExpenses').dataTable({
+			responsive: true
+		});
+	} );
+</script>

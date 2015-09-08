@@ -1,0 +1,25 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: satinder_gensys_development
+  pool: 5
+  timeout: 5000
+  username: satinder
+  password: satinder123
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: gensysbagga_test
+  pool: 5
+  timeout: 5000
+  username: gensysbagga
+  password: gensysbagga##
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: gensysbagga
+  pool: 5
+  timeout: 5000
+  username: gensysbagga
+  password: gensysbagga##

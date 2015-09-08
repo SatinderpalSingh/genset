@@ -1,0 +1,164 @@
+<%= render 'welcome/header' %> <br><br><br><br><br>
+
+<div class="container">
+	<h2 class="table-heading">Generator Types</h2>
+	<% if @notice.present? %>
+		<div class="notice">
+			<%= @notice %>
+		</div>
+	<%  end %>
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			$( ".notice" ).delay(5000).animate({
+				height: "0%",
+				opacity: 0.0,
+			}, 1000 );
+		});
+
+
+	</script>
+
+	<%= button_to 'Add Type & Rent', gendetails_path, {:class => "new-sender"} %> <br>
+
+	<!-- Generator Type And Rent Table -->
+	<table id="generatorTypeAndRent" class="display responsive no-wrap">
+		<thead>
+			<tr>
+				<th> Generator Type </th>
+				<th> Generator Rent </th>
+					<th> Edit Gen Details </th>
+				<th> Delete Gen Details </th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% 
+					@gen_details.each do |gen_detail| 
+					dest=true
+				
+				%>
+			<% @gen_avail = GenAvail.where(gen_detail_id: gen_detail.id) %>
+			<% @gen_avail.each do |gen_avail| %>
+				<%  if gen_avail.available==false
+						dest=false %>
+				<% end %>
+				<% @tpg = ThirdPartyGen.where(gen_detail_id: gen_detail.id) %>
+				<% @tpg.each do |g| %>
+					<%
+							@cgs = ClientGenSet.where(third_party_gen_id: g.id)
+					i =1
+					@cgs.each do |c|
+						@cd = ClientDetail.find(c.client_detail_id) 
+						if @cd.contract == false
+							dest=false 
+						end
+					end
+				%>
+		<% end %>
+	<% end %>
+	<tr>
+		<td><%= gen_detail.genType %></td>
+		<td><%= gen_detail.genRent %></td>
+		<td><%= link_to 'Edit', edit_gen_detail_path(gen_detail) %></td></td>
+		<td><% if dest %>
+			<%= link_to 'Destroy',  gen_detail, method: :delete, data: { confirm: 'Are you sure?'+ dest.to_s } %> 
+		<%  else  %> 
+			<%= "Distroy Disabled" %> 
+		<%  end %>
+	</td>
+</tr>
+		<% end %>
+	</tbody>
+</table><br><br>
+
+<!-- Generator ID Table -->
+
+<h2 class="table-heading">Available Generators</h2>
+<%= button_to 'Add Generator', availableGenerators_path, {:class => "new-sender"} %> <br>
+<table id="generatorID" class="display responsive no-wrap">
+	<thead>
+		<tr>
+			<th> Generator Type </th>
+			<th> Generator ID </th>
+			<th> Available </th>
+			<th> Generator Consumption </th>
+			<th> Service Due Hours </th>
+			<th> Edit </th>
+			<th> Delete </th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @gen_details.each do |gen_detail| %>
+			<% @gen_avail = GenAvail.where(gen_detail_id: gen_detail.id) %>
+			<tr>
+				<td><%= gen_detail.genType %></td>
+				<td>
+					<% @gen_avail.each do |gen_avail| %>
+						<%= gen_avail.genID %>
+						<br>
+					<% end %>
+				</td>
+				<td>
+					<% @gen_avail.each do |gen_avail| %>
+						<% 
+								available = ''
+						if (gen_avail.available == true)
+							available = "Yes"
+						else
+							available = "No"
+						end
+					%>
+				<%= available %>
+				<br />
+			<% end %>
+		</td>
+				<td>
+					<% @gen_avail.each do |gen_avail| %>
+						<%= gen_avail.genConsumption %>
+						<br>
+					<% end %>
+				</td>
+				<td>
+					<% @gen_avail.each do |gen_avail| %>
+						<%= gen_avail.service_due_after %>
+						<br>
+					<% end %>
+				</td>
+
+		<td>
+			<% @gen_avail.each do |gen_avail| %>
+				<%= link_to 'Edit', edit_gen_avail_path(gen_avail) %>
+				<br>
+			<% end %>
+		</td>
+		<td>
+			<% @gen_avail.each do |gen_avail| 
+
+				if gen_avail.available
+			%>
+		<%= link_to 'Destroy', gen_avail, method: :delete, data: { confirm: 'Are you sure?' } %>
+		<br>
+	<% else %>
+		<%= "Destroy Disabled" %>
+		<br>
+		<% end end %>
+	</td>
+</tr>
+	  <% end %>      
+  </tbody>  
+</table>
+<script>
+	$(document).ready(function() {
+		$('#generatorTypeAndRent').dataTable({
+			responsive: true
+		});
+	} );
+
+	$(document).ready(function() {
+		$('#generatorID').dataTable({
+			responsive: true
+		});
+	} );
+</script>
+</div>
+

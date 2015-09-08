@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Bill:</strong>
+  <%= @bill_table.bill_id %>
+</p>
+
+<p>
+  <strong>Monthly rent:</strong>
+  <%= @bill_table.monthly_rent %>
+</p>
+
+<p>
+  <strong>Mail sent:</strong>
+  <%= @bill_table.mail_sent %>
+</p>
+
+<p>
+  <strong>Third party payment:</strong>
+  <%= @bill_table.third_party_payment %>
+</p>
+
+<p>
+  <strong>Owner payment:</strong>
+  <%= @bill_table.owner_payment %>
+</p>
+
+<%= link_to 'Edit', edit_bill_table_path(@bill_table) %> |
+<%= link_to 'Back', bill_tables_path %>

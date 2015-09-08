@@ -1,0 +1,35 @@
+<!-- CSS on this form is forked from quotations CSS which is in quotation.css.scss -->
+
+<section class="quotationSection">
+    <%= render "welcome/header"  %>
+    <div class="quotationForm">
+      <h2 class="fillForm">Sender Details</h2>
+      <%= form_for(@sender_detail) do |f| %>
+
+  <% if @sender_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sender_detail.errors.count, "error") %> prohibited this gen_detail from being saved:</h2>
+
+      <ul>
+      <% @sender_detail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+       <label class="ll">Name </label> <%= f.text_field :name, autofocus: true, :required => true, :class => 'common', :placeholder=> "Name of Sender"%>
+        <label class="ll">Address</label><%= f.text_field :address, autofocus: true, :required => true, :class => 'common', :placeholder => "Address"%>
+        <label class="ll">Contact No.</label><%= f.text_field :contactNo, autofocus: true, :required => true, :class => 'common', :placeholder => "Contact Number" %>
+        <label class="ll">Email</label><%= f.email_field :emailID, autofocus: true, :required => true, :class => 'common', :placeholder => "Email"%> <br><br>
+        <label class="ll">Upload Signature</label><p style="text-align: center;"><%= f.file_field :signature %></p><br>
+
+        <label class="ll">Choose Quotation Type</label>
+            <p style="text-align: center;">
+              <label for="Real">Real Quotation  <%= f.radio_button(:quotationType, "Real")  %> </label>
+              <label for="Fake">Fake Quotation  <%= f.radio_button(:quotationType, "Fake") %></label>
+            </p> <br />
+                    
+        <p style="text-align: center; padding-bottom: 40px;"><%= submit_tag "Save", :id => "submit", :name => "submit", :class => "send save", :disabled => false, :disable_with => "Please wait..." %></p>
+      <% end %>
+    </div>
+</section>

@@ -1,0 +1,37 @@
+<%= render 'welcome/header' %> <br><br><br><br><br>
+
+<p id="notice"><%= notice %></p>
+
+<h2 class="table-heading">Listing Banks</h2>
+<br>
+<div class="container">
+	<%= link_to 'Add Bank', new_bank_path() %> </br>
+<br>
+<br>
+<div class="container">
+<table id="banks" class="display responsive no-wrap" >
+  <thead>
+    <tr>
+      <th>Bank Name</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @banks.each do |bank| %>
+      <tr>
+        <td><%= bank.name %></td>
+        <td><%= link_to 'Edit', edit_bank_path(bank) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<script>
+    $(document).ready(function() {
+    $('#banks').dataTable({
+      responsive: true
+    });
+  } );
+</script>

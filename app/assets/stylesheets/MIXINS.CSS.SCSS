@@ -1,0 +1,25 @@
+/*
+ * Mixins Start 
+ */
+
+@mixin breakpoint($point) {
+    @if $point == epsilon {
+        @media (min-width: 70em) { @content ; }
+    }
+    @else if $point == delta {
+        @media (min-width: 64em) { @content ; }
+    }
+    @else if $point == gamma {
+        @media (min-width: 50em) { @content ; }
+    }
+    @else if $point == beta {
+        @media (min-width: 37.5em)  { @content ; }
+    }
+    @else if $point == alpha {
+        @media (max-width: 37.5em)  { @content ; }
+    }
+}
+
+/*
+ * Mixins End 
+ */

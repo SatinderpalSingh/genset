@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  designation: MyString
+  nameOfBank: MyString
+  address: MyText
+  district: MyString
+  contactNo: 1
+  emailID: MyString
+  approved: false
+
+two:
+  designation: MyString
+  nameOfBank: MyString
+  address: MyText
+  district: MyString
+  contactNo: 1
+  emailID: MyString
+  approved: false

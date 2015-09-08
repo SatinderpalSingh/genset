@@ -1,0 +1,20 @@
+<%= form_for(@gen_avail) do |f| %>
+  <% if @gen_avail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gen_avail.errors.count, "error") %> prohibited this gen_avail from being saved:</h2>
+
+      <ul>
+      <% @gen_avail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<br><br><br>Generator Type: <%= @detail.genType %><br><br>
+  Generator Name(ID) <%= f.text_field :genID, :readonly => true %><br />
+	Available <%= f.check_box :available %><br><br>
+	Consumption (in litres) <%= f.text_field :genConsumption %><br>        Service Due Hours <%= f.text_field :service_due_after %><br><br>
+
+    <%= f.submit :class => "quotation_submit", :value => "Update" %>
+<% end %>

@@ -1,0 +1,198 @@
+<%= render 'welcome/header' %> <br><br><br><br><br>
+
+<div class="container">
+	<h2 class="table-heading">Search Quotations</h2>
+
+	<div style="margin-left:18%;">
+	<%= form_for :Date do |f| %>
+		From <%= select_date Date.today, prefix: :start_date %>
+ 
+To		<%= select_date Date.today, prefix: :end_date %></p></br>
+	<p> 
+	</div>
+	<div style="margin-left:23%;">
+		Bank Name <%= f.collection_select :bank_id, Bank.all, :id, :name, prompt: true, autofocus: true, :class => 'dropDown new-dropdown'  %> &nbsp;
+		&nbsp;	Bank Branch Name &nbsp; <%= f.text_field :bank_branch, autofocus: true,  :placeholder => 'Bank Branch Name',:title => 'Bank Branch Name' %>
+</div><br> <br>
+<div class="actions">
+<%= f.submit value:"Filter Result", :class=> 'form_submit' %>
+</div>
+
+	</p>
+<% end %>
+
+
+<%#= render :text => params[:start_date][:year].inspect %>
+<%#= render :text => params[:end_date].inspect %>
+<%
+
+	if not params[:start_date].blank?
+		start_d =  Date::civil(params[:start_date][:year].to_i, params[:start_date][:month].to_i, params[:start_date][:day].to_i) 
+		end_d = Date::civil(params[:end_date][:year].to_i, params[:end_date][:month].to_i, params[:end_date][:day].to_i)
+
+		start_d = start_d.beginning_of_day
+		end_d = end_d.end_of_day
+end
+%>
+</div> <br> <hr> <br>
+	<h2 class="table-heading">Real Quotations</h2>
+<table id="realQuotations" class="display responsive no-wrap">
+
+	<thead>
+		<tr>
+			<th></th>
+			<th>Sender Name</th>
+			<th>Bank Name</th>
+			<th>District</th>      
+			<th>Contact Number</th>
+			<th>Email ID</th>
+			<th>Show Quotations</th>
+			<th>Edit Client</th>
+			<th>Approve</th>    
+			<th>Contract</th> 
+		</tr>
+	</thead>   
+  <tbody>
+  <% 
+i = 0
+j = 0
+@sender_details.each do |s| 
+	if s.quotationType == "Real" 
+		@client_details = ClientDetail.where(sender_details_id: s.id)
+		if not params[:Date].blank?
+			if not params[:start_date].blank? 
+				@client_details = @client_details.where(created_at: (start_d)..end_d)
+			end
+			if not params[:Date][:bank_branch].blank?
+			end
+			@client_details = @client_details.where('bank_branch LIKE ?', '%' + params[:Date][:bank_branch].to_s + '%')
+			if not params[:Date][:bank_id].blank?
+				@client_details = @client_details.where(bank_id: params[:Date][:bank_id])
+			end
+		end
+		@client_details = @client_details.order(id: :desc) 
+		@client_details.each do |f| 
+			i= i+1
+		%>   
+	<tr>
+		<td><%= i %></td>
+		<td><%= s.name %></td>
+		<td>
+			<%	bank=""
+			if not f.bank_id.blank? 
+				bank= Bank.find(f.bank_id).name 
+			end	%>
+		<%= bank.html_safe %>, 
+		<%= f.bank_branch.html_safe  %>
+	</td>
+	<td><%= f.district %></td>      
+	<td><%= f.contactNo %></td>
+	<td><%= f.emailID %></td> 
+	<td><%= link_to "Show", "/quotations/" + f.id.to_s %></td> 
+	<td><%= link_to "Edit", client_detail_path(f.id) + "/edit" %></td>
+	<% if f.approved == true %> 
+		<td>Approved</td>
+	<% else %>
+		<td><%= button_to 'Approve', "/approved" + quotation_detail_path(f.id) %></td> 
+	<% end %>      
+	<% if f.contract == true %>
+		<td><%= button_to  'Close', "/closed" + client_detail_path(f.id) %></td>  
+	<% else %>
+		<td> Contract Closed </td>
+	<% end %>
+</tr>
+	  <% end %>
+  <% end %>
+  <% end %>  
+  </tbody>
+
+</table>
+<h2 class="table-heading">Fake Quotations</h2>
+
+
+<table id="fakeQuotations" class="display responsive no-wrap">
+
+	<thead>
+		<tr>
+			<th></th>
+			<th>Sender Name</th>
+			<th>Bank Name</th>
+			<th>District</th>      
+			<th>Contact Number</th>
+			<th>Email ID</th>
+			<th>Show Quotations</th>
+			<th>Edit Client</th>
+		</tr>
+	</thead>  
+
+	<tbody>
+		<% 
+				@sender_details.each do |s| %>
+			<% if s.quotationType == "Fake" %>
+				<% @client_details = ClientDetail.where(sender_details_id: s.id)  %>
+				<%
+					if not params[:Date].blank?
+			if not params[:start_date].blank? 
+				@client_details = @client_details.where(created_at: (start_d)..end_d)
+			end
+			if not params[:Date][:bank_branch].blank?
+			end
+			@client_details = @client_details.where('bank_branch LIKE ?', '%' + params[:Date][:bank_branch].to_s + '%')
+			if not params[:Date][:bank_id].blank?
+				@client_details = @client_details.where(bank_id: params[:Date][:bank_id])
+			end
+		end
+		@client_details = @client_details.order(id: :desc) 
+	
+				 @client_details.each do |f| %>    
+				<% 
+						@fake_qtn = FakeQuotation.where(client_details_id: f.id).order(id: :desc)
+				qtn_id = ''
+				@fake_qtn.each do |q|
+					qtn_id = q.id
+				end
+				j = 1+j
+			%>
+		<tr>
+			<td><%= j %></td>
+			<td><%= s.name%></td>          
+
+
+			<td>
+				<%	bank=""
+				if not f.bank_id.blank? 
+					bank= Bank.find(f.bank_id).name 
+				end	%>
+			<%= bank.html_safe %>, 
+			<%= f.bank_branch.html_safe  %> 
+		</td>
+		<td><%= f.district %></td>      
+		<td><%= f.contactNo %></td>
+		<td><%= f.emailID %></td> 
+		<td><%= link_to "Show", "/fake_quotations/" + qtn_id.to_s %></td>
+		<td><%= link_to "Edit", client_detail_path(f.id) + "/edit" %></td>
+	<% end %>  
+</tr>
+	<% end %>  
+<% end %>
+  </tbody>
+
+</table>
+</div>
+
+
+<script>
+	$(document).ready(function() {
+		$('#realQuotations').dataTable({
+			responsive: true
+		});
+	} );
+</script>
+
+<script>
+	$(document).ready(function() {
+		$('#fakeQuotations').dataTable({
+			responsive: true
+		});
+	} );
+</script>

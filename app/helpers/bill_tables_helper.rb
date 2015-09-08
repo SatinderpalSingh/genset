@@ -1,0 +1,2 @@
+module BillTablesHelper
+end

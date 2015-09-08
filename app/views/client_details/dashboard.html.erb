@@ -1,0 +1,55 @@
+<section class="dashboard" style="overflow:hidden; display:block;">
+    <%= render 'welcome/header' %>
+    <main>
+
+    <%= link_to sender_path, {:class=>"link-color"} do %>
+        <div class="icon1">
+                <%= icon('user', class: 'icon') %>
+                    <br><br>
+            <p class="textIcon" style="text-align:center"> Profiles</p>         
+    </div>
+    <% end %>
+
+    <%= link_to generators_path, {:class=>"link-color"} do %>
+        <div class="icon2">
+                        <%= icon('flash', class: 'icon') %>
+                    <br><br>
+           <p class="textIcon" style="text-align:center">Generators</p>
+   </div>
+   <% end %>
+   
+   <%= link_to  clientdetails_path, {:class=>"link-color"} do %>
+           <div class="icon3">
+                   <%= icon('user-plus', class: 'icon') %>
+                    <br><br>
+           <p class="textIcon" style="text-align:center">Add New Client</p>
+       </div>
+    <% end %>
+
+    <%= link_to client_path, {:class=>"link-color"} do %>
+            <div class="icon4">
+                    <%= icon('file-text', class: 'icon') %>
+                    <br><br>
+            <p class="textIcon" style="text-align:center">Quotations</p>
+        </div>
+    <% end %>
+
+    <%= link_to genexpenses_path, {:class=>"link-color"} do %>
+            <div class="icon5"> 
+                    <%= icon('inr', class: 'icon') %>
+                    <br><br>
+            <p class="textIcon" style="text-align:center">Generator Expenses</p>
+        </div>
+    <% end %>
+
+    <%= link_to thirdparty_path, {:class=>"link-color"} do %>
+            <div class="icon6">
+                    <%= icon('users', class: 'icon') %>
+                    <br><br>
+            <p class="textIcon" style="text-align:center">Third Party Providers</p>
+        </div>
+    <% end %>
+
+    </main>
+</section>
+

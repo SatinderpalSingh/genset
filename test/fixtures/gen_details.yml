@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  genType: MyString
+  genRent: 
+  genRent: 
+  totalGen: 1
+
+two:
+  genType: MyString
+  genRent: 
+  genRent: 
+  totalGen: 1

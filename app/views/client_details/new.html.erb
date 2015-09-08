@@ -1,0 +1,54 @@
+<!-- CSS can be found in quotation.scss.css -->
+    <%= render "welcome/header"  %>
+<div class="container">
+<section class="quotationSection">
+    <div class="quotationForm">
+		<h2 class="fillForm">New Client</h2>
+        <%= form_for(@client_detail) do |f| %>
+
+        <% if @client_detail.errors.any? %>
+          <div id="error_explanation">
+            <ul>
+              <% @client_detail.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+              <% end %>
+           </ul>
+         </div>
+        <% end %>
+
+  <label class="ll">Designation</label>
+  <%= f.text_field :designation, autofocus: true, :required => true, :class => 'nameOfPerson', :placeholder => 'Designation',:title => 'What is the name of Person?' %>
+
+  <label class="ll">Name</label>
+ <%= f.text_field :name, autofocus: true, :required => true, :class => 'nameOfPerson', :placeholder => 'Name',:title => 'What is the name of Person?' %>
+  <label class="ll">Bank Name(In case client is a bank)</label>
+ <%= f.collection_select(:bank_id, Bank.all, :id, :name, {prompt: true, autofocus: true}, {:required => false}) %>
+  <label class="ll">Branch Name</label>
+  <%= f.text_field :bank_branch, :required => false, :class => 'nameOfPerson', :placeholder => 'Branch name',:title => 'Bank Branch Name' %>
+
+  <label class="ll">My Bank Account To be Used</label>
+  <%= f.collection_select(:account_id, Account.all, :id, :name, {prompt: true, autofocus: true}, {:required => true}) %>
+
+  <label class="ll">Address</label>
+  <%= f.text_field :address, autofocus: true, :required => true, :class => 'address', :placeholder => 'Address', :title => 'Bank address' %>
+
+  <label class="ll">City</label>
+  <%= f.text_field :district, autofocus: true, :required => true, :class => 'district', :placeholder => 'District / City', :title => 'District / City where the bank is located	' %>
+
+  <label class="ll">Contact No.</label>
+  <%= f.text_field :contactNo, :required => true, autofocus: true, :class => 'contactNumber', :placeholder => 'Contact Number', :title => 'Contact Number' %>
+
+  <label class="ll">Email</label> 
+  <%= f.email_field :emailID, autofocus: true, :required => true, :class => 'eMail', :placeholder => 'E-mail', :title => 'Email Id of Sender' %>
+
+  <label class="ll">Sender</label>
+  <%= f.collection_select(:sender_details_id, SenderDetail.all, :id, :name,{prompt: true, autofocus: true}, {:required => true}) %>
+
+  <p style="text-align: center; padding-bottom: 40px;">
+  <%= f.submit :class => 'quotation_submit', :value => 'Submit', :disabled => false, :disable_with => "Please wait..." %>
+  </p>
+
+  <% end %>
+  </div> 
+</section>
+

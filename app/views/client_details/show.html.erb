@@ -1,0 +1,94 @@
+<%= render 'welcome/quotationHeader' %>
+<section class="quotationPage">
+    <div class="barline"></div>
+    <div class="address">
+    <% @quotation_detail.each do |quotation| %>
+        <h2 class="companyName"><%= quotation.companyName.html_safe  %><span class="serviceTax"><%= quotation.serviceTax.html_safe  %></span></h2>
+        <h4 class="companyNameTagline" ><%= quotation.companyTagLine.html_safe  %><span class="phoneNumbers"><%= quotation.headerMobileNumber.html_safe  %></span></h4>
+        <h4 class="companyAddress1" ><%= quotation.companyAddressOne.html_safe  %>,</h4> 
+        <h4 class="companyAddress2" ><%= quotation.companyAddressTwo.html_safe  %>.</h4>
+    </div>
+    <div  class="referenceNumber">Ref. No. ..........<span class="dated">Dated : <%= Time.now.strftime("%m/%d/%Y") %></span>
+    </div><br><br>
+
+    <!--  Template content part starts -->
+
+    <div class="contentPart">
+        <div class="contentsToStatement" >To</div>
+		<div class="details"><%= @client_detail.designation.html_safe  %>,
+			
+			<%	bank=""
+			if not @client_detail.bank_id.blank? 
+				bank= Bank.find(@client_detail.bank_id).name 
+			end	%>
+		<br><%= bank.html_safe %>, 
+		<br> <%= @client_detail.bank_branch.html_safe  %>, 
+			
+			<br> <%= @client_detail.address.html_safe  %>, <br><%= @client_detail.district.html_safe  %>
+        </div>
+        <div  class= "subject" data-mercury="full" id="quotation_subject"><%= quotation.subject.html_safe  %></div>
+        <div class="regards" data-mercury="full" id="quotation_regard"><%= quotation.regard.html_safe  %>,</div>
+        <div class="regardContent" data-mercury="full" data-type="editable" id="quotation_regardContent"><%= quotation.regardContent.html_safe  %></div><br>
+    </div>
+    <!--  Banks Names Start Here -->
+
+    <div class="banks" >
+    <% @quotation_detail.each do |q| %>
+        <p class="bankName1" data-mercury="full" id="quotation_bankNameOne"><%= quotation.bankNameOne.html_safe  %></p>
+        <ul class="banksAndZones" style="list-style-type:none">
+            <li><span class="zoneInBold" data-mercury="full" id="quotation_bankZoneOne">Ludhiana Zone : </span><%= quotation.bankZoneOne.html_safe  %></li>
+            <li><span class="zoneInBold" data-mercury="full" id="quotation_bankZoneTwo">Amritsar Zone : </span><%= quotation.bankZoneTwo.html_safe  %></li>
+        </ul>
+        <p><span class="bankName2" data-mercury="full" id="quotation_bankNameTwo">Oriental Bank of Commerce : </span><%= quotation.bankNameTwo.html_safe  %></p>
+        <p><span class="bankName3" data-mercury="full" id="quotation_bankNameThree">Bank of Baroda : </span><%= quotation.bankNameThree.html_safe  %></p>
+        <p><span class="bankName4" data-mercury="full" id="quotation_bankNameFour">The Federal Bank Limited :</span><%= quotation.bankNameFour.html_safe  %></p>
+        <p><span class="bankName5" data-mercury="full" id ="quotation_bankNameFive">Central Bank of India : </span><%= quotation.bankNameFive.html_safe  %></p><br>
+    <% end %>
+    </div>
+
+
+    <!-- Quotations -->
+
+    <div class="quotations" >
+        <h4 class="quotationLine" data-mercury="full" id="quotation_quotationLine"><%= quotation.quotationLine.html_safe  %></h4> <br>
+    <% @quotation_rent = QuotationRent.where(client_detail_id: quotation.client_details_id, quotation_detail_id: quotation.id)
+        @quotation_rent.each do |qr|
+    %>
+
+    <div>
+      <%= qr.genType.split(', ').join(', ') %> <br>
+        <br>
+      <%= qr.genRent %>
+    </div>
+
+    <% end %> <br>      
+        <h4 class="serviceTax">(Plus Service tax is applicable)</h4>
+    </div>
+
+    <!-- Content of 10% increment-->
+
+    <div class="secondPageContent">
+    <% @quotation_detail.each do |q| %>    
+        <p class="contentPartOne" data-mercury="full" id="quotation_contentPartOne"><%= quotation.contentPartOne.html_safe %></p><br><br>
+        <p class="contetnPartTwo" data-mercury="full" id="quotation_contentPartTwo"><%= quotation.contentPartTwo.html_safe %></p><br><br>
+        <p class="thankYou" data-mercury="full" id="quotation_thankYou"><%= quotation.thankYou.html_safe %></p><br><br>
+        <p class="yoursTruly" data-mercury="full" id="quotation_yoursTruly"><%= quotation.yoursTruly.html_safe  %></p><br><br>
+        <p class="nameOfCompany" data-mercury="full" id="quotation_nameOfCompany"><%= quotation.nameOfCompany.html_safe  %></p><br><br><br>
+        <p><%= image_tag(@sender_detail.signature.url(:med))%></p><br><br>
+        <p class="name"><%= @sender_detail.name.html_safe  %></p><hr class="nameHrLine">
+        <div class="phoneNumbers" style="float:left;">
+            <p class="contactNumberOne" data-mercury="full" id="quotation_contactNumberOne"><%= quotation.contactNumberOne.html_safe %></p>
+            <p class="contactNumberTwo" data-mercury="full" id="quotation_contactNumberTwo"><%= quotation.contactNumberTwo.html_safe %></p>
+            <p class="contactNumberThree" data-mercury="full" id="quotation_contactNumberThree"><%= quotation.contactNumberThree.html_safe %></p>
+        </div>        
+        <div class="emails" style="float:right; color:blue;">
+            <p class="emailIdOne" data-mercury="full" id="quotation_emailIdOne"><%= quotation.emailIdOne.html_safe %></p>
+            <p class="emailIdTwo" data-mercury="full" id="quotation_emailIdTwo"><%= quotation.emailIdTwo.html_safe %></p>            
+            <p class="emailIdThree" data-mercury="full" id="quotation_emailIdThree"><%= quotation.emailIdThree.html_safe %></p>
+            <p class="emailIdFour" data-mercury="full" id="quotation_emailIdFour"><%= quotation.emailIdFour.html_safe %></p>
+        </div>
+    <% end %>    
+    </div>
+
+    <% end %>
+</section>
